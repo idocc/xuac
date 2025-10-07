@@ -81,7 +81,7 @@ const faqData = [
     id: 3,
     question: "是否需要实名认证(KYC)",
     answer:
-      "目前支持主流数字货币 BTC、ETH、USDT,以及 USD、EUR、CNY、BRL、INR 等多种法币，未来会持续拓展更多币种和市场。目前支持主流数字货币 BTC、ETH、USDT,以及 USD、EUR、CNY、BRL、INR 等多种法币，未来会持续拓展更多币种和市场。",
+      "目前支持主流数字货币 BTC、ETH、USDT,以及 USD、EUR、CNY、BRL、INR 多种法币，未来会持续拓展更多币种和市场。目前支持主流数字货币 BTC、ETH、USDT,以及 USD、EUR、CNY、BRL、INR 等多种法币，未来会持续拓展更多币种和市场。",
   },
   {
     id: 4,
