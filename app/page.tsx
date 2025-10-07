@@ -241,7 +241,7 @@ function Introduce() {
           onClick={toggleProductService}
         >
           <div className="border-b border-[#000] flex justify-between items-center py-[20px]">
-            <span className="text-[72px] font-bold">产品与服务</span>
+            <span className="text-[72px] font-bold">使用流程</span>
             <span
               className={`text-[40px] transition-transform duration-300 ease-in-out ${isProductServiceExpanded ? "rotate-45" : "rotate-0"}`}
             >
@@ -493,7 +493,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="h-[130px] grid grid-cols-4 relative z-10 items-center px-[40px]">
+        <div className="h-[130px] grid grid-cols-4 relative z-10 items-center px-[40px] mt-[170px]">
           {mockExchangeFeatures.map((feature, index) => (
             <div
               key={feature.id}
@@ -521,6 +521,36 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      <div className="px-[108px] mt-[50px] pb-[50px] flex justify-center space-x-[150px]">
+        <div className="text-[52px] text-[#000] pt-[38px]">
+          <span className="font-bold">全天汇 24exc</span>
+          <div>
+            下一代加密货币
+            <br />
+            兑换平台
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-x-[120px] gap-y-[142px] text-black">
+          <div>
+            <div className="text-[72px] font-bold">$100B+</div>
+            <div className="text-[16px]">截止2025年交易量</div>
+          </div>
+          <div>
+            <div className="text-[72px] font-bold">30+</div>
+            <div className="text-[16px]">国家和地区覆盖</div>
+          </div>
+          <div>
+            <div className="text-[72px] font-bold">7x24h</div>
+            <div className="text-[16px]">7x24 小时服务</div>
+          </div>
+          <div>
+            <div className="text-[72px] font-bold">95%</div>
+            <div className="text-[16px]">用户满意度</div>
+          </div>
+        </div>
+      </div>
+
       <Introduce />
       <CommentCarousel />
 

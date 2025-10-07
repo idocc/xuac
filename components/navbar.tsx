@@ -63,7 +63,7 @@ export const Navbar = () => {
   const pathname = usePathname();
   return (
     <HeroUINavbar
-      maxWidth="2xl"
+      maxWidth="full"
       position="sticky"
       height="72px"
       className="bg-black backdrop-blur-2xl"
