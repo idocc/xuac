@@ -1,12 +1,16 @@
 "use client";
-import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/icons";
+import {
+  ArrowRightIcon,
+  ArrowUpRightIcon,
+  ArrowDownIcon,
+} from "@/components/icons";
 import { Button } from "@heroui/button";
 import icon1 from "@/assets/home/icon1.svg";
 import icon2 from "@/assets/home/icon2.svg";
 import icon3 from "@/assets/home/icon3.svg";
 import icon4 from "@/assets/home/icon4.svg";
 import { useState, useEffect, useRef } from "react";
-
+import Link from "next/link";
 // Mock数据 - 交易所特色功能
 const mockExchangeFeatures = [
   {
@@ -60,6 +64,64 @@ const commentsData = [
     avatar: "/images/user_ava.png",
     content:
       "全球化的数字资产兑换服务确实很有价值。支持的币种丰富，汇率透明公正，没有隐藏费用。特别是跨境转账功能，比传统银行快很多，手续费也更低。推荐给有国际业务的朋友。",
+  },
+];
+
+// 模糊背景图片数据
+const blurImagesData = [
+  {
+    id: 1,
+    src: "/images/blur/4.png",
+    left: "15%",
+    top: "20%",
+    width: "100px",
+    height: "100px",
+    animationDelay: "0s",
+  },
+  {
+    id: 2,
+    src: "/images/blur/5.png",
+    left: "-3%",
+    top: "50%",
+    width: "170px",
+    height: "170px",
+    animationDelay: "0.5s",
+  },
+  {
+    id: 3,
+    src: "/images/blur/6.png",
+    left: "25%",
+    top: "80%",
+    width: "160px",
+    height: "160px",
+    animationDelay: "1s",
+  },
+  {
+    id: 4,
+    src: "/images/blur/8.png",
+    left: "68%",
+    top: "60%",
+    width: "150px",
+    height: "150px",
+    animationDelay: "1.5s",
+  },
+  {
+    id: 5,
+    src: "/images/blur/7.png",
+    left: "85%",
+    top: "20%",
+    width: "90px",
+    height: "90px",
+    animationDelay: "2s",
+  },
+  {
+    id: 6,
+    src: "/images/blur/3.png",
+    left: "97%",
+    top: "80%",
+    width: "60px",
+    height: "60px",
+    animationDelay: "2s",
   },
 ];
 
@@ -225,82 +287,89 @@ function TradingViewWidget() {
   );
 }
 
+// 导航菜单数据
+const navMenuData = [
+  { id: 1, title: "产品与服务", href: "/product" },
+  { id: 2, title: "使用流程", href: "/process" },
+  { id: 3, title: "安全与合规", href: "/security" },
+  { id: 4, title: "关于我们", href: "/about" },
+];
+
 function Introduce() {
-  const [isProductServiceExpanded, setIsProductServiceExpanded] =
-    useState(false);
-
-  const toggleProductService = () => {
-    setIsProductServiceExpanded(!isProductServiceExpanded);
-  };
-
   return (
-    <div className="relative py-[90px]">
+    <div className="relative py-[50px]">
       <div>
-        <div
-          className="px-[108px] pr-[40px] text-[#000] relative group cursor-pointer hover-effect"
-          onClick={toggleProductService}
-        >
-          <div className="border-b border-[#000] flex justify-between items-center py-[20px]">
-            <span className="text-[72px] font-bold">使用流程</span>
-            <span
-              className={`text-[40px] transition-transform duration-300 ease-in-out ${isProductServiceExpanded ? "rotate-45" : "rotate-0"}`}
-            >
-              {isProductServiceExpanded ? "-" : "+"}
-            </span>
-          </div>
-        </div>
+        {navMenuData.map((item) => (
+          <Link href={item.href} key={item.id}>
+            <div className="px-[108px] pr-[40px] text-[#000] relative group hover-effect">
+              <div className="border-b border-[#000] flex justify-between items-center py-[20px] pr-[40px]">
+                <span className="text-[72px] font-bold">{item.title}</span>
+                <ArrowRightIcon size={20} color="#000" />
+              </div>
+            </div>
+          </Link>
+        ))}
 
-        {/* 可展开/收起的内容区域 */}
-        <div
-          className={`overflow-hidden transition-all duration-500 ease-in-out ${
-            isProductServiceExpanded
-              ? "max-h-[2000px] opacity-100"
-              : "max-h-0 opacity-0"
-          }`}
-        >
+        {/* 内容区域 - 始终显示 */}
+        <div>
           <div className="px-[108px] py-[50px] grid grid-cols-3 gap-[80px] place-items-center">
-            <div className="bg-[#BDEE63] w-[420px]">
-              <div className="text-[#000] text-[32px] font-bold pt-[30px] pl-[30px]">
-                STEP ONE
-              </div>
-              <img
-                src="/images/icon1.png"
-                alt="step_one"
-                className="w-[340px] h-[172px] mx-auto my-[20px]"
-              />
-              <div className="p-[30px] text-[#fff] bg-[#000]">
-                <div className="text-[32px] font-bold">联系客服</div>
-                <div className="text-[#D5D5D5] text-[18px]">
-                  通过在线客服、Telegram、WhatsApp
-                  等方式提交兑换需求（币种与金额）。
+            {/* STEP ONE */}
+            <div className="w-[420px] group cursor-pointer transition-all duration-300">
+              <div className="bg-transparent group-hover:bg-[#BDEE63] transition-colors duration-300">
+                <div className="text-[#000] text-[32px] font-bold pt-[30px] pl-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  STEP ONE
+                </div>
+                <img
+                  src="/images/icon1.png"
+                  alt="step_one"
+                  className="w-[340px] h-[172px] mx-auto my-[20px]"
+                />
+                <div className="p-[30px] text-[#000] group-hover:text-[#fff] group-hover:bg-[#000]">
+                  <div className="text-[32px] font-bold">联系客服</div>
+                  <div className="text-[#5F5F5F] text-[18px] group-hover:text-[#D5D5D5]">
+                    通过在线客服、Telegram、WhatsApp
+                    等方式提交兑换需求（币种与金额）。
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="w-[420px]">
-              <img
-                src="/images/icon2.png"
-                alt="step_one"
-                className="w-[340px] h-[172px] mx-auto my-[20px]"
-              />
-              <div className="p-[30px] text-[#000]">
-                <div className="text-[32px] font-bold">支付与收款</div>
-                <div className="text-[#5F5F5F] text-[18px]">
-                  客户将数字货币转入指定地址，平台在确认到账后快速完成法币结算。
+            {/* STEP TWO */}
+            <div className="w-[420px] group cursor-pointer transition-all duration-300">
+              <div className="bg-transparent group-hover:bg-[#BDEE63] transition-colors duration-300">
+                <div className="text-[#000] text-[32px] font-bold pt-[30px] pl-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  STEP TWO
+                </div>
+                <img
+                  src="/images/icon2.png"
+                  alt="step_two"
+                  className="w-[340px] h-[172px] mx-auto my-[20px]"
+                />
+                <div className="p-[30px] text-[#000] group-hover:text-[#fff] group-hover:bg-[#000] transition-colors duration-300">
+                  <div className="text-[32px] font-bold">支付与收款</div>
+                  <div className="text-[#5F5F5F] text-[18px] group-hover:text-[#D5D5D5]">
+                    客户将数字货币转入指定地址，平台在确认到账后快速完成法币结算。
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="w-[420px]">
-              <img
-                src="/images/icon3.png"
-                alt="step_one"
-                className="w-[340px] h-[172px] mx-auto my-[20px]"
-              />
-              <div className="p-[30px] text-[#000]">
-                <div className="text-[32px] font-bold">交易完成</div>
-                <div className="text-[#5F5F5F] text-[18px]">
-                  兑换成功，客户可实时查询订单进度，交易全程透明可追踪。
+            {/* STEP THREE */}
+            <div className="w-[420px] group cursor-pointer transition-all duration-300">
+              <div className="bg-transparent group-hover:bg-[#BDEE63] transition-colors duration-300">
+                <div className="text-[#000] text-[32px] font-bold pt-[30px] pl-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  STEP THREE
+                </div>
+                <img
+                  src="/images/icon3.png"
+                  alt="step_three"
+                  className="w-[340px] h-[172px] mx-auto my-[20px]"
+                />
+                <div className="p-[30px] text-[#000] group-hover:text-[#fff] group-hover:bg-[#000] transition-colors duration-300">
+                  <div className="text-[32px] font-bold">交易完成</div>
+                  <div className="text-[#5F5F5F] text-[18px] group-hover:text-[#D5D5D5]">
+                    兑换成功，客户可实时查询订单进度，交易全程透明可追踪。
+                  </div>
                 </div>
               </div>
             </div>
@@ -464,9 +533,11 @@ function FAQItem({ faq, index }: { faq: (typeof faqData)[0]; index: number }) {
 }
 
 export default function Home() {
+  const [inputValue, setInputValue] = useState("");
+
   return (
     <div>
-      <div className="min-h-[900px] pt-[140px] relative overflow-hidden">
+      <div className="min-h-[900px] pt-[160px] relative overflow-hidden">
         <div
           className="absolute inset-0 w-full h-full"
           style={{
@@ -493,7 +564,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="h-[130px] grid grid-cols-4 relative z-10 items-center px-[40px] mt-[170px]">
+        <div className="h-[130px] grid grid-cols-4 relative z-10 items-center px-[40px] mt-[150px]">
           {mockExchangeFeatures.map((feature, index) => (
             <div
               key={feature.id}
@@ -519,6 +590,77 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="h-[830px] text-center pt-[100px] relative overflow-hidden">
+        {blurImagesData.map((image) => (
+          <div
+            className="ani-float absolute"
+            key={image.id}
+            style={{
+              left: image.left,
+              top: image.top,
+              width: image.width,
+              height: image.height,
+              animationDelay: image.animationDelay,
+            }}
+          >
+            <img src={image.src} alt="" className="blur-image w-full h-full" />
+          </div>
+        ))}
+
+        <span className="text-black font-bold text-[68px] relative z-10">
+          随时随地地兑换
+        </span>
+        <div className="mt-[25px] mx-auto w-[756px] h-[533px] rounded-[12px] p-[30px] bg-white shadow-[0_4px_65.5px_0_rgba(0,0,0,0.06)] relative z-10">
+          <div className="flex py-[10px] justify-between h-[124px] rounded-[8px] border border-[rgba(0,0,0,0.10)] bg-[rgba(255,255,255,0.00)] px-[20px]">
+            <input
+              type="text"
+              className="w-full h-full text-[48px] text-black outline-none focus:outline-none"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              placeholder="0"
+            />
+            <div className="flex items-center text-black space-x-2 cursor-pointer ml-[30px]">
+              <img
+                src="/images/user_ava.png"
+                alt=""
+                className="w-[24px] h-[24px]"
+              />
+              <span className="text-[28px] font-bold">SGD</span>
+              <ArrowDownIcon color="#868685" size={40} />
+            </div>
+          </div>
+          <div className="bg-[#F2F2F2] h-[124px] rounded-[8px] px-[20px] flex justify-between items-center">
+            <div>
+              <div className="text-[48px] text-[#00000033]">0</div>
+            </div>
+            <div className="flex items-center text-black text-[28px] space-x-2 font-bold cursor-pointer ml-[30px]">
+              <span>选择代币</span>
+              <ArrowDownIcon color="#868685" size={20} />
+            </div>
+          </div>
+          <div className="text-[#2C2C2C] mt-[30px] space-y-[15px]">
+            <div className="flex justify-between">
+              <span className="text-[#9F9F9F]">实时汇率</span>
+              <span>0.24AUD</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-[#9F9F9F]">手续费</span>
+              <span>131.47 SGD</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-[#9F9F9F]">预计到账时间</span>
+              <span>1小时内</span>
+            </div>
+          </div>
+          <div className="mt-[20px]">
+            <Button className="text-black w-full px-[42px] py-[35px] mx-auto text-[24px] border-none bg-primary font-bold cursor-pointer">
+              <span>立即兑换</span>
+              <ArrowRightIcon color="black" />
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -554,7 +696,7 @@ export default function Home() {
       <Introduce />
       <CommentCarousel />
 
-      <div className="h-[790px] px-[108px] py-[120px] bg-[#000] flex justify-center space-x-[60px]">
+      <div className="px-[108px] py-[120px] bg-[#000] flex justify-center space-x-[150px]">
         <div className="w-[460px] pt-[50px]">
           <div className="text-[68px] font-bold">合作伙伴</div>
           <div className="mt-[24px] text-[20px]">

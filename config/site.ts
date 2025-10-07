@@ -10,27 +10,27 @@ export const siteConfig = {
     },
     {
       label: "产品与服务",
-      href: "/1",
+      href: "/product",
     },
     {
       label: "使用流程",
-      href: "/2",
+      href: "/process",
     },
     {
       label: "安全与合规",
-      href: "/3",
+      href: "/security",
     },
     {
       label: "全球覆盖",
-      href: "/4",
+      href: "/global",
     },
     {
       label: "客户支持",
-      href: "/5",
+      href: "/support",
     },
     {
       label: "关于我们",
-      href: "/6",
+      href: "/about",
     },
   ],
 };

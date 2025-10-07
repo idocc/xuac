@@ -75,9 +75,7 @@ export const Logo: React.FC<IconSvgProps> = ({
   </svg>
 );
 
-export const ArrowRightIcon: React.FC<IconSvgProps> = ({
-  color = "white",
-}) => (
+export const ArrowRightIcon: React.FC<IconSvgProps> = ({ color = "white" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
@@ -156,12 +154,6 @@ export const ArrowRightIcon: React.FC<IconSvgProps> = ({
   </svg>
 );
 
-
-
-
-
-
-
 export const ArrowUpRightIcon: React.FC<IconSvgProps> = ({
   size = 24,
   width,
@@ -177,15 +169,336 @@ export const ArrowUpRightIcon: React.FC<IconSvgProps> = ({
     fill="none"
     {...props}
   >
-    <rect x="24.5723" y="71.6289" width="8.75" height="8.75" transform="rotate(-46.8706 24.5723 71.6289)" fill={color}/>
-    <rect x="32.9512" y="62.6836" width="8.75" height="8.75" transform="rotate(-46.8706 32.9512 62.6836)" fill={color}/>
-    <rect x="41.3301" y="53.7402" width="8.75" height="8.75" transform="rotate(-46.8706 41.3301 53.7402)" fill={color}/>
-    <rect x="49.7109" y="44.793" width="8.75" height="8.75" transform="rotate(-46.8706 49.7109 44.793)" fill={color}/>
-    <rect x="49.1953" y="27.5137" width="8.75" height="8.75" transform="rotate(-46.8706 49.1953 27.5137)" fill={color}/>
-    <rect width="8.75" height="8.75" transform="matrix(-0.683648 0.729812 0.729812 0.683648 73.334 54.9336)" fill={color}/>
-    <rect x="32.0703" y="28.2676" width="8.75" height="8.75" transform="rotate(-46.8706 32.0703 28.2676)" fill={color}/>
-    <rect width="8.75" height="8.75" transform="matrix(-0.683648 0.729812 0.729812 0.683648 72.9609 37.7891)" fill={color}/>
-    <rect x="58.0898" y="35.8477" width="8.75" height="8.75" transform="rotate(-46.8706 58.0898 35.8477)" fill={color}/>
-    <rect x="66.4688" y="26.9023" width="8.75" height="8.75" transform="rotate(-46.8706 66.4688 26.9023)" fill={color}/>
+    <rect
+      x="24.5723"
+      y="71.6289"
+      width="8.75"
+      height="8.75"
+      transform="rotate(-46.8706 24.5723 71.6289)"
+      fill={color}
+    />
+    <rect
+      x="32.9512"
+      y="62.6836"
+      width="8.75"
+      height="8.75"
+      transform="rotate(-46.8706 32.9512 62.6836)"
+      fill={color}
+    />
+    <rect
+      x="41.3301"
+      y="53.7402"
+      width="8.75"
+      height="8.75"
+      transform="rotate(-46.8706 41.3301 53.7402)"
+      fill={color}
+    />
+    <rect
+      x="49.7109"
+      y="44.793"
+      width="8.75"
+      height="8.75"
+      transform="rotate(-46.8706 49.7109 44.793)"
+      fill={color}
+    />
+    <rect
+      x="49.1953"
+      y="27.5137"
+      width="8.75"
+      height="8.75"
+      transform="rotate(-46.8706 49.1953 27.5137)"
+      fill={color}
+    />
+    <rect
+      width="8.75"
+      height="8.75"
+      transform="matrix(-0.683648 0.729812 0.729812 0.683648 73.334 54.9336)"
+      fill={color}
+    />
+    <rect
+      x="32.0703"
+      y="28.2676"
+      width="8.75"
+      height="8.75"
+      transform="rotate(-46.8706 32.0703 28.2676)"
+      fill={color}
+    />
+    <rect
+      width="8.75"
+      height="8.75"
+      transform="matrix(-0.683648 0.729812 0.729812 0.683648 72.9609 37.7891)"
+      fill={color}
+    />
+    <rect
+      x="58.0898"
+      y="35.8477"
+      width="8.75"
+      height="8.75"
+      transform="rotate(-46.8706 58.0898 35.8477)"
+      fill={color}
+    />
+    <rect
+      x="66.4688"
+      y="26.9023"
+      width="8.75"
+      height="8.75"
+      transform="rotate(-46.8706 66.4688 26.9023)"
+      fill={color}
+    />
+  </svg>
+);
+
+export const ArrowDownIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  color = "currentColor",
+  ...props
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width || size}
+    height={height || size}
+    viewBox="0 0 17 16"
+    fill="none"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M8.49998 9.72528L13.362 4.86328L14.3046 5.80595L8.97598 11.1346C8.84971 11.2608 8.6785 11.3317 8.49998 11.3317C8.32146 11.3317 8.15024 11.2608 8.02398 11.1346L2.69531 5.80595L3.63798 4.86328L8.49998 9.72528Z"
+      fill={color}
+    />
+  </svg>
+);
+
+export const SecurityIcon1: React.FC<IconSvgProps> = ({
+  size = 80,
+  width,
+  height,
+  color = "currentColor",
+  ...props
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width || size}
+    height={height || size}
+    viewBox="0 0 80 81"
+    fill="none"
+    {...props}
+  >
+    <rect
+      x="16.0312"
+      y="62.1562"
+      width="47.9003"
+      height="5.32226"
+      fill="white"
+    />
+    <rect
+      x="16.0312"
+      y="29.3359"
+      width="47.9003"
+      height="5.32226"
+      fill="white"
+    />
+    <rect
+      x="10.707"
+      y="34.6582"
+      width="5.32226"
+      height="27.4983"
+      fill="white"
+    />
+    <rect
+      x="24.9004"
+      y="39.9795"
+      width="5.32226"
+      height="16.8538"
+      fill="white"
+    />
+    <rect
+      x="23.127"
+      y="39.9795"
+      width="8.87043"
+      height="7.98339"
+      fill="white"
+    />
+    <rect
+      x="36.4316"
+      y="39.9795"
+      width="8.87043"
+      height="7.98339"
+      fill="white"
+    />
+    <rect
+      x="48.8516"
+      y="39.9795"
+      width="8.87043"
+      height="7.98339"
+      fill="white"
+    />
+    <rect
+      x="38.207"
+      y="39.9795"
+      width="5.32226"
+      height="16.8538"
+      fill="white"
+    />
+    <rect
+      x="26.6758"
+      y="20.4658"
+      width="5.32226"
+      height="12.4186"
+      fill="white"
+    />
+    <rect
+      x="32.873"
+      y="14.2559"
+      width="5.32226"
+      height="8.83165"
+      transform="rotate(44.5718 32.873 14.2559)"
+      fill="white"
+    />
+    <rect
+      width="5.32226"
+      height="8.83165"
+      transform="matrix(-0.712371 0.701803 0.701803 0.712371 47.3203 14.2559)"
+      fill="white"
+    />
+    <rect
+      x="47.9629"
+      y="20.4658"
+      width="5.32226"
+      height="12.4186"
+      fill="white"
+    />
+    <path d="M32.8828 14.2559H47.319V19.5781H32.8828V14.2559Z" fill="white" />
+    <rect
+      x="50.625"
+      y="39.9795"
+      width="5.32226"
+      height="16.8538"
+      fill="white"
+    />
+    <rect
+      x="63.9316"
+      y="34.6582"
+      width="5.32226"
+      height="27.4983"
+      fill="white"
+    />
+  </svg>
+);
+
+export const SecurityIcon2: React.FC<IconSvgProps> = ({
+  size = 81,
+  width,
+  height,
+  color = "currentColor",
+  ...props
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width || size}
+    height={height || size}
+    viewBox="0 0 81 80"
+    fill="none"
+    {...props}
+  >
+    <rect
+      x="12.2949"
+      y="45.4633"
+      width="5.32226"
+      height="17.6471"
+      transform="rotate(-43.8934 12.2949 45.4633)"
+      fill="white"
+    />
+    <rect
+      x="12.2949"
+      y="37.3383"
+      width="5.32226"
+      height="7.98339"
+      fill="white"
+    />
+    <rect
+      x="24.8281"
+      y="24.9203"
+      width="5.32226"
+      height="17.6471"
+      transform="rotate(45.247 24.8281 24.9203)"
+      fill="white"
+    />
+    <path
+      d="M49.7949 30.8988L53.5421 34.6784L35.5574 52.657L31.8102 48.8774L49.7949 30.8988Z"
+      fill="white"
+    />
+    <rect
+      width="5.32226"
+      height="17.6471"
+      transform="matrix(-0.720631 -0.693319 -0.693319 0.720631 71.6719 45.4633)"
+      fill="white"
+    />
+    <rect
+      width="5.32226"
+      height="7.98339"
+      transform="matrix(-1 0 0 1 71.6719 37.3383)"
+      fill="white"
+    />
+    <rect
+      width="5.32226"
+      height="17.6471"
+      transform="matrix(-0.704052 0.710148 0.710148 0.704052 59.1387 24.9203)"
+      fill="white"
+    />
+  </svg>
+);
+
+export const SecurityIcon3: React.FC<IconSvgProps> = ({
+  size = 91,
+  width,
+  height,
+  color = "currentColor",
+  ...props
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width || size}
+    height={height || size}
+    viewBox="0 0 91 90"
+    fill="none"
+    {...props}
+  >
+    <rect x="21.2988" y="22.0008" width="5" height="36" fill={color} />
+    <rect x="64.2988" y="22.0008" width="5" height="36" fill={color} />
+    <path
+      d="M54.5 35.0008L57.952 38.4827L46.8186 49.6571L43.3666 46.1752L54.5 35.0008Z"
+      fill={color}
+    />
+    <path
+      d="M47.0703 49.3445L43.6328 52.8407L34.3249 43.8247L37.7624 40.3286L47.0703 49.3445Z"
+      fill={color}
+    />
+    <rect
+      width="5"
+      height="25.7437"
+      transform="matrix(-0.647635 0.761951 0.761951 0.647635 24.5391 54.0008)"
+      fill={color}
+    />
+    <rect
+      x="65.9141"
+      y="54.0008"
+      width="5"
+      height="25.7437"
+      transform="rotate(49.6365 65.9141 54.0008)"
+      fill={color}
+    />
+    <path
+      d="M49.2852 74.5067L49.2571 69.5067L40.8004 69.4999L40.8285 74.4999L49.2852 74.5067Z"
+      fill={color}
+    />
+    <rect
+      width="5"
+      height="38"
+      transform="matrix(0 1 1 0 26.2988 17.0008)"
+      fill={color}
+    />
   </svg>
 );
