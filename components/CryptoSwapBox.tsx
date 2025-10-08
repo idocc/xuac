@@ -77,17 +77,17 @@ const CryptoSwapBox: React.FC = () => {
     {
       symbol: "BTC",
       name: "Bitcoin",
-      logoURI: "https://assets.coingecko.com/coins/images/1/standard/bitcoin.png",
+      logoURI: "/images/token/bitcoin.webp",
     },
     {
       symbol: "ETH",
       name: "Ethereum",
-      logoURI: "https://icons.llamao.fi/icons/chains/rsz_ethereum.jpg",
+      logoURI: "/images/token/ethereum.webp",
     },
     {
       symbol: "DOGE",
       name: "Dogecoin",
-      logoURI: "https://assets.coingecko.com/coins/images/5/standard/dogecoin.png",
+      logoURI: "/images/token/dogecoin.webp",
     },
   ];
   const [selectedToken, setSelectedToken] = useState(TOKENS[0]);
