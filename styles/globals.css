@@ -5,6 +5,12 @@
   color: #fff;
 }
 
+
+*{
+  /* -webkit-font-smoothing:antialiased; */
+  -webkit-font-smoothing: subpixel-antialiased
+}
+
 /* 横向滚动动画 */
 @keyframes scroll {
   0% {
