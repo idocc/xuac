@@ -1,0 +1,213 @@
+{
+  "HomePage": {
+    "hero": {
+      "title": "全天汇",
+      "subtitle": "24小时全球数字资产兑换服务",
+      "description": "安全、快速、合规，支持稳定币与法币兑换，随时随地完成交易",
+      "exchangeNow": "立即兑换"
+    },
+    "features": {
+      "mainCoins": "主流币种",
+      "mainCoinsDesc": "覆盖BTC/ETH/USDT,直兑USD、EUR、CNY等主流法币。",
+      "fastDeposit": "快速到账",
+      "fastDepositDesc": "分钟级到账，减少资金占用与等待时间。",
+      "globalCoverage": "全球覆盖",
+      "globalCoverageDesc": "接入多国法币与支付通道，覆盖巴西、东南亚、欧洲等市场。",
+      "available24": "24小时在线",
+      "available24Desc": "7x24小时随时可兑,全球用户无时差等待。"
+    },
+    "exchange": {
+      "title": "随时随地地兑换",
+      "placeholder": "0",
+      "selectToken": "选择代币",
+      "realTimeRate": "实时汇率",
+      "fee": "手续费",
+      "estimatedTime": "预计到账时间",
+      "within1Hour": "1小时内"
+    },
+    "stats": {
+      "platformTitle": "全天汇 24exc",
+      "platformSubtitle": "下一代加密货币\n兑换平台",
+      "volume": "$100B+",
+      "volumeDesc": "截止2025年交易量",
+      "countries": "30+",
+      "countriesDesc": "国家和地区覆盖",
+      "service": "7x24h",
+      "serviceDesc": "7x24 小时服务",
+      "satisfaction": "95%",
+      "satisfactionDesc": "用户满意度"
+    },
+    "nav": {
+      "products": "产品与服务",
+      "process": "使用流程",
+      "security": "安全与合规",
+      "about": "关于我们"
+    },
+    "steps": {
+      "stepOne": "STEP ONE",
+      "stepOneTitle": "联系客服",
+      "stepOneDesc": "通过在线客服、Telegram、WhatsApp 等方式提交兑换需求（币种与金额）。",
+      "stepTwo": "STEP TWO",
+      "stepTwoTitle": "支付与收款",
+      "stepTwoDesc": "客户将数字货币转入指定地址，平台在确认到账后快速完成法币结算。",
+      "stepThree": "STEP THREE",
+      "stepThreeTitle": "交易完成",
+      "stepThreeDesc": "兑换成功，客户可实时查询订单进度，交易全程透明可追踪。",
+      "quickExchange": "只需3步,快速兑换",
+      "description": "全天汇(24EXC)为全球个人与企业用户提供 安全、透明、合规 的数字资产兑换服务。支持稳定币、主流加密货币与法币间的快速结算,7x24 小时随时随地完成交易。 无需注册账户。通过 在线客服 / Telegram / WhatsApp 告知兑换需求， 确认汇率后完成支付与收款，几分钟内即可完成交易。"
+    },
+    "testimonials": {
+      "title": "来自用户的声音",
+      "user1Name": "George",
+      "user1Time": "3天前的评论",
+      "user1Content": "企业大额兑换最怕合规风险。这里全程 KYC/AML 与标准化身份核验,资金隔离+实时风控,大额订单由专人跟进；还提供 企业 API 与批量对接,出入金与对账更顺畅;7x24 客服覆盖多语种与多时区，跨境结算也稳妥。",
+      "user1Highlight": "这里全程 KYC/AML 与标准化身份核验,资金隔离+实时风控,大额订单由专人跟进；",
+      "user2Name": "Sarah",
+      "user2Time": "5天前的评论",
+      "user2Content": "作为个人投资者，我最看重的是安全和便捷。这个平台的用户体验很好，界面简洁，操作流畅。而且支持多种支付方式，到账速度也很快，客服响应及时，解决问题很专业。",
+      "user3Name": "Michael",
+      "user3Time": "1周前的评论",
+      "user3Content": "全球化的数字资产兑换服务确实很有价值。支持的币种丰富，汇率透明公正，没有隐藏费用。特别是跨境转账功能，比传统银行快很多，手续费也更低。推荐给有国际业务的朋友。"
+    },
+    "partners": {
+      "title": "合作伙伴",
+      "description": "我们与国际银行、交易与做市、托管与合规机构建立长期合作网络,覆盖收付结算、流动性、KYC/AML 与法律合规，全链路支撑 24/7 的全球兑付能力。"
+    },
+    "faq": {
+      "title": "常见问题",
+      "question1": "平台支持哪些币种和法币？",
+      "answer1": "目前支持主流数字货币 BTC、ETH、USDT 等,以及 USD、EUR、CNY、BRL、INR 等多种法币。覆盖全球30+国家和地区的支付通道,未来会持续拓展更多币种和市场,为用户提供更便捷的兑换服务。",
+      "question2": "我的资金是否安全？",
+      "answer2": "我们采用银行级安全标准,包括多重签名冷热钱包隔离、SSL加密传输、实时风控监测系统。所有交易均符合国际 KYC/AML 合规要求,与持牌金融机构合作,确保您的资金安全。平台7x24小时监控异常交易,为每笔订单提供全程保障。",
+      "question3": "是否需要实名认证(KYC)",
+      "answer3": "为了保障交易安全和符合国际反洗钱法规,我们要求用户完成基础身份验证。小额交易只需简单的身份信息,大额交易需要提供更详细的 KYC 认证。整个过程快速便捷,通常5-10分钟即可完成,所有信息均加密存储。",
+      "question4": "手续费是多少？",
+      "answer4": "我们采用透明的阶梯费率结构,根据交易金额和币种类型收取0.5%-2%的手续费。大额交易享受更优惠的费率,企业客户可申请定制化费率方案。所有费用在交易前明确显示,无隐藏费用,让您清楚掌握每笔交易成本。"
+    }
+  },
+  "Navbar": {
+    "home": "首页",
+    "products": "产品与服务",
+    "process": "使用流程",
+    "security": "安全与合规",
+    "global": "全球覆盖",
+    "about": "关于我们",
+    "news": "咨讯"
+  },
+  "Common": {
+    "loading": "加载中...",
+    "error": "发生错误",
+    "success": "成功",
+    "confirm": "确认",
+    "cancel": "取消"
+  },
+  "ProductPage": {
+    "title": "产品与服务",
+    "subtitle": "Products & Services",
+    "tagline": "多币种兑换 · 跨境结算 · 安全高效",
+    "supportedCrypto": "支持币种",
+    "supportedFiat": "支持法币",
+    "serviceModesTitle": "丰富的服务模式",
+    "normalExchange": "普通兑换",
+    "bulkExchange": "大宗兑换",
+    "apiIntegration": "API对接",
+    "scenariosTitle": "满足三大应用场景",
+    "personalWithdrawal": "个人提现",
+    "personalWithdrawalDesc": "是用户将数字资产快速兑换为法币并转入银行卡或支付工具的场景。平台提供24/7服务,支持BTC、ETH、USDT等币种,到账迅速,降低资金占用风险。通过KYC认证和风险控制机制,确保提现过程安全可靠,避免诈骗和洗钱问题。对自由职业者、投资者和普通用户来说,这种便捷的提现渠道提升了资金流动性和使用体验。",
+    "crossBorderSettlement": "跨境结算",
+    "crossBorderSettlementDesc": "主要满足企业、跨境电商和个人的国际资金流通需求。通过平台，用户可实现多币种兑换与快速结算，避免传统国际汇款的高手续费和漫长等待。基于区块链清算技术，交易透明且可追溯，合规性保障降低风险。无论是学费、生活费，还是企业大额结算，都能高效完成，助力全球资金流动。",
+    "fiatDeposit": "法币入金",
+    "fiatDepositDesc": "是用户将美元、人民币、欧元等法币充值到平台账户的过程，是进入数字资产生态的重要入口。平台支持银行卡转账、第三方支付等多种方式，强调操作简便和快速到账。为确保合规性，系统会进行身份核验和资金来源审查。便捷的入金体验不仅提升用户信任，也决定了平台在市场上的竞争力和用户增长速度。"
+  },
+  "ProcessPage": {
+    "title": "使用流程",
+    "subtitle": "How it Works",
+    "contactSupport": "联系客服",
+    "contactSupportDesc": "通过在线客服、Telegram、WhatsApp 等方式提交兑换需求（币种与金额）。",
+    "paymentReceipt": "支付与收款",
+    "paymentReceiptDesc": "通过在线客服、Telegram、WhatsApp 等方式提交兑换需求（币种与金额）。",
+    "transactionComplete": "交易完成",
+    "transactionCompleteDesc": "通过在线客服、Telegram、WhatsApp 等方式提交兑换需求（币种与金额）。",
+    "faqTitle": "常见问题Q&A",
+    "faq1Question": "我可以向谁汇寄新加坡元 (SGD)?",
+    "faq1Answer": "您可以向任何拥有新加坡银行账户的个人或企业汇寄新加坡元。我们支持主流新加坡银行的转账服务，包括 DBS、OCBC、UOB 等。只需提供收款人的银行账户信息，我们将在确认您的数字货币到账后，快速完成新加坡元的转账。",
+    "faq2Question": "我的资金是否安全？",
+    "faq2Answer": "您的资金安全是我们的首要任务。我们采用多重安全措施保护您的资产：包括冷热钱包分离存储、多重签名技术、实时风控监测系统，以及严格的 KYC/AML 合规流程。所有交易均通过加密通道传输，资金由专业托管机构隔离保管，确保您的资产安全可靠。",
+    "faq3Question": "是否需要实名认证(KYC)",
+    "faq3Answer": "为了符合国际反洗钱(AML)和了解您的客户(KYC)法规要求，我们需要对用户进行身份验证。小额交易可能只需要基本信息，而大额交易则需要提供身份证明文件。这不仅是法律要求，也是保护您资金安全的重要措施。认证流程简单快捷，通常在几分钟内即可完成。",
+    "faq4Question": "手续费是多少？",
+    "faq4Answer": "我们的手续费根据交易金额和币种有所不同，但始终保持透明公开。一般来说，手续费在 0.5%-2% 之间，具体费率会在您确认交易前明确显示。大额交易可享受更优惠的费率。我们承诺无隐藏费用，所有成本都会在交易前清楚列明，让您放心交易。"
+  },
+  "SecurityPage": {
+    "title": "安全与合规",
+    "subtitle": "Security & Compliance",
+    "securityMeasures": "安全措施",
+    "securityMeasuresDesc": "多重签名、冷钱包储存、实时风控",
+    "complianceStatement": "合规声明",
+    "complianceStatementDesc": "遵守 KYC/AML,不服务制裁国家",
+    "protectionMechanism": "保障机制",
+    "protectionMechanismDesc": "资金隔离、大额资金专人处理、赔付计划",
+    "detailDescription": "在数字资产交易领域,安全与合规是平台建立用户信任的基石。全天汇24exc 通过多层次安全架构，采用多重签名机制和冷钱包储存，确保用户资产免受黑客攻击与单点风险。同时，系统配置实时风控与大数据监测，能够快速识别和拦截异常交易，保障资金安全。 在合规层面，平台严格遵循 KYC(身份认证) 和 AML(反洗钱) 国际标准,全面审查用户身份与资金来源,拒绝为受制裁国家和高风险用户提供服务。此外,平台建立了资金隔离制度,将用户资产与平台自有资金独立存放,并针对大额资金配备专人处理及赔付计划,最大程度降低风险敞口。通过全方位的安全与合规体系,全天汇24exc 为用户提供透明、可信赖的交易环境，树立行业信任标杆。"
+  },
+  "AboutPage": {
+    "title": "关于我们",
+    "subtitle": "About Us",
+    "platformName": "下一代加密货币兑换平台",
+    "visionTitle": "我们的愿景",
+    "visionDesc": "全天汇 24exc 致力于颠覆传统兑换店的局限，打造一个 安全、合规、全球化 的下一代加密货币兑换平台。我们相信，数字资产应当像日常支付一样便捷可靠，让个人与企业在全球范围内自由、安全地流动资金。我们的目标不仅是交易撮合者，更是用户值得信赖的金融基础设施提供商。",
+    "sayNo": "SAY NO",
+    "breakBarriers": "打破传统货币兑换的",
+    "timeLimit": "时间限制",
+    "locationLimit": "地域限制",
+    "securityLack": "安全性不足",
+    "areYouIn": "ARE YOU IN?",
+    "recentActivities": "近期活动",
+    "viewMore": "查看更多"
+  },
+  "GlobalPage": {
+    "title": "全球覆盖",
+    "subtitle": "Global Reach",
+    "intro": "通过构建全球化服务网络,全天汇24exc 不仅实现了 24/7 跨境兑换能力，还为个人与企业用户提供统一入口，真正做到 \"一站式全球支付与结算平台\"，彰显规模与国际化竞争力。",
+    "specialSupportTitle": "特别支持国家",
+    "brazil": "巴西",
+    "brazilDesc": "支持 BRL 入金与结算，满足跨境电商与自由职业者的资金流动需求。",
+    "europe": "欧洲",
+    "europeDesc": "全面符合欧盟 KYC/AML 要求，支持 EUR 结算，保障合规与安全。",
+    "southeastAsia": "东南亚",
+    "southeastAsiaDesc": "提供低成本、快速到账服务，适配移动支付环境，助力出海企业。",
+    "india": "印度",
+    "indiaDesc": "支持 INR 快速兑换，覆盖海外汇款与教育支付等高频场景。",
+    "uk": "英国",
+    "thailand": "泰国"
+  },
+  "NewsPage": {
+    "title": "全天汇",
+    "subtitle": "Insight & Views",
+    "platform": "全天汇",
+    "newsNotFound": "新闻未找到",
+    "newsList": [
+      {
+        "id": 1,
+        "title": "全天汇 24exc 正式上线 BTC、ETH 法币兑换服务，开启全球 24 小时加密兑换新时代",
+        "description": "全球下一代加密货币兑换平台 全天汇 24exc 今日宣布，正式开放 BTC、ETH 与多国法币(USD、EUR、BRL、INR) 的实时兑换服务，为全球用户提供 安全、合规、分钟级到账 的数字资产兑换体验。",
+        "date": "November 23, 2024",
+        "content": "<p>全天汇 24exc 致力于让全球用户摆脱传统兑换渠道的时间与地域限制，实现 7×24 小时不间断服务。平台基于多重签名冷钱包技术与实时风控系统，确保每笔交易安全可靠。同时，企业用户还可通过 API 接口 实现自动化大额结算，提升效率与透明度。</p><p><strong>我们相信，去中心化时代的金融服务，应该像空气一样随处可得。全天汇 24exc 产品负责人表示，BTC 和 ETH 是数字经济的核心资产，我们的目标是让更多用户以更低门槛、更高效率地参与其中。</strong></p><p>未来，全天汇还将陆续开放更多主流币种与新兴市场法币兑换，构建真正 全球化的加密货币流通网络。</p>"
+      },
+      {
+        "id": 2,
+        "title": "从币圈到现实世界：全天汇 24exc 打通 BTC/ETH 到全球法币的桥梁",
+        "description": "作为新一代加密货币兑换平台，全天汇 24exc 提供 实时兑换、分钟到账 的服务体验。用户可在任何时间，通过网页或移动端完成兑换，无需繁琐操作。平台内置 KYC/AML 审核机制,遵循国际标准,确保每笔交易的合规与资金安全。",
+        "date": "November 20, 2024",
+        "content": "<p>作为新一代加密货币兑换平台，全天汇 24exc 提供 实时兑换、分钟到账 的服务体验。用户可在任何时间，通过网页或移动端完成兑换，无需繁琐操作。平台内置 KYC/AML 审核机制，遵循国际标准，确保每笔交易的合规与资金安全。</p><p><br></p><p>企业用户同样受益匪浅。跨境电商、自由职业者、金融机构等可通过全天汇的 API 企业接口 实现批量结算与财务自动化，助力全球资金流通效率提升。</p><p>全天汇 24exc 的推出，标志着加密货币正式走向主流支付生态，成为连接数字资产与现实经济的重要桥梁。</p><p><br></p>"
+      },
+      {
+        "id": 3,
+        "title": "新手看过来！一分钟搞懂 BTC/ETH 兑换法币的正确姿势",
+        "description": "安全 · 合规 · 全球覆盖 全天汇 24exc —— 让数字资产流动更自由。",
+        "date": "November 18, 2024",
+        "content": "<p>对于很多刚接触加密货币的用户来说，怎么把比特币或以太坊换成法币？是最常见的问题。其实，只要掌握几个关键步骤，就能轻松上手：</p><p><br></p><p>1.注册账户并完成身份验证（KYC） 👉 这是保障交易安全和防止诈骗的重要环节。</p><p>2.选择要兑换的币种（BTC / ETH / USDT）和目标法币（如 USD / CNY / EUR 等） 👉 全天汇 24exc 支持全球主流币种与法币间自由兑换。</p><p>3.提交兑换申请，等待到账 👉 平均到账时间小于 5 分钟，资金安全有保障。</p><p><br></p><p>全天汇 24exc 提供 24 小时在线客服，帮助新用户快速了解流程。如果你是第一次使用加密货币，或者想将数字资产合法、安全地提现为法币 ——全天汇 24exc 就是你的首选工具。</p>"
+      }
+    ]
+  }
+}
+

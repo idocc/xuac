@@ -1,9 +1,13 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+
 export default function Product() {
+  const t = useTranslations("ProductPage");
   return (
     <div>
-      <div className="min-h-[526px] pt-[130px] relative overflow-hidden">
+      <div className="min-h-[520px] pt-[130px] relative overflow-hidden">
         <div
           className="absolute inset-0 w-full h-full"
           style={{
@@ -13,84 +17,217 @@ export default function Product() {
             backgroundPosition: "center",
           }}
         />
-        <div className="relative z-10 pl-[110px]">
+        <motion.div
+          className="relative z-10 pl-[110px]"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="text-[78px] text-[#fff]">
-            <span className="font-bold">产品与服务</span>
-            <div className="space-x-[40px] font-bold">
+            <motion.span
+              className="font-bold"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              {t("title")}
+            </motion.span>
+            <motion.div
+              className="space-x-[40px] font-bold"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               <span className="text-[#BDEE63]">Products</span>
               <span>&</span>
               <span>Services</span>
-            </div>
-            <div className="text-[28px]">多币种兑换 · 跨境结算 · 安全高效</div>
+            </motion.div>
+            <motion.div
+              className="text-[28px]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              {t("tagline")}
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <div className="px-[120px] py-[60px] text-[#000]">
-        <div className="font-bold text-[32px] mb-[20px]">支持币种</div>
+        <motion.div
+          className="font-bold text-[32px] mb-[20px]"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
+          {t("supportedCrypto")}
+        </motion.div>
         <div className="grid grid-cols-3 gap-x-[60px]">
-          <img src="/images/product/11.png" className="w-full" alt="" />
-          <img src="/images/product/12.png" className="w-full" alt="" />
-          <img src="/images/product/13.png" className="w-full" alt="" />
+          <motion.img
+            src="/images/product/11.png"
+            className="w-full"
+            alt=""
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          />
+          <motion.img
+            src="/images/product/12.png"
+            className="w-full"
+            alt=""
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          />
+          <motion.img
+            src="/images/product/13.png"
+            className="w-full"
+            alt=""
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          />
         </div>
 
-        <div className="font-bold text-[32px] mb-[20px]">支持法币</div>
+        <motion.div
+          className="font-bold text-[32px] mb-[20px]"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
+          {t("supportedFiat")}
+        </motion.div>
         <div className="grid grid-cols-3 gap-x-[60px] mb-[20px]">
-          <img src="/images/product/1.png" className="w-full" alt="" />
-          <img src="/images/product/2.png" className="w-full" alt="" />
-          <img src="/images/product/3.png" className="w-full" alt="" />
+          <motion.img
+            src="/images/product/1.png"
+            className="w-full"
+            alt=""
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          />
+          <motion.img
+            src="/images/product/2.png"
+            className="w-full"
+            alt=""
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          />
+          <motion.img
+            src="/images/product/3.png"
+            className="w-full"
+            alt=""
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          />
         </div>
       </div>
 
       <div className="bg-[#BDEE63] relative px-[108px] py-[120px]">
-        <img
+        <motion.img
           src="/images/product/circle.png"
           alt=""
           className="absolute top-0 right-0 w-[574px]"
+          initial={{ opacity: 0, scale: 0.8, rotate: -45 }}
+          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: "easeOut" }}
         />
-        <div className="text-[60px] font-bold text-[#000]">丰富的服务模式</div>
+        <motion.div
+          className="text-[60px] font-bold text-[#000]"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
+          {t("serviceModesTitle")}
+        </motion.div>
 
         <div className="flex justify-between gap-x-[28px] mt-[72px]">
-          <div className="border border-[#000] rounded-[4px] w-[400px] group cursor-pointer">
+          <motion.div
+            className="border border-[#000] rounded-[4px] w-[400px] group cursor-pointer"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            whileHover={{ scale: 1.05 }}
+          >
             <img
               src="/images/product/21.png"
               alt=""
               className="w-[300px] h-[300px] mx-auto mt-[20px]"
             />
             <div className="h-[90px] text-[32px] font-bold text-[#000] flex items-center pl-[24px] group-hover:bg-[#000] group-hover:text-[#BDEE63] transition-all duration-300">
-              普通兑换
+              {t("normalExchange")}
             </div>
-          </div>
-          <div className="border border-[#000] rounded-[4px] w-[400px] group cursor-pointer">
+          </motion.div>
+          <motion.div
+            className="border border-[#000] rounded-[4px] w-[400px] group cursor-pointer"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ scale: 1.05 }}
+          >
             <img
               src="/images/product/22.png"
               alt=""
               className="w-[300px] h-[300px] mx-auto mt-[20px]"
             />
             <div className="h-[90px] text-[32px] font-bold text-[#000] flex items-center pl-[24px] group-hover:bg-[#000] group-hover:text-[#BDEE63] transition-all duration-300">
-              大宗兑换
+              {t("bulkExchange")}
             </div>
-          </div>
-          <div className="border border-[#000] rounded-[4px] w-[400px] group cursor-pointer">
+          </motion.div>
+          <motion.div
+            className="border border-[#000] rounded-[4px] w-[400px] group cursor-pointer"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            whileHover={{ scale: 1.05 }}
+          >
             <img
               src="/images/product/23.png"
               alt=""
               className="w-[300px] h-[300px] mx-auto mt-[20px]"
             />
             <div className="h-[90px] text-[32px] font-bold text-[#000] flex items-center pl-[24px] group-hover:bg-[#000] group-hover:text-[#BDEE63] transition-all duration-300">
-              API对接
+              {t("apiIntegration")}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       <div className="px-[108px] py-[60px]">
-        <div className="text-[60px] font-bold text-[#000]">
-          满足三大应用场景
-        </div>
+        <motion.div
+          className="text-[60px] font-bold text-[#000]"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+        >
+          {t("scenariosTitle")}
+        </motion.div>
 
         <div>
-          <div className="mt-[24px] flex text-[#000] text-[24px]">
+          <motion.div
+            className="mt-[24px] flex text-[#000] text-[24px]"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <span>-</span>
             <img
               src="/images/product/article.png"
@@ -98,12 +235,18 @@ export default function Product() {
               alt=""
             />
             <div>
-              <span className="font-bold text-[28px]">个人提现</span>
-              是用户将数字资产快速兑换为法币并转入银行卡或支付工具的场景。平台提供24/7服务,支持BTC、ETH、USDT等币种,到账迅速,降低资金占用风险。通过KYC认证和风险控制机制,确保提现过程安全可靠,避免诈骗和洗钱问题。对自由职业者、投资者和普通用户来说,这种便捷的提现渠道提升了资金流动性和使用体验。
+              <span className="font-bold text-[28px]">{t("personalWithdrawal")}</span>
+              {t("personalWithdrawalDesc")}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="mt-[24px] flex text-[#000] text-[24px]">
+          <motion.div
+            className="mt-[24px] flex text-[#000] text-[24px]"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             <span>-</span>
             <img
               src="/images/product/article.png"
@@ -111,12 +254,18 @@ export default function Product() {
               alt=""
             />
             <div>
-              <span className="font-bold text-[28px]">跨境结算</span>
-              主要满足企业、跨境电商和个人的国际资金流通需求。通过平台，用户可实现多币种兑换与快速结算，避免传统国际汇款的高手续费和漫长等待。基于区块链清算技术，交易透明且可追溯，合规性保障降低风险。无论是学费、生活费，还是企业大额结算，都能高效完成，助力全球资金流动。
+              <span className="font-bold text-[28px]">{t("crossBorderSettlement")}</span>
+              {t("crossBorderSettlementDesc")}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="mt-[24px] flex text-[#000] text-[24px]">
+          <motion.div
+            className="mt-[24px] flex text-[#000] text-[24px]"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <span>-</span>
             <img
               src="/images/product/article.png"
@@ -124,10 +273,10 @@ export default function Product() {
               alt=""
             />
             <div>
-              <span className="font-bold text-[28px]">法币入金</span>
-              是用户将美元、人民币、欧元等法币充值到平台账户的过程，是进入数字资产生态的重要入口。平台支持银行卡转账、第三方支付等多种方式，强调操作简便和快速到账。为确保合规性，系统会进行身份核验和资金来源审查。便捷的入金体验不仅提升用户信任，也决定了平台在市场上的竞争力和用户增长速度。
+              <span className="font-bold text-[28px]">{t("fiatDeposit")}</span>
+              {t("fiatDepositDesc")}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

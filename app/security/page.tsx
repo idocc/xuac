@@ -5,8 +5,10 @@ import {
   SecurityIcon3,
 } from "@/components/icons";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function Security() {
+  const t = useTranslations("SecurityPage");
   return (
     <div>
       <div className="min-h-[900px] pt-[130px] relative overflow-hidden pb-[40px]">
@@ -26,7 +28,7 @@ export default function Security() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <span className="font-bold">安全与合规</span>
+            <span className="font-bold">{t("title")}</span>
             <div className="space-x-[40px] font-bold">
               <span className="text-[#BDEE63]">Security</span>
               <span>&</span>
@@ -54,9 +56,9 @@ export default function Security() {
                   <SecurityIcon1 />
                 </div>
                 <div>
-                  <div className="text-[39px] font-bold">安全措施</div>
+                  <div className="text-[39px] font-bold">{t("securityMeasures")}</div>
                   <div className="text-[32px]">
-                    多重签名、冷钱包储存、实时风控
+                    {t("securityMeasuresDesc")}
                   </div>
                 </div>
               </motion.div>
@@ -70,8 +72,8 @@ export default function Security() {
                   <SecurityIcon2 />
                 </div>
                 <div>
-                  <div className="text-[39px] font-bold">合规声明</div>
-                  <div className="text-[32px]">遵守 KYC/AML,不服务制裁国家</div>
+                  <div className="text-[39px] font-bold">{t("complianceStatement")}</div>
+                  <div className="text-[32px]">{t("complianceStatementDesc")}</div>
                 </div>
               </motion.div>
               <motion.div
@@ -84,9 +86,9 @@ export default function Security() {
                   <SecurityIcon3 />
                 </div>
                 <div>
-                  <div className="text-[39px] font-bold">保障机制</div>
+                  <div className="text-[39px] font-bold">{t("protectionMechanism")}</div>
                   <div className="text-[32px]">
-                    资金隔离、大额资金专人处理、赔付计划
+                    {t("protectionMechanismDesc")}
                   </div>
                 </div>
               </motion.div>
@@ -116,11 +118,7 @@ export default function Security() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          在数字资产交易领域,安全与合规是平台建立用户信任的基石。全天汇24exc
-          通过多层次安全架构，采用多重签名机制和冷钱包储存，确保用户资产免受黑客攻击与单点风险。同时，系统配置实时风控与大数据监测，能够快速识别和拦截异常交易，保障资金安全。
-          在合规层面，平台严格遵循 KYC(身份认证) 和 AML(反洗钱)
-          国际标准,全面审查用户身份与资金来源,拒绝为受制裁国家和高风险用户提供服务。此外,平台建立了资金隔离制度,将用户资产与平台自有资金独立存放,并针对大额资金配备专人处理及赔付计划,最大程度降低风险敞口。通过全方位的安全与合规体系,全天汇24exc
-          为用户提供透明、可信赖的交易环境，树立行业信任标杆。
+          {t("detailDescription")}
         </motion.div>
       </div>
     </div>

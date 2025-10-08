@@ -9,7 +9,7 @@ import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
-
+import { NextIntlClientProvider } from "next-intl";
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -40,9 +40,11 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col">
             <ScrollProgress />
-            <Navbar />
-            <main className="text-[#fff]">{children}</main>
-            <Footer />
+            <NextIntlClientProvider>
+              <Navbar />
+              <main className="text-[#fff]">{children}</main>
+              <Footer />
+            </NextIntlClientProvider>
           </div>
         </Providers>
       </body>

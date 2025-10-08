@@ -1,4 +1,6 @@
 "use client";
+
+import {useTranslations} from 'next-intl';
 import {
   ArrowRightIcon,
   ArrowUpRightIcon,
@@ -11,59 +13,60 @@ import icon3 from "@/assets/home/icon3.svg";
 import icon4 from "@/assets/home/icon4.svg";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-// Mock数据 - 交易所特色功能
-const mockExchangeFeatures = [
+import { motion } from "framer-motion";
+
+
+// Mock数据 - 交易所特色功能 - 将在组件内部使用 t() 动态生成
+const getExchangeFeatures = (t: any) => [
   {
     id: 1,
     icon: icon1,
-    title: "主流币种",
-    description: "覆盖BTC/ETH/USDT,直兑<br/>USD、EUR、CNY等主流法币。",
+    title: t('features.mainCoins'),
+    description: t('features.mainCoinsDesc'),
   },
   {
     id: 2,
     icon: icon2,
-    title: "快速到账",
-    description: "分钟级到账，减少资金占用与<br/>等待时间。",
+    title: t('features.fastDeposit'),
+    description: t('features.fastDepositDesc'),
   },
   {
     id: 3,
     icon: icon3,
-    title: "全球覆盖",
-    description: "接入多国法币与支付通道，覆盖<br/>巴西、东南亚、欧洲等市场。",
+    title: t('features.globalCoverage'),
+    description: t('features.globalCoverageDesc'),
   },
   {
     id: 4,
     icon: icon4,
-    title: "24小时在线",
-    description: "7x24小时随时可兑,全球用户无<br/>时差等待。",
+    title: t('features.available24'),
+    description: t('features.available24Desc'),
   },
 ];
 
-// 评论数据
-const commentsData = [
+// 评论数据 - 将在组件内部使用 t() 动态生成
+const getCommentsData = (t: any) => [
   {
     id: 1,
-    name: "George",
-    time: "3天前的评论",
+    name: t('testimonials.user1Name'),
+    time: t('testimonials.user1Time'),
     avatar: "/images/user_ava.png",
-    content:
-      "企业大额兑换最怕合规风险。这里全程 KYC/AML 与标准化身份核验,资金隔离+实时风控,大额订单由专人跟进；还提供 企业 API 与批量对接,出入金与对账更顺畅;7x24 客服覆盖多语种与多时区，跨境结算也稳妥。",
+    content: t('testimonials.user1Content'),
+    highlight: t('testimonials.user1Highlight'),
   },
   {
     id: 2,
-    name: "Sarah",
-    time: "5天前的评论",
+    name: t('testimonials.user2Name'),
+    time: t('testimonials.user2Time'),
     avatar: "/images/user_ava.png",
-    content:
-      "作为个人投资者，我最看重的是安全和便捷。这个平台的用户体验很好，界面简洁，操作流畅。而且支持多种支付方式，到账速度也很快，客服响应及时，解决问题很专业。",
+    content: t('testimonials.user2Content'),
   },
   {
     id: 3,
-    name: "Michael",
-    time: "1周前的评论",
+    name: t('testimonials.user3Name'),
+    time: t('testimonials.user3Time'),
     avatar: "/images/user_ava.png",
-    content:
-      "全球化的数字资产兑换服务确实很有价值。支持的币种丰富，汇率透明公正，没有隐藏费用。特别是跨境转账功能，比传统银行快很多，手续费也更低。推荐给有国际业务的朋友。",
+    content: t('testimonials.user3Content'),
   },
 ];
 
@@ -125,31 +128,27 @@ const blurImagesData = [
   },
 ];
 
-// FAQ数据
-const faqData = [
+// FAQ数据 - 将在组件内部使用 t() 动态生成
+const getFaqData = (t: any) => [
   {
     id: 1,
-    question: "平台支持哪些币种和法币？",
-    answer:
-      "目前支持主流数字货币 BTC、ETH、USDT,以及 USD、EUR、CNY、BRL、INR 等多种法币，未来会持续拓展更多币种和市场。目前支持主流数字货币 BTC、ETH、USDT,以及 USD、EUR、CNY、BRL、INR 等多种法币，未来会持续拓展更多币种和市场。",
+    question: t('faq.question1'),
+    answer: t('faq.answer1'),
   },
   {
     id: 2,
-    question: "我的资金是否安全？",
-    answer:
-      "目前支持主流数字货币 BTC、ETH、USDT,以及 USD、EUR、CNY、BRL、INR 等多种法币，未来会持续拓展更多币种和市场。目前支持主流数字货币 BTC、ETH、USDT,以及 USD、EUR、CNY、BRL、INR 等多种法币，未来会持续拓展更多币种和市场。",
+    question: t('faq.question2'),
+    answer: t('faq.answer2'),
   },
   {
     id: 3,
-    question: "是否需要实名认证(KYC)",
-    answer:
-      "目前支持主流数字货币 BTC、ETH、USDT,以及 USD、EUR、CNY、BRL、INR 多种法币，未来会持续拓展更多币种和市场。目前支持主流数字货币 BTC、ETH、USDT,以及 USD、EUR、CNY、BRL、INR 等多种法币，未来会持续拓展更多币种和市场。",
+    question: t('faq.question3'),
+    answer: t('faq.answer3'),
   },
   {
     id: 4,
-    question: "手续费是多少？",
-    answer:
-      "目前支持主流数字货币 BTC、ETH、USDT,以及 USD、EUR、CNY、BRL、INR 等多种法币，未来会持续拓展更多币种和市场。目前支持主流数字货币 BTC、ETH、USDT,以及 USD、EUR、CNY、BRL、INR 等多种法币，未来会持续拓展更多币种和市场。",
+    question: t('faq.question4'),
+    answer: t('faq.answer4'),
   },
 ];
 
@@ -287,26 +286,35 @@ function TradingViewWidget() {
   );
 }
 
-// 导航菜单数据
-const navMenuData = [
-  { id: 1, title: "产品与服务", href: "/product" },
-  { id: 2, title: "使用流程", href: "/process" },
-  { id: 3, title: "安全与合规", href: "/security" },
-  { id: 4, title: "关于我们", href: "/about" },
+// 导航菜单数据 - 将在组件内部使用 t() 动态生成
+const getNavMenuData = (t: any) => [
+  { id: 1, title: t('nav.products'), href: "/product" },
+  { id: 2, title: t('nav.process'), href: "/process" },
+  { id: 3, title: t('nav.security'), href: "/security" },
+  { id: 4, title: t('nav.about'), href: "/about" },
 ];
 
 function Introduce() {
+  const t = useTranslations('HomePage');
+  const navMenuData = getNavMenuData(t);
+  
   return (
     <div className="relative py-[50px]">
       <div>
-        {navMenuData.map((item) => (
+        {navMenuData.map((item, index) => (
           <Link href={item.href} key={item.id}>
-            <div className="px-[108px] pr-[40px] text-[#000] relative group hover-effect">
+            <motion.div 
+              className="px-[108px] pr-[40px] text-[#000] relative group hover-effect"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
               <div className="border-b border-[#000] flex justify-between items-center py-[20px] pr-[40px]">
                 <span className="text-[72px] font-bold">{item.title}</span>
                 <ArrowRightIcon size={20} color="#000" />
               </div>
-            </div>
+            </motion.div>
           </Link>
         ))}
 
@@ -314,10 +322,16 @@ function Introduce() {
         <div>
           <div className="px-[108px] py-[50px] grid grid-cols-3 gap-[80px] place-items-center">
             {/* STEP ONE */}
-            <div className="w-[420px] group cursor-pointer transition-all duration-300">
+            <motion.div 
+              className="w-[420px] group cursor-pointer transition-all duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               <div className="bg-transparent group-hover:bg-[#BDEE63] transition-colors duration-300">
                 <div className="text-[#000] text-[32px] font-bold pt-[30px] pl-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  STEP ONE
+                  {t('steps.stepOne')}
                 </div>
                 <img
                   src="/images/icon1.png"
@@ -325,20 +339,25 @@ function Introduce() {
                   className="w-[340px] h-[172px] mx-auto my-[20px]"
                 />
                 <div className="p-[30px] text-[#000] group-hover:text-[#fff] group-hover:bg-[#000]">
-                  <div className="text-[32px] font-bold">联系客服</div>
+                  <div className="text-[32px] font-bold">{t('steps.stepOneTitle')}</div>
                   <div className="text-[#5F5F5F] text-[18px] group-hover:text-[#D5D5D5]">
-                    通过在线客服、Telegram、WhatsApp
-                    等方式提交兑换需求（币种与金额）。
+                    {t('steps.stepOneDesc')}
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* STEP TWO */}
-            <div className="w-[420px] group cursor-pointer transition-all duration-300">
+            <motion.div 
+              className="w-[420px] group cursor-pointer transition-all duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="bg-transparent group-hover:bg-[#BDEE63] transition-colors duration-300">
                 <div className="text-[#000] text-[32px] font-bold pt-[30px] pl-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  STEP TWO
+                  {t('steps.stepTwo')}
                 </div>
                 <img
                   src="/images/icon2.png"
@@ -346,19 +365,25 @@ function Introduce() {
                   className="w-[340px] h-[172px] mx-auto my-[20px]"
                 />
                 <div className="p-[30px] text-[#000] group-hover:text-[#fff] group-hover:bg-[#000] transition-colors duration-300">
-                  <div className="text-[32px] font-bold">支付与收款</div>
+                  <div className="text-[32px] font-bold">{t('steps.stepTwoTitle')}</div>
                   <div className="text-[#5F5F5F] text-[18px] group-hover:text-[#D5D5D5]">
-                    客户将数字货币转入指定地址，平台在确认到账后快速完成法币结算。
+                    {t('steps.stepTwoDesc')}
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* STEP THREE */}
-            <div className="w-[420px] group cursor-pointer transition-all duration-300">
+            <motion.div 
+              className="w-[420px] group cursor-pointer transition-all duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               <div className="bg-transparent group-hover:bg-[#BDEE63] transition-colors duration-300">
                 <div className="text-[#000] text-[32px] font-bold pt-[30px] pl-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  STEP THREE
+                  {t('steps.stepThree')}
                 </div>
                 <img
                   src="/images/icon3.png"
@@ -366,35 +391,37 @@ function Introduce() {
                   className="w-[340px] h-[172px] mx-auto my-[20px]"
                 />
                 <div className="p-[30px] text-[#000] group-hover:text-[#fff] group-hover:bg-[#000] transition-colors duration-300">
-                  <div className="text-[32px] font-bold">交易完成</div>
+                  <div className="text-[32px] font-bold">{t('steps.stepThreeTitle')}</div>
                   <div className="text-[#5F5F5F] text-[18px] group-hover:text-[#D5D5D5]">
-                    兑换成功，客户可实时查询订单进度，交易全程透明可追踪。
+                    {t('steps.stepThreeDesc')}
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="px-[108px] flex justify-end">
+          <motion.div 
+            className="px-[108px] flex justify-end"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
             <div className="relative w-[628px]">
               <div className="flex items-center">
                 <span className="text-[48px] font-bold text-[#000] mr-[90px]">
-                  只需3步,快速兑换
+                  {t('steps.quickExchange')}
                 </span>
                 <Button className="text-black px-[20px] py-[30px] rounded-[4px] text-[20px] border-none bg-primary font-bold cursor-pointer">
-                  <span>立即兑换</span>
+                  <span>{t('hero.exchangeNow')}</span>
                   <ArrowRightIcon color="black" />
                 </Button>
               </div>
               <div className="text-[18px] text-[#020202] mt-[31px]">
-                全天汇(24EXC)为全球个人与企业用户提供 安全、透明、合规
-                的数字资产兑换服务。支持稳定币、主流加密货币与法币间的快速结算,7x24
-                小时随时随地完成交易。 无需注册账户。通过 在线客服 / Telegram /
-                WhatsApp 告知兑换需求，
-                确认汇率后完成支付与收款，几分钟内即可完成交易。
+                {t('steps.description')}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
@@ -403,6 +430,8 @@ function Introduce() {
 
 // 评论轮播组件
 function CommentCarousel() {
+  const t = useTranslations('HomePage');
+  const commentsData = getCommentsData(t);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -432,27 +461,48 @@ function CommentCarousel() {
 
   return (
     <div className="bg-[#000] text-center py-[75px] px-[108px]">
-      <h1 className="text-[68px] font-bold">来自用户的声音</h1>
+      <motion.h1 
+        className="text-[68px] font-bold"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        {t('testimonials.title')}
+      </motion.h1>
 
-      <div className="text-[24px] mt-[72px] text-left">
-        {currentComment.content
-          .split(
-            "这里全程 KYC/AML 与标准化身份核验,资金隔离+实时风控,大额订单由专人跟进；"
-          )
-          .map((part, index) => (
-            <span key={index}>
-              {part}
-              {index === 0 && currentComment.id === 1 && (
-                <span className="text-[#BCFF2F]">
-                  这里全程 KYC/AML
-                  与标准化身份核验,资金隔离+实时风控,大额订单由专人跟进；
-                </span>
-              )}
-            </span>
-          ))}
-      </div>
+      <motion.div 
+        className="text-[24px] mt-[72px] text-left"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        {currentComment.id === 1 && currentComment.highlight ? (
+          <>
+            {currentComment.content.split(currentComment.highlight).map((part: string, index: number) => (
+              <span key={index}>
+                {part}
+                {index === 0 && (
+                  <span className="text-[#BCFF2F]">
+                    {currentComment.highlight}
+                  </span>
+                )}
+              </span>
+            ))}
+          </>
+        ) : (
+          currentComment.content
+        )}
+      </motion.div>
 
-      <div className="mt-[32px] flex justify-between">
+      <motion.div 
+        className="mt-[32px] flex justify-between"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
         <div className="flex items-center text-left">
           <img
             className="w-[90px] h-[90px]"
@@ -471,9 +521,15 @@ function CommentCarousel() {
           src="/images/music_icon.png"
           alt="user"
         />
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-3 gap-[28px] mt-[56px]">
+      <motion.div 
+        className="grid grid-cols-3 gap-[28px] mt-[56px]"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+        viewport={{ once: true }}
+      >
         {commentsData.map((_, index) => (
           <div key={index} className="bg-[#393C47] h-[2px] relative">
             {index === currentIndex && (
@@ -487,13 +543,13 @@ function CommentCarousel() {
             )}
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
 
 // FAQ项组件
-function FAQItem({ faq, index }: { faq: (typeof faqData)[0]; index: number }) {
+function FAQItem({ faq, index }: { faq: { id: number; question: string; answer: string }; index: number }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpanded = () => {
@@ -512,7 +568,7 @@ function FAQItem({ faq, index }: { faq: (typeof faqData)[0]; index: number }) {
         {/* 小字部分 - 只在展开时显示 */}
         <div
           className={`text-[18px] w-[414px] font-medium transition-all duration-500 ease-in-out overflow-hidden ${
-            isExpanded ? "max-h-[200px] opacity-100" : "max-h-0 opacity-0"
+            isExpanded ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           {faq.answer}
@@ -533,6 +589,9 @@ function FAQItem({ faq, index }: { faq: (typeof faqData)[0]; index: number }) {
 }
 
 export default function Home() {
+  const t = useTranslations('HomePage');
+  const mockExchangeFeatures = getExchangeFeatures(t);
+  const faqData = getFaqData(t);
   const [inputValue, setInputValue] = useState("");
 
   return (
@@ -551,28 +610,58 @@ export default function Home() {
           <TradingViewWidget />
         </div>
 
-        <div className="relative z-10 font-bold text-[78px] text-center">
-          <div>全天汇</div>
-          24小时全球数字资产兑换服务
-          <div className="text-[18px]">
-            安全、快速、合规，支持稳定币与法币兑换，随时随地完成交易
-          </div>
-          <div className="mt-[80px]">
+        <motion.div 
+          className="relative z-10 font-bold text-[78px] text-center"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {t('hero.title')}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            {t('hero.subtitle')}
+          </motion.div>
+          <motion.div 
+            className="text-[18px]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            {t('hero.description')}
+          </motion.div>
+          <motion.div 
+            className="mt-[80px]"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
             <Button className="text-black px-[42px] py-[30px] mx-auto text-[24px] border-none bg-primary font-bold cursor-pointer">
-              <span>立即兑换</span>
+              <span>{t('hero.exchangeNow')}</span>
               <ArrowRightIcon color="black" />
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         <div className="h-[130px] grid grid-cols-4 relative z-10 items-center px-[40px] mt-[150px]">
           {mockExchangeFeatures.map((feature, index) => (
-            <div
+            <motion.div
               key={feature.id}
               className={`h-[61px] flex items-center ${
                 index < mockExchangeFeatures.length - 1
                   ? "border-r border-[#FFFFFF]"
                   : ""
               }`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}
             >
               <img
                 src={feature.icon.src}
@@ -588,7 +677,7 @@ export default function Home() {
                   dangerouslySetInnerHTML={{ __html: feature.description }}
                 />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -610,10 +699,22 @@ export default function Home() {
           </div>
         ))}
 
-        <span className="text-black font-bold text-[68px] relative z-10">
-          随时随地地兑换
-        </span>
-        <div className="mt-[25px] mx-auto w-[756px] h-[533px] rounded-[12px] p-[30px] bg-white shadow-[0_4px_65.5px_0_rgba(0,0,0,0.06)] relative z-10">
+        <motion.span 
+          className="text-black font-bold text-[68px] relative z-10"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          {t('exchange.title')}
+        </motion.span>
+        <motion.div 
+          className="mt-[25px] mx-auto w-[756px] h-[533px] rounded-[12px] p-[30px] bg-white shadow-[0_4px_65.5px_0_rgba(0,0,0,0.06)] relative z-10"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <div className="flex py-[10px] justify-between h-[124px] rounded-[8px] border border-[rgba(0,0,0,0.10)] bg-[rgba(255,255,255,0.00)] px-[20px]">
             <input
               type="text"
@@ -634,62 +735,86 @@ export default function Home() {
           </div>
           <div className="bg-[#F2F2F2] h-[124px] rounded-[8px] px-[20px] flex justify-between items-center">
             <div>
-              <div className="text-[48px] text-[#00000033]">0</div>
+              <div className="text-[48px] text-[#00000033]">{t('exchange.placeholder')}</div>
             </div>
             <div className="flex items-center text-black text-[28px] space-x-2 font-bold cursor-pointer ml-[30px]">
-              <span>选择代币</span>
+              <span>{t('exchange.selectToken')}</span>
               <ArrowDownIcon color="#868685" size={20} />
             </div>
           </div>
           <div className="text-[#2C2C2C] mt-[30px] space-y-[15px]">
             <div className="flex justify-between">
-              <span className="text-[#9F9F9F]">实时汇率</span>
+              <span className="text-[#9F9F9F]">{t('exchange.realTimeRate')}</span>
               <span>0.24AUD</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-[#9F9F9F]">手续费</span>
+              <span className="text-[#9F9F9F]">{t('exchange.fee')}</span>
               <span>131.47 SGD</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-[#9F9F9F]">预计到账时间</span>
-              <span>1小时内</span>
+              <span className="text-[#9F9F9F]">{t('exchange.estimatedTime')}</span>
+              <span>{t('exchange.within1Hour')}</span>
             </div>
           </div>
           <div className="mt-[20px]">
             <Button className="text-black w-full px-[42px] py-[35px] mx-auto text-[24px] border-none bg-primary font-bold cursor-pointer">
-              <span>立即兑换</span>
+              <span>{t('hero.exchangeNow')}</span>
               <ArrowRightIcon color="black" />
             </Button>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <div className="px-[108px] mt-[50px] pb-[50px] flex justify-center space-x-[150px]">
-        <div className="text-[52px] text-[#000] pt-[38px]">
-          <span className="font-bold">全天汇 24exc</span>
-          <div>
-            下一代加密货币
-            <br />
-            兑换平台
+        <motion.div 
+          className="text-[52px] text-[#000] pt-[38px]"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <span className="font-bold">{t('stats.platformTitle')}</span>
+          <div style={{ whiteSpace: 'pre-line' }}>
+            {t('stats.platformSubtitle')}
           </div>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-2 gap-x-[120px] gap-y-[142px] text-black">
-          <div>
-            <div className="text-[72px] font-bold">$100B+</div>
-            <div className="text-[16px]">截止2025年交易量</div>
-          </div>
-          <div>
-            <div className="text-[72px] font-bold">30+</div>
-            <div className="text-[16px]">国家和地区覆盖</div>
-          </div>
-          <div>
-            <div className="text-[72px] font-bold">7x24h</div>
-            <div className="text-[16px]">7x24 小时服务</div>
-          </div>
-          <div>
-            <div className="text-[72px] font-bold">95%</div>
-            <div className="text-[16px]">用户满意度</div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-[72px] font-bold">{t('stats.volume')}</div>
+            <div className="text-[16px]">{t('stats.volumeDesc')}</div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-[72px] font-bold">{t('stats.countries')}</div>
+            <div className="text-[16px]">{t('stats.countriesDesc')}</div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-[72px] font-bold">{t('stats.service')}</div>
+            <div className="text-[16px]">{t('stats.serviceDesc')}</div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-[72px] font-bold">{t('stats.satisfaction')}</div>
+            <div className="text-[16px]">{t('stats.satisfactionDesc')}</div>
+          </motion.div>
         </div>
       </div>
 
@@ -697,31 +822,65 @@ export default function Home() {
       <CommentCarousel />
 
       <div className="px-[108px] py-[120px] bg-[#000] flex justify-center space-x-[150px]">
-        <div className="w-[460px] pt-[50px]">
-          <div className="text-[68px] font-bold">合作伙伴</div>
+        <motion.div 
+          className="w-[460px] pt-[50px]"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-[68px] font-bold">{t('partners.title')}</div>
           <div className="mt-[24px] text-[20px]">
-            我们与国际银行、交易与做市、托管与合规机构建立长期合作网络，覆盖收付结算、流动性、KYC/AML
-            与法律合规，全链路支撑 24/7 的全球兑付能力。
+            {t('partners.description')}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="w-[700px] grid grid-cols-3 gap-[24px]">
+        <motion.div 
+          className="w-[700px] grid grid-cols-3 gap-[24px]"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           {Array.from({ length: 15 }).map((_, index) => (
-            <div key={index} className="h-[100px]">
+            <motion.div 
+              key={index} 
+              className="h-[100px]"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
+              viewport={{ once: true }}
+            >
               <img
                 src={`/images/line${index + 1}.png`}
                 className="h-full"
                 alt="partner"
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <div className="p-[118px]">
-        <div className="text-[68px] font-bold text-black mb-8">常见问题</div>
+        <motion.div 
+          className="text-[68px] font-bold text-black mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          {t('faq.title')}
+        </motion.div>
         {faqData.map((faq, index) => (
-          <FAQItem key={faq.id} faq={faq} index={index} />
+          <motion.div
+            key={faq.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            viewport={{ once: true }}
+          >
+            <FAQItem faq={faq} index={index} />
+          </motion.div>
         ))}
       </div>
     </div>

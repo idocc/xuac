@@ -502,3 +502,232 @@ export const SecurityIcon3: React.FC<IconSvgProps> = ({
     />
   </svg>
 );
+
+export const AboutIcon1: React.FC<IconSvgProps> = ({
+  size = 46,
+  width,
+  height,
+  color = "currentColor",
+  ...props
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width || size}
+    height={height || size}
+    viewBox="0 0 46 47"
+    fill="none"
+  >
+    <rect
+      x="27.2344"
+      y="1.4032"
+      width="6.64438"
+      height="18.1443"
+      fill={color}
+    />
+    <rect
+      x="0.145508"
+      y="14.6919"
+      width="6.64438"
+      height="18.1443"
+      fill={color}
+    />
+    <rect
+      x="36.9443"
+      y="2.42493"
+      width="6.64438"
+      height="6.89993"
+      fill={color}
+    />
+    <rect
+      x="39.2441"
+      y="26.1918"
+      width="6.64438"
+      height="6.89993"
+      fill={color}
+    />
+    <rect
+      x="32.6006"
+      y="33.0913"
+      width="6.64438"
+      height="6.89993"
+      fill={color}
+    />
+    <rect
+      x="6.78906"
+      y="33.0913"
+      width="6.64438"
+      height="6.89993"
+      fill={color}
+    />
+    <rect
+      x="6.78906"
+      y="7.79126"
+      width="6.64438"
+      height="6.89993"
+      fill={color}
+    />
+    <rect
+      x="13.4355"
+      y="0.891846"
+      width="6.64438"
+      height="6.89993"
+      fill={color}
+    />
+    <rect
+      x="27.2344"
+      y="12.6475"
+      width="16.3554"
+      height="6.89993"
+      fill={color}
+    />
+    <rect
+      x="13.4355"
+      y="39.9919"
+      width="19.1665"
+      height="6.89993"
+      fill={color}
+    />
+  </svg>
+);
+
+export const AboutIcon2: React.FC<IconSvgProps> = ({
+  size = 55,
+  width,
+  height,
+  color = "currentColor",
+  ...props
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width || size}
+    height={height || size}
+    viewBox="0 0 55 55"
+    fill="none"
+  >
+    <rect x="34.1855" y="6.29028" width="7.2" height="7.2" fill={color} />
+    <rect x="40.4902" y="11.6926" width="7.2" height="7.2" fill={color} />
+    <rect x="38.6855" y="35.9934" width="7.2" height="7.2" fill={color} />
+    <rect x="26.0918" y="23.3918" width="7.2" height="7.2" fill={color} />
+    <rect x="45.8887" y="17.9934" width="7.2" height="18" fill={color} />
+    <rect
+      width="18.9"
+      height="7.2"
+      transform="matrix(-1 0 0 1 39.5918 45.8918)"
+      fill={color}
+    />
+    <rect
+      width="18"
+      height="7.2"
+      transform="matrix(-1 0 0 1 35.9902 6.29028)"
+      fill={color}
+    />
+    <rect
+      width="7.2"
+      height="7.2"
+      transform="matrix(-1 0 0 1 18.8887 11.6926)"
+      fill={color}
+    />
+    <rect
+      width="7.2"
+      height="7.2"
+      transform="matrix(-1 0 0 1 20.6855 35.9934)"
+      fill={color}
+    />
+    <rect
+      width="7.2"
+      height="18"
+      transform="matrix(-1 0 0 1 13.4902 17.9934)"
+      fill={color}
+    />
+  </svg>
+);
+
+export const AboutIcon3: React.FC<IconSvgProps> = ({
+  size = 55,
+  width,
+  height,
+  color = "currentColor",
+  ...props
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width || size}
+    height={height || size}
+    viewBox="0 0 45 46"
+    fill="none"
+  >
+    <rect x="0.888672" y="7.3728" width="7" height="21" fill={color} />
+    <rect x="36.8887" y="7.3728" width="7" height="21" fill={color} />
+    <rect x="7.88867" y="0.372803" width="30" height="7" fill={color} />
+    <rect x="14.8887" y="38.3728" width="16" height="7" fill={color} />
+    <path
+      d="M25.4529 40.9644L38.9658 23.3733L44.4028 27.7823L30.8898 45.3734L25.4529 40.9644Z"
+      fill={color}
+    />
+    <path
+      d="M20.3369 40.9647L6.40109 23.8737L0.964143 28.2828L14.9 45.3738L20.3369 40.9647Z"
+      fill={color}
+    />
+    <path
+      d="M27.335 12.3728L30.7869 15.8547L19.5381 27.3728L16.0861 23.8909L27.335 12.3728Z"
+      fill={color}
+    />
+    <path
+      d="M30.402 23.8735L26.9645 27.3696L15.4943 15.9366L18.9318 12.4405L30.402 23.8735Z"
+      fill={color}
+    />
+  </svg>
+);
+
+export const AboutIcon4: React.FC<IconSvgProps> = ({
+  size = 55,
+  width,
+  height,
+  color = "currentColor",
+  ...props
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width || size}
+    height={height || size}
+    viewBox="0 0 47 103"
+    fill="none"
+  >
+    <rect
+      width="17.5238"
+      height="17.5238"
+      transform="matrix(-1 0 0 1 46.5 85.4286)"
+      fill={color}
+    />
+    <rect
+      width="17.5238"
+      height="17.5238"
+      transform="matrix(-1 0 0 1 46.5 0)"
+      fill={color}
+    />
+    <rect
+      width="17.5238"
+      height="17.5238"
+      transform="matrix(-1 0 0 1 31.167 70.0953)"
+      fill={color}
+    />
+    <rect
+      width="17.5238"
+      height="17.5238"
+      transform="matrix(-1 0 0 1 31.167 13.1429)"
+      fill={color}
+    />
+    <rect
+      width="18"
+      height="26"
+      transform="matrix(-1 0 0 1 18.5 56.9524)"
+      fill={color}
+    />
+    <rect
+      width="18"
+      height="41"
+      transform="matrix(-1 0 0 1 18.5 17.9524)"
+      fill={color}
+    />
+  </svg>
+);

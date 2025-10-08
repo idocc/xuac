@@ -1,55 +1,10 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-
-// 流程步骤数据
-const processSteps = [
-  {
-    id: 1,
-    icon: "/images/process/WhatsappLogo.png",
-    title: "联系客服",
-    description: "通过在线客服、Telegram、WhatsApp 等方式提交兑换需求（币种与金额）。",
-  },
-  {
-    id: 2,
-    icon: "/images/process/MoneyWavy.png",
-    title: "支付与收款",
-    description: "通过在线客服、Telegram、WhatsApp 等方式提交兑换需求（币种与金额）。",
-  },
-  {
-    id: 3,
-    icon: "/images/process/Checks.png",
-    title: "交易完成",
-    description: "通过在线客服、Telegram、WhatsApp 等方式提交兑换需求（币种与金额）。",
-  },
-];
-
-// FAQ数据
-const faqData = [
-  {
-    id: 1,
-    question: "我可以向谁汇寄新加坡元 (SGD)?",
-    answer: "您可以向任何拥有新加坡银行账户的个人或企业汇寄新加坡元。我们支持主流新加坡银行的转账服务，包括 DBS、OCBC、UOB 等。只需提供收款人的银行账户信息，我们将在确认您的数字货币到账后，快速完成新加坡元的转账。",
-  },
-  {
-    id: 2,
-    question: "我的资金是否安全？",
-    answer: "您的资金安全是我们的首要任务。我们采用多重安全措施保护您的资产：包括冷热钱包分离存储、多重签名技术、实时风控监测系统，以及严格的 KYC/AML 合规流程。所有交易均通过加密通道传输，资金由专业托管机构隔离保管，确保您的资产安全可靠。",
-  },
-  {
-    id: 3,
-    question: "是否需要实名认证(KYC)",
-    answer: "为了符合国际反洗钱(AML)和了解您的客户(KYC)法规要求，我们需要对用户进行身份验证。小额交易可能只需要基本信息，而大额交易则需要提供身份证明文件。这不仅是法律要求，也是保护您资金安全的重要措施。认证流程简单快捷，通常在几分钟内即可完成。",
-  },
-  {
-    id: 4,
-    question: "手续费是多少？",
-    answer: "我们的手续费根据交易金额和币种有所不同，但始终保持透明公开。一般来说，手续费在 0.5%-2% 之间，具体费率会在您确认交易前明确显示。大额交易可享受更优惠的费率。我们承诺无隐藏费用，所有成本都会在交易前清楚列明，让您放心交易。",
-  },
-];
+import { useTranslations } from "next-intl";
 
 // FAQ项组件
-function FAQItem({ faq, index }: { faq: (typeof faqData)[0]; index: number }) {
+function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpanded = () => {
@@ -70,7 +25,7 @@ function FAQItem({ faq, index }: { faq: (typeof faqData)[0]; index: number }) {
       >
         {/* 问题行 */}
         <div className="flex items-center justify-between text-white text-[18px]">
-          <div className="font-bold">{faq.question}</div>
+          <div className="font-bold">{question}</div>
           <div
             className={`transition-transform duration-300 ease-in-out ${
               isExpanded ? "rotate-90" : "rotate-0"
@@ -90,7 +45,7 @@ function FAQItem({ faq, index }: { faq: (typeof faqData)[0]; index: number }) {
               : "max-h-0 opacity-0"
           }`}
         >
-          {faq.answer}
+          {answer}
         </div>
       </div>
     </motion.div>
@@ -98,6 +53,51 @@ function FAQItem({ faq, index }: { faq: (typeof faqData)[0]; index: number }) {
 }
 
 export default function Process() {
+  const t = useTranslations("ProcessPage");
+
+  const processSteps = [
+    {
+      id: 1,
+      icon: "/images/process/WhatsappLogo.png",
+      title: t("contactSupport"),
+      description: t("contactSupportDesc"),
+    },
+    {
+      id: 2,
+      icon: "/images/process/MoneyWavy.png",
+      title: t("paymentReceipt"),
+      description: t("paymentReceiptDesc"),
+    },
+    {
+      id: 3,
+      icon: "/images/process/Checks.png",
+      title: t("transactionComplete"),
+      description: t("transactionCompleteDesc"),
+    },
+  ];
+
+  const faqData = [
+    {
+      id: 1,
+      question: t("faq1Question"),
+      answer: t("faq1Answer"),
+    },
+    {
+      id: 2,
+      question: t("faq2Question"),
+      answer: t("faq2Answer"),
+    },
+    {
+      id: 3,
+      question: t("faq3Question"),
+      answer: t("faq3Answer"),
+    },
+    {
+      id: 4,
+      question: t("faq4Question"),
+      answer: t("faq4Answer"),
+    },
+  ];
   return (
     <div>
       <div className="bg-[#000] pt-[120px]">
@@ -118,7 +118,7 @@ export default function Process() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-[78px] font-bold"
           >
-            使用流程
+            {t("title")}
           </motion.span>
           <motion.span
             initial={{ opacity: 0, y: 50 }}
@@ -178,12 +178,12 @@ export default function Process() {
               transition={{ duration: 0.8 }}
               className="text-left text-[55px] font-bold mb-[40px]"
             >
-              常见问题Q&A
+              {t("faqTitle")}
             </motion.div>
 
             <div>
               {faqData.map((faq, index) => (
-                <FAQItem key={faq.id} faq={faq} index={index} />
+                <FAQItem key={faq.id} question={faq.question} answer={faq.answer} index={index} />
               ))}
             </div>
           </div>
