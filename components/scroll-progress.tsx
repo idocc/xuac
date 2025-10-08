@@ -33,7 +33,7 @@ export const ScrollProgress = () => {
       className="fixed top-0 left-0 z-50 h-[72px] transition-all duration-100 ease-out pointer-events-none"
       style={{
         width: `${scrollProgress}%`,
-        backgroundColor: "#BDEE63",
+        backgroundColor: "#fff",
         mixBlendMode: "difference",
       }}
     />
