@@ -1,13 +1,48 @@
 "use client";
 
 import { Logo } from "./icons";
-import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import inIcon from "@/assets/footer/in.svg";
 import whatsapp from "@/assets/footer/whatsapp.svg";
 import x from "@/assets/footer/x.svg";
+import { useTranslations } from "next-intl";
 
 export const Footer = () => {
+  const tNav = useTranslations('Navbar');
+  const tFooter = useTranslations('Footer');
+  const tHome = useTranslations('HomePage');
+
+  const navItems = [
+    {
+      label: tNav('home'),
+      href: "/",
+    },
+    {
+      label: tNav('products'),
+      href: "/product",
+    },
+    {
+      label: tNav('process'),
+      href: "/process",
+    },
+    {
+      label: tNav('security'),
+      href: "/security",
+    },
+    {
+      label: tNav('global'),
+      href: "/global",
+    },
+    {
+      label: tNav('about'),
+      href: "/about",
+    },
+    {
+      label: tNav('news'),
+      href: "/new",
+    },
+  ];
+
   const socialMediaItems = [
     {
       icon: whatsapp,
@@ -33,10 +68,10 @@ export const Footer = () => {
     <div className="bg-black px-[108px] py-[40px]">
       <div className="flex items-center gap-2">
         <Logo size={60}></Logo>
-        <span className="text-[55px] font-bold">全天汇</span>
+        <span className="text-[55px] font-bold">{tFooter('brandName')}</span>
       </div>
       <div className="space-x-[50px] mt-[50px]">
-        {siteConfig.navItems.map((item) => (
+        {navItems.map((item) => (
           <Link
             href={item.href}
             key={item.href}
@@ -60,13 +95,11 @@ export const Footer = () => {
 
       <div className="flex justify-between items-start text-[#8C8C8E] text-[18px] mt-[48px]">
         <div>
-          <div>Disclaimer</div>
-          <div>© 2025 OnePort All rights reserved</div>
+          <div>{tFooter('disclaimer')}</div>
+          <div>{tFooter('copyright')}</div>
         </div>
         <div className="w-[616px]">
-          All product images and simulations presented are for informational and
-          demonstrative purposes only. Not all features may be available to all
-          customers.
+          {tFooter('description')}
         </div>
       </div>
       <div className="h-[200px] relative">

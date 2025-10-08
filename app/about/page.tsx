@@ -7,13 +7,22 @@ import {
 } from "@/components/icons";
 import { Button } from "@heroui/button";
 import { ArrowRightIcon } from "@/components/icons";
-import { newsList } from "@/config/site";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 export default function About() {
   const t = useTranslations("AboutPage");
+  const tNews = useTranslations("NewsPage");
+
+  // 构建国际化的新闻列表
+  const newsList = [1, 2, 3].map((id) => ({
+    id,
+    image: `/images/about/new${id}.png`,
+    title: tNews(`newsList.${id - 1}.title`),
+    description: tNews(`newsList.${id - 1}.description`),
+    date: tNews(`newsList.${id - 1}.date`),
+  }));
   
   return (
     <div className="bg-[#000] pt-[120px]">
@@ -38,16 +47,16 @@ export default function About() {
 
       {/* 副标题 */}
       <motion.div
-        className="text-[78px] font-bold flex justify-center"
+        className="text-[40px] font-bold flex items-center justify-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8 }}
       >
-        <AboutIcon4 width={46} height={103} color="#BDEE63" />
+        <AboutIcon4 width={46} height={60} color="#BDEE63" />
         {t("platformName")}
         <div className="rotate-180">
-          <AboutIcon4 width={46} height={103} color="#BDEE63" />
+          <AboutIcon4 width={46} height={60} color="#BDEE63" />
         </div>
       </motion.div>
 
@@ -92,7 +101,7 @@ export default function About() {
             {t("sayNo")}
           </motion.div>
           <motion.div
-            className="text-[#fff] text-[40px] font-bold"
+            className="text-[#fff] text-[26px] font-bold"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -101,7 +110,7 @@ export default function About() {
             {t("breakBarriers")}
           </motion.div>
         </div>
-        <div className="flex h-[90px] px-[10px] justify-between items-center text-[#D9D9D9] text-[32px] font-bold">
+        <div className="flex h-[80px] px-[10px] justify-between items-center text-[#D9D9D9] text-[22px] font-bold">
           <motion.div
             className="flex items-center space-x-2"
             initial={{ opacity: 0, y: 20 }}
@@ -109,7 +118,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <AboutIcon1 size={46} color="#D9D9D9" />
+            <AboutIcon1 size={30} color="#D9D9D9" />
             <span>{t("timeLimit")}</span>
           </motion.div>
           <motion.div
@@ -119,7 +128,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <AboutIcon2 size={46} color="#D9D9D9" />
+            <AboutIcon2 size={30} color="#D9D9D9" />
             <span>{t("locationLimit")}</span>
           </motion.div>
           <motion.div
@@ -129,7 +138,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <AboutIcon3 size={46} color="#D9D9D9" />
+            <AboutIcon3 size={30} color="#D9D9D9" />
             <span>{t("securityLack")}</span>
           </motion.div>
         </div>

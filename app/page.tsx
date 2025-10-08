@@ -13,7 +13,7 @@ import icon3 from "@/assets/home/icon3.svg";
 import icon4 from "@/assets/home/icon4.svg";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 
 // Mock数据 - 交易所特色功能 - 将在组件内部使用 t() 动态生成
@@ -323,7 +323,7 @@ function Introduce() {
           <div className="px-[108px] py-[50px] grid grid-cols-3 gap-[80px] place-items-center">
             {/* STEP ONE */}
             <motion.div 
-              className="w-[420px] group cursor-pointer transition-all duration-300"
+              className="w-[420px] group transition-all duration-300"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -349,7 +349,7 @@ function Introduce() {
 
             {/* STEP TWO */}
             <motion.div 
-              className="w-[420px] group cursor-pointer transition-all duration-300"
+              className="w-[420px] group transition-all duration-300"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -375,7 +375,7 @@ function Introduce() {
 
             {/* STEP THREE */}
             <motion.div 
-              className="w-[420px] group cursor-pointer transition-all duration-300"
+              className="w-[420px] group transition-all duration-300"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -407,8 +407,8 @@ function Introduce() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="relative w-[628px]">
-              <div className="flex items-center">
+            <div className="relative w-[50%]">
+              <div className="flex items-center justify-between">
                 <span className="text-[48px] font-bold text-[#000] mr-[90px]">
                   {t('steps.quickExchange')}
                 </span>
@@ -434,9 +434,11 @@ function CommentCarousel() {
   const commentsData = getCommentsData(t);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [direction, setDirection] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
+      setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % commentsData.length);
       setProgress(0); // 重置进度条
     }, 5000);
@@ -457,7 +459,20 @@ function CommentCarousel() {
     return () => clearInterval(progressInterval);
   }, [currentIndex]);
 
-  const currentComment = commentsData[currentIndex];
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? '100%' : '-100%',
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => ({
+      x: direction > 0 ? '-100%' : '100%',
+      opacity: 0,
+    }),
+  };
 
   return (
     <div className="bg-[#000] text-center py-[75px] px-[108px]">
@@ -471,57 +486,64 @@ function CommentCarousel() {
         {t('testimonials.title')}
       </motion.h1>
 
-      <motion.div 
-        className="text-[24px] mt-[72px] text-left"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        {currentComment.id === 1 && currentComment.highlight ? (
-          <>
-            {currentComment.content.split(currentComment.highlight).map((part: string, index: number) => (
-              <span key={index}>
-                {part}
-                {index === 0 && (
-                  <span className="text-[#BCFF2F]">
-                    {currentComment.highlight}
-                  </span>
-                )}
-              </span>
-            ))}
-          </>
-        ) : (
-          currentComment.content
-        )}
-      </motion.div>
-
-      <motion.div 
-        className="mt-[32px] flex justify-between"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        viewport={{ once: true }}
-      >
-        <div className="flex items-center text-left">
-          <img
-            className="w-[90px] h-[90px]"
-            src={currentComment.avatar}
-            alt="user"
-          />
-          <div className="ml-[24px]">
-            <div className="text-[28px]">{currentComment.name}</div>
-            <div className="text-[18px] text-[#8C8C8E]">
-              {currentComment.time}
+      {/* 固定高度的容器 */}
+      <div className="relative overflow-hidden min-h-[300px] mt-[72px]">
+        <AnimatePresence initial={false} custom={direction} mode="wait">
+          <motion.div
+            key={currentIndex}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.3 },
+            }}
+            className="absolute w-full"
+          >
+            <div className="text-[24px] text-left">
+              {commentsData[currentIndex].id === 1 && commentsData[currentIndex].highlight ? (
+                <>
+                  {commentsData[currentIndex].content.split(commentsData[currentIndex].highlight).map((part: string, index: number) => (
+                    <span key={index}>
+                      {part}
+                      {index === 0 && (
+                        <span className="text-[#BCFF2F]">
+                          {commentsData[currentIndex].highlight}
+                        </span>
+                      )}
+                    </span>
+                  ))}
+                </>
+              ) : (
+                commentsData[currentIndex].content
+              )}
             </div>
-          </div>
-        </div>
-        <img
-          className="w-[90px] h-[90px]"
-          src="/images/music_icon.png"
-          alt="user"
-        />
-      </motion.div>
+
+            <div className="mt-[32px] flex justify-between">
+              <div className="flex items-center text-left">
+                <img
+                  className="w-[90px] h-[90px]"
+                  src={commentsData[currentIndex].avatar}
+                  alt="user"
+                />
+                <div className="ml-[24px]">
+                  <div className="text-[28px]">{commentsData[currentIndex].name}</div>
+                  <div className="text-[18px] text-[#8C8C8E]">
+                    {commentsData[currentIndex].time}
+                  </div>
+                </div>
+              </div>
+              <img
+                className="w-[90px] h-[90px]"
+                src="/images/music_icon.png"
+                alt="user"
+              />
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
       <motion.div 
         className="grid grid-cols-3 gap-[28px] mt-[56px]"

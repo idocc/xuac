@@ -13,7 +13,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
-
 import { Logo, ArrowRightIcon } from "@/components/icons";
 
 // 自定义语言切换开关组件
@@ -46,7 +45,7 @@ const LanguageSwitch = () => {
       >
         {/* 背景标签 */}
         <span
-          className={`absolute left-3 top-1/2 transform -translate-y-1/2 font-medium transition-all duration-300 z-10 ${
+          className={`absolute left-3 top-1/2 transform font-sans -translate-y-1/2 font-medium transition-all duration-300 z-10 ${
             !isEnglish ? "text-white/60" : "text-white/90"
           }`}
         >
@@ -54,7 +53,7 @@ const LanguageSwitch = () => {
         </span>
 
         <span
-          className={`absolute right-3 top-1/2 transform -translate-y-1/2 transition-all duration-300 z-10 ${
+          className={`absolute right-3 top-1/2 transform font-sans -translate-y-1/2 transition-all duration-300 z-10 ${
             isEnglish ? "text-white/60" : "text-white/90"
           }`}
         >
@@ -67,7 +66,7 @@ const LanguageSwitch = () => {
             isEnglish ? "translate-x-[48px]" : "translate-x-[4px]"
           }`}
         >
-          <span className=" text-gray-700 leading-none font-semibold">
+          <span className=" text-gray-700 leading-none font-semibold font-sans">
             {isEnglish ? "EN" : "CN"}
           </span>
         </div>
@@ -78,41 +77,41 @@ const LanguageSwitch = () => {
 
 export const Navbar = () => {
   const pathname = usePathname();
-  const tHome = useTranslations('HomePage');
-  const tNav = useTranslations('Navbar');
-  
+  const tHome = useTranslations("HomePage");
+  const tNav = useTranslations("Navbar");
+
   // 导航项配置
   const navItems = [
     {
-      label: tNav('home'),
+      label: tNav("home"),
       href: "/",
     },
     {
-      label: tNav('products'),
+      label: tNav("products"),
       href: "/product",
     },
     {
-      label: tNav('process'),
+      label: tNav("process"),
       href: "/process",
     },
     {
-      label: tNav('security'),
+      label: tNav("security"),
       href: "/security",
     },
     {
-      label: tNav('global'),
+      label: tNav("global"),
       href: "/global",
     },
     {
-      label: tNav('about'),
+      label: tNav("about"),
       href: "/about",
     },
     {
-      label: tNav('news'),
+      label: tNav("news"),
       href: "/new",
     },
   ];
-  
+
   return (
     <HeroUINavbar
       maxWidth="full"
@@ -124,7 +123,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo size={20} />
-            <p className="font-bold text-[#fff]">{tHome('hero.title')}</p>
+            <p className="font-bold text-[#fff]">{tHome("hero.title")}</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -139,7 +138,7 @@ export const Navbar = () => {
                   )}
                   href={item.href}
                 >
-                  {item.label}
+                  <span className="font-sans">{item.label}</span>
                 </NextLink>
               </NavbarItem>
             );
@@ -150,13 +149,13 @@ export const Navbar = () => {
       <NavbarContent className="hidden lg:flex" justify="end">
         <LanguageSwitch />
         <div
-          className="text-white ml-[10px] text-[16px] font-bold px-[18px] py-[10px] flex items-center gap-2 cursor-pointer"
+          className="text-white w-[180px] justify-center ml-[10px] text-[16px] font-bold px-[18px] py-[10px] flex items-center gap-2 cursor-pointer"
           style={{
             borderRadius: "4px",
             border: "1px solid rgba(255, 255, 255, 0.40)",
           }}
         >
-          {tHome('hero.exchangeNow')}
+          <span className="font-sans">{tHome("hero.exchangeNow")}</span>
           <ArrowRightIcon />
         </div>
       </NavbarContent>
@@ -170,7 +169,10 @@ export const Navbar = () => {
           {navItems.map((item, index) => {
             const isActive = pathname === item.href;
             return (
-              <NavbarMenuItem key={`${item.href}-${index}`} className="text-center">
+              <NavbarMenuItem
+                key={`${item.href}-${index}`}
+                className="text-center"
+              >
                 <NextLink
                   href={item.href}
                   className={clsx(
@@ -178,7 +180,7 @@ export const Navbar = () => {
                     isActive && "font-bold"
                   )}
                 >
-                  {item.label}
+                  <span className="font-sans">{item.label}</span>
                 </NextLink>
               </NavbarMenuItem>
             );
