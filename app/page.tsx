@@ -4,7 +4,6 @@ import {useTranslations} from 'next-intl';
 import {
   ArrowRightIcon,
   ArrowUpRightIcon,
-  ArrowDownIcon,
 } from "@/components/icons";
 import { Button } from "@heroui/button";
 import icon1 from "@/assets/home/icon1.svg";
@@ -14,6 +13,7 @@ import icon4 from "@/assets/home/icon4.svg";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import CryptoSwapBox from '../components/CryptoSwapBox';
 
 
 // Mock数据 - 交易所特色功能 - 将在组件内部使用 t() 动态生成
@@ -730,61 +730,7 @@ export default function Home() {
         >
           {t('exchange.title')}
         </motion.span>
-        <motion.div 
-          className="mt-[25px] mx-auto w-[756px] h-[533px] rounded-[12px] p-[30px] bg-white shadow-[0_4px_65.5px_0_rgba(0,0,0,0.06)] relative z-10"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex py-[10px] justify-between h-[124px] rounded-[8px] border border-[rgba(0,0,0,0.10)] bg-[rgba(255,255,255,0.00)] px-[20px]">
-            <input
-              type="text"
-              className="w-full h-full text-[48px] text-black outline-none focus:outline-none"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              placeholder="0"
-            />
-            <div className="flex items-center text-black space-x-2 cursor-pointer ml-[30px]">
-              <img
-                src="/images/user_ava.png"
-                alt=""
-                className="w-[24px] h-[24px]"
-              />
-              <span className="text-[28px] font-bold">SGD</span>
-              <ArrowDownIcon color="#868685" size={40} />
-            </div>
-          </div>
-          <div className="bg-[#F2F2F2] h-[124px] rounded-[8px] px-[20px] flex justify-between items-center">
-            <div>
-              <div className="text-[48px] text-[#00000033]">{t('exchange.placeholder')}</div>
-            </div>
-            <div className="flex items-center text-black text-[28px] space-x-2 font-bold cursor-pointer ml-[30px]">
-              <span>{t('exchange.selectToken')}</span>
-              <ArrowDownIcon color="#868685" size={20} />
-            </div>
-          </div>
-          <div className="text-[#2C2C2C] mt-[30px] space-y-[15px]">
-            <div className="flex justify-between">
-              <span className="text-[#9F9F9F]">{t('exchange.realTimeRate')}</span>
-              <span>0.24AUD</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-[#9F9F9F]">{t('exchange.fee')}</span>
-              <span>131.47 SGD</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-[#9F9F9F]">{t('exchange.estimatedTime')}</span>
-              <span>{t('exchange.within1Hour')}</span>
-            </div>
-          </div>
-          <div className="mt-[20px]">
-            <Button className="text-black w-full px-[42px] py-[35px] mx-auto text-[24px] border-none bg-primary font-bold cursor-pointer">
-              <span>{t('hero.exchangeNow')}</span>
-              <ArrowRightIcon color="black" />
-            </Button>
-          </div>
-        </motion.div>
+        <CryptoSwapBox />
       </div>
 
       <div className="px-[108px] mt-[50px] pb-[50px] flex justify-center space-x-[150px]">

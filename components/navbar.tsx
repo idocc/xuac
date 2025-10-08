@@ -45,7 +45,7 @@ const LanguageSwitch = () => {
       >
         {/* 背景标签 */}
         <span
-          className={`absolute left-3 top-1/2 transform font-sora -translate-y-1/2 font-medium transition-all duration-300 z-10 ${
+          className={`absolute left-3 top-1/2 transform  -translate-y-1/2 font-medium transition-all duration-300 z-10 ${
             !isEnglish ? "text-white/60" : "text-white/90"
           }`}
         >
@@ -53,7 +53,7 @@ const LanguageSwitch = () => {
         </span>
 
         <span
-          className={`absolute right-3 top-1/2 transform font-sora -translate-y-1/2 transition-all duration-300 z-10 ${
+          className={`absolute right-3 top-1/2 transform  -translate-y-1/2 transition-all duration-300 z-10 ${
             isEnglish ? "text-white/60" : "text-white/90"
           }`}
         >
@@ -66,7 +66,7 @@ const LanguageSwitch = () => {
             isEnglish ? "translate-x-[48px]" : "translate-x-[4px]"
           }`}
         >
-          <span className=" text-gray-700 leading-none font-sora">
+          <span className=" text-gray-700 leading-none ">
             {isEnglish ? "EN" : "CN"}
           </span>
         </div>
@@ -123,7 +123,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo size={20} />
-            <p className="font-bold text-[#fff] font-sora">{tHome("hero.title")}</p>
+            <p className="font-bold text-[#fff] ">{tHome("hero.title")}</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -138,7 +138,7 @@ export const Navbar = () => {
                   )}
                   href={item.href}
                 >
-                  <span  className="font-sora">{item.label}</span>
+                  <span  className="">{item.label}</span>
                 </NextLink>
               </NavbarItem>
             );
@@ -155,7 +155,7 @@ export const Navbar = () => {
             border: "1px solid rgba(255, 255, 255, 0.40)",
           }}
         >
-          <span className="font-sora">{tHome("hero.exchangeNow")}</span>
+          <span className="">{tHome("hero.exchangeNow")}</span>
           <ArrowRightIcon />
         </div>
       </NavbarContent>
@@ -180,7 +180,7 @@ export const Navbar = () => {
                     isActive && "font-bold"
                   )}
                 >
-                  <span className="font-sora">{item.label}</span>
+                  <span className="">{item.label}</span>
                 </NextLink>
               </NavbarMenuItem>
             );
