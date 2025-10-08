@@ -138,7 +138,7 @@ export const Navbar = () => {
                   )}
                   href={item.href}
                 >
-                  <span>{item.label}</span>
+                  <span  className="font-sora">{item.label}</span>
                 </NextLink>
               </NavbarItem>
             );

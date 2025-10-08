@@ -1,14 +1,15 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'Sora';
+  src: url('/Sora-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --button-bg-primary: #bdee63;
   color: #fff;
-}
-
-
-*{
-  /* -webkit-font-smoothing:antialiased; */
-  -webkit-font-smoothing: subpixel-antialiased
 }
 
 /* 横向滚动动画 */
