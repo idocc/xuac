@@ -65,21 +65,21 @@ export default async function NewsDetailPage({
 
   return (
     <div>
-      <div className="max-w-[1200px] mx-auto px-[40px] py-[108px]">
-        <h1 className="text-[48px] font-bold text-[#000] mb-[24px]">
+      <div className="max-w-[1200px] mx-auto px-[20px] lg:px-[40px] py-[60px] lg:py-[108px]">
+        <h1 className="text-[24px] lg:text-[48px] font-bold text-[#000] mb-[16px] lg:mb-[24px]">
           {news.title}
         </h1>
-        <div className="text-[18px] text-[#000] mb-[48px] flex justify-between">
+        <div className="text-[12px] lg:text-[18px] text-[#000] mb-[30px] lg:mb-[48px] flex justify-between">
           <span>{t("platform")}</span>
           <span>{news.date}</span>
         </div>
 
-        <div className="text-[20px] leading-[1.8] text-[#333]">
-          <p className="mb-[24px] p-[20px] border border-[#00000033] rounded-[4px]">
+        <div className="text-[14px] lg:text-[20px] leading-[1.8] text-[#333]">
+          <p className="mb-[20px] lg:mb-[24px] p-[15px] lg:p-[20px] border border-[#00000033] rounded-[4px]">
             {news.description}
           </p>
 
-          <div className="mt-[48px] rounded-lg space-y-[24px]">
+          <div className="mt-[30px] lg:mt-[48px] rounded-lg space-y-[20px] lg:space-y-[24px]">
             <div dangerouslySetInnerHTML={{ __html: news.content }}></div>
           </div>
         </div>

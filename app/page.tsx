@@ -301,7 +301,7 @@ function Introduce() {
         {navMenuData.map((item, index) => (
           <Link href={item.href} key={item.id}>
             <motion.div
-              className="lg:px-[108px] lg:pr-[40px] px-[10px] text-[#000] relative group lg:hover-effect"
+              className="lg:px-[108px] lg:pr-[40px] px-[10px] text-[#000] relative group hover-effect"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -816,7 +816,7 @@ export default function Home() {
       <Introduce />
       <CommentCarousel />
 
-      <div className="lg:py-[120px] py-[30px] px-[12px] bg-[#000] lg:flex lg:justify-center lg:space-x-[80px]">
+      <div className="lg:py-[120px] py-[30px] px-[12px] bg-[#000] lg:flex lg:justify-center lg:space-x-[80px] overflow-hidden">
         <motion.div
           className="lg:w-[460px] lg:pt-[50px]"
           initial={{ opacity: 0, x: -50 }}
@@ -831,8 +831,8 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          className="lg:w-[700px] grid grid-cols-3 gap-[24px]"
-          initial={{ opacity: 0, x: 50 }}
+          className="lg:w-[700px] grid grid-cols-3 gap-[24px] lg:mt-0 mt-[30px]"
+          initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}

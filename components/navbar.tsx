@@ -124,6 +124,12 @@ export const Navbar = () => {
   const pathname = usePathname();
   const tHome = useTranslations("HomePage");
   const tNav = useTranslations("Navbar");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // 监听路由变化，关闭菜单
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
 
   // 导航项配置
   const navItems = [
@@ -163,6 +169,8 @@ export const Navbar = () => {
       position="sticky"
       // height="72px"
       className="bg-black backdrop-blur-2xl"
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">

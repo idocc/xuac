@@ -26,25 +26,27 @@
   animation: scroll 60s linear infinite;
 }
 
-/* 伪元素hover效果 */
-.hover-effect::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  filter: invert(1);
-  background-color: black;
-  transform: translate3d(-100%, 0, 0);
-  transform-origin: left;
-  transition: transform 300ms ease-in-out;
-  mix-blend-mode: difference;
-  z-index: 5;
-}
+/* 伪元素hover效果 - 仅在桌面端生效 */
+@media (min-width: 1024px) {
+  .hover-effect::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: invert(1);
+    background-color: black;
+    transform: translate3d(-100%, 0, 0);
+    transform-origin: left;
+    transition: transform 300ms ease-in-out;
+    mix-blend-mode: difference;
+    z-index: 5;
+  }
 
-.hover-effect:hover::before {
-  transform: translate3d(0%, 0, 0);
+  .hover-effect:hover::before {
+    transform: translate3d(0%, 0, 0);
+  }
 }
 
 /* 模糊图片浮动动画 */

@@ -10,6 +10,7 @@ const CryptoSwapBox: React.FC = () => {
   const [debouncedValue, setDebouncedValue] = useState("");
   const [exchangeResult, setExchangeResult] = useState("--");
   const [loading, setLoading] = useState(false);
+  const FEE_RATE = 0.01; // 1% 手续费
 
   // 防抖处理
   useEffect(() => {
@@ -205,7 +206,11 @@ const CryptoSwapBox: React.FC = () => {
       <div className="text-[#2C2C2C] mt-[30px] space-y-[15px]">
         <div className="flex justify-between">
           <span className="text-[#9F9F9F]">{t("fee")}</span>
-          <span>{t("feeValue")}</span>
+          <span>
+            {inputValue && !isNaN(Number(inputValue))
+              ? `${(Number(inputValue) * FEE_RATE).toFixed(2)} ${toFiat.symbol}`
+              : t("feeValue")}
+          </span>
         </div>
         <div className="flex justify-between">
           <span className="text-[#9F9F9F]">{t("estimatedTime")}</span>

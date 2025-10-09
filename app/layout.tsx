@@ -8,6 +8,7 @@ import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { Intercom } from "@/components/intercom";
 import { NextIntlClientProvider } from "next-intl";
 
 export const metadata: Metadata = {
@@ -45,6 +46,7 @@ export default function RootLayout({
               <main className="text-[#fff]">{children}</main>
               <Footer />
             </NextIntlClientProvider>
+            <Intercom />
           </div>
         </Providers>
       </body>
