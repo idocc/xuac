@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/icons";
-import { Button } from "@heroui/button";
+import { RippleButton } from "@/components/RippleButton";
 import icon1 from "@/assets/home/icon1.svg";
 import icon2 from "@/assets/home/icon2.svg";
 import icon3 from "@/assets/home/icon3.svg";
@@ -384,10 +384,18 @@ function Introduce() {
                 <span className="text-[48px] font-bold text-[#000] mr-[90px]">
                   {t("steps.quickExchange")}
                 </span>
-                <Button className="text-black px-[20px] py-[30px] rounded-[4px] text-[20px] border-none bg-primary font-bold cursor-pointer">
+                <RippleButton 
+                  variant="green"
+                  className="text-black px-[15px] py-[10px] rounded-[4px] text-[20px] border-none font-bold"
+                  onClick={() => {
+                    if (window.Intercom) {
+                      window.Intercom('show');
+                    }
+                  }}
+                >
                   <span>{t("hero.exchangeNow")}</span>
                   <ArrowRightIcon color="black" />
-                </Button>
+                </RippleButton>
               </div>
               <div className="text-[18px] text-[#020202] mt-[31px]">
                 {t("steps.description")}
@@ -636,6 +644,8 @@ export default function Home() {
   const mockExchangeFeatures = getExchangeFeatures(t);
   const faqData = getFaqData(t);
 
+
+
   return (
     <div>
       <div className="lg:min-h-[900px] pt-[160px] px-[12px] relative overflow-hidden">
@@ -691,15 +701,21 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <Button
+            <RippleButton
+              variant="white"
               className={clsx(
-                "text-black mx-auto text-[16px] py-[30px] px-[20px] border-none bg-[#fff] font-bold cursor-pointer",
-                "lg:px-[42px] lg:py-[30px] lg:text-[24px]"
+                "text-black mx-auto text-[16px] py-[10px] px-[20px] border-none font-bold",
+                "lg:px-[32px] lg:py-[15px] lg:text-[24px]"
               )}
+              onClick={() => {
+                if (window.Intercom) {
+                  window.Intercom('show');
+                }
+              }}
             >
               <span>{t("hero.exchangeNow")}</span>
               <ArrowRightIcon color="black" />
-            </Button>
+            </RippleButton>
           </motion.div>
         </motion.div>
         <div className="h-[130px] grid grid-cols-2 lg:grid-cols-4 relative z-10 items-center lg:px-[40px] mt-[150px]">

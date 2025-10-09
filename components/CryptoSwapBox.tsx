@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRightIcon } from "./icons";
 import { Button } from "@heroui/button";
+import { RippleButton } from "./RippleButton";
 import { useTranslations } from "next-intl";
 
 const CryptoSwapBox: React.FC = () => {
@@ -219,10 +220,18 @@ const CryptoSwapBox: React.FC = () => {
       </div>
       {/* 兑换按钮 */}
       <div className="mt-[20px]">
-        <Button className="text-black w-full px-[42px] lg:py-[35px] py-[25px] mx-auto lg:text-[24px] text-[20px] border-none bg-primary font-bold cursor-pointer">
+        <RippleButton 
+          variant="green"
+          className="text-black w-full px-[20px] lg:py-[20px] py-[10px] mx-auto lg:text-[24px] text-[20px] border-none font-bold"
+          onClick={() => {
+            if (window.Intercom) {
+              window.Intercom('show');
+            }
+          }}
+        >
           <span>{t("exchangeNow")}</span>
-          <ArrowRightIcon color="black" />
-        </Button>
+          <ArrowRightIcon />
+        </RippleButton>
       </div>
     </motion.div>
   );

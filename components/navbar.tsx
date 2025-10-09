@@ -14,6 +14,7 @@ import { useState, useEffect } from "react";
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { Logo, ArrowRightIcon } from "@/components/icons";
+import { RippleButton } from "@/components/RippleButton";
 
 // 自定义语言切换开关组件（桌面版）
 const LanguageSwitch = () => {
@@ -201,7 +202,15 @@ export const Navbar = () => {
 
       <NavbarContent className="hidden lg:flex" justify="end">
         <LanguageSwitch />
-        <div
+        <RippleButton variant="transparent" className="text-white w-[190px] justify-center ml-[10px] text-[16px] font-bold px-[18px] py-[10px] flex items-center gap-2 cursor-pointer" onClick={() => {
+          if (window.Intercom) {
+            window.Intercom('show');
+          }
+        }}>
+          <span className="">{tHome("hero.exchangeNow")}</span>
+          <ArrowRightIcon />
+        </RippleButton>
+        {/* <div
           className="text-white w-[190px] justify-center ml-[10px] text-[16px] font-bold px-[18px] py-[10px] flex items-center gap-2 cursor-pointer"
           style={{
             borderRadius: "4px",
@@ -210,7 +219,7 @@ export const Navbar = () => {
         >
           <span className="">{tHome("hero.exchangeNow")}</span>
           <ArrowRightIcon />
-        </div>
+        </div> */}
       </NavbarContent>
 
       <NavbarContent className="lg:hidden" justify="end">

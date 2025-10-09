@@ -75,7 +75,7 @@ export const Logo: React.FC<IconSvgProps> = ({
   </svg>
 );
 
-export const ArrowRightIcon: React.FC<IconSvgProps> = ({ color = "white" }) => (
+export const ArrowRightIcon: React.FC<IconSvgProps> = ({ color = "currentColor" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"
