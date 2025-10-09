@@ -17,7 +17,7 @@
       "available24Desc": "7x24小时随时可兑,全球用户无时差等待。"
     },
     "exchange": {
-      "title": "随时随地地兑换",
+      "title": "随时随地兑换",
       "placeholder": "0",
       "selectToken": "选择代币",
       "realTimeRate": "实时汇率",
@@ -216,7 +216,7 @@
     "description": "所有产品图片和模拟均仅用于信息和演示目的。并非所有功能都适用于所有客户。"
   },
   "CryptoSwapBox": {
-    "inputPlaceholder": "请输入法币金额",
+    "inputPlaceholder": "0",
     "loading": "加载中...",
     "realTimeRate": "实时汇率",
     "fee": "手续费",

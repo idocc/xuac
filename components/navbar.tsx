@@ -15,7 +15,7 @@ import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { Logo, ArrowRightIcon } from "@/components/icons";
 
-// 自定义语言切换开关组件
+// 自定义语言切换开关组件（桌面版）
 const LanguageSwitch = () => {
   const router = useRouter();
   const [isEnglish, setIsEnglish] = useState(false);
@@ -75,6 +75,51 @@ const LanguageSwitch = () => {
   );
 };
 
+// 移动端语言切换组件
+const MobileLanguageSwitch = () => {
+  const router = useRouter();
+  const [isEnglish, setIsEnglish] = useState(false);
+
+  // 读取当前语言设置
+  useEffect(() => {
+    const cookies = document.cookie.split("; ");
+    const localeCookie = cookies.find((row) => row.startsWith("locale="));
+    const currentLocale = localeCookie ? localeCookie.split("=")[1] : "zh";
+    setIsEnglish(currentLocale === "en");
+  }, []);
+
+  const changeLanguage = (locale: string) => {
+    // 保存到 cookie
+    document.cookie = `locale=${locale}; path=/; max-age=31536000`;
+    setIsEnglish(locale === "en");
+    // 刷新页面以应用新语言
+    router.refresh();
+  };
+
+  return (
+    <div className="flex items-center justify-center gap-2">
+      <span className="text-white">语言:</span>
+      <span
+        className={`cursor-pointer transition-all duration-200 ${
+          !isEnglish ? "text-white" : "text-white/70"
+        }`}
+        onClick={() => changeLanguage("zh")}
+      >
+        CN
+      </span>
+      <span className="text-white">/</span>
+      <span
+        className={`cursor-pointer transition-all duration-200 ${
+          isEnglish ? "text-white" : "text-white/70"
+        }`}
+        onClick={() => changeLanguage("en")}
+      >
+        EN
+      </span>
+    </div>
+  );
+};
+
 export const Navbar = () => {
   const pathname = usePathname();
   const tHome = useTranslations("HomePage");
@@ -116,7 +161,7 @@ export const Navbar = () => {
     <HeroUINavbar
       maxWidth="full"
       position="sticky"
-      height="72px"
+      // height="72px"
       className="bg-black backdrop-blur-2xl"
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -134,11 +179,11 @@ export const Navbar = () => {
                 <NextLink
                   className={clsx(
                     "text-[16px] text-[#fff] transition-all duration-200",
-                    isActive && "font-bold"
+                    isActive && "font-bold border-b border-[#fff]"
                   )}
                   href={item.href}
                 >
-                  <span  className="">{item.label}</span>
+                  <span className="">{item.label}</span>
                 </NextLink>
               </NavbarItem>
             );
@@ -165,26 +210,31 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu className="bg-black">
-        <div className="mx-4 mt-2 flex flex-col gap-2">
-          {navItems.map((item, index) => {
-            const isActive = pathname === item.href;
-            return (
-              <NavbarMenuItem
-                key={`${item.href}-${index}`}
-                className="text-center"
-              >
-                <NextLink
-                  href={item.href}
-                  className={clsx(
-                    "text-[#fff] text-[16px] transition-all duration-200",
-                    isActive && "font-bold"
-                  )}
+        <div>
+          <div className="mx-4 mt-2 flex flex-col gap-2">
+            {navItems.map((item, index) => {
+              const isActive = pathname === item.href;
+              return (
+                <NavbarMenuItem
+                  key={`${item.href}-${index}`}
+                  className="text-center"
                 >
-                  <span className="">{item.label}</span>
-                </NextLink>
-              </NavbarMenuItem>
-            );
-          })}
+                  <NextLink
+                    href={item.href}
+                    className={clsx(
+                      "text-[#fff] text-[16px] transition-all duration-200",
+                      isActive && "font-bold border-b border-[#fff]"
+                    )}
+                  >
+                    <span className="">{item.label}</span>
+                  </NextLink>
+                </NavbarMenuItem>
+              );
+            })}
+          </div>
+          <div className="absolute w-[350px] border-t border-[#fff] bottom-0 left-[50%] translate-x-[-50%] p-[20px] border-box text-center text-[20px] font-bold">
+            <MobileLanguageSwitch />
+          </div>
         </div>
       </NavbarMenu>
     </HeroUINavbar>
