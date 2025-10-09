@@ -12,6 +12,12 @@
   color: #fff;
 }
 
+html, body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+}
+
 /* 横向滚动动画 */
 @keyframes scroll {
   0% {
