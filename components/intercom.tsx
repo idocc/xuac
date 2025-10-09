@@ -61,8 +61,6 @@ export function Intercom() {
         
         if (document.readyState === 'complete') {
           l();
-        } else if (w.attachEvent) {
-          w.attachEvent('onload', l);
         } else {
           w.addEventListener('load', l, false);
         }
