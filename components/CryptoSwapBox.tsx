@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRightIcon } from "./icons";
-import { Button } from "@heroui/button";
 import { RippleButton } from "./RippleButton";
 import { useTranslations } from "next-intl";
 

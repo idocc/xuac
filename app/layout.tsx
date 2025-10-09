@@ -37,7 +37,8 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head />
-      <body className={clsx("min-h-screen antialiased", fontSans.variable)}>
+      <body className={clsx("antialiased", fontSans.variable)}>
+        <div className="h-full bg-[#000]"></div>
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col">
             <ScrollProgress />

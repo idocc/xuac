@@ -13,9 +13,9 @@
 }
 
 html, body {
-  background-color: #000;
+  background-color: #fff;
   margin: 0;
-  padding: 0;
+  padding: 0;  min-height: 100vh;
 }
 
 /* 横向滚动动画 */

@@ -101,7 +101,7 @@ export const Footer = () => {
           {tFooter('description')}
         </div>
       </div>
-      <div className="h-0 lg:h-[200px] relative hidden lg:block">
+      <div className="h-[200px] relative lg:block hidden">
         <img
           src="/images/footer_abc.webp"
           className="h-[120px] absolute bottom-[-40px] right-[-108px]"
