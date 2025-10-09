@@ -2,11 +2,8 @@
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
-  NavbarMenu,
-  NavbarMenuToggle,
   NavbarBrand,
   NavbarItem,
-  NavbarMenuItem,
 } from "@heroui/navbar";
 import NextLink from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -132,6 +129,18 @@ export const Navbar = () => {
     setIsMenuOpen(false);
   }, [pathname]);
 
+  // 阻止菜单打开时的背景滚动
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
   // 导航项配置
   const navItems = [
     {
@@ -165,95 +174,133 @@ export const Navbar = () => {
   ];
 
   return (
-    <HeroUINavbar
-      maxWidth="full"
-      position="sticky"
-      // height="72px"
-      className="bg-black backdrop-blur-2xl"
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
-    >
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo size={20} />
-            <p className="font-bold text-[#fff] ">{tHome("hero.title")}</p>
-          </NextLink>
-        </NavbarBrand>
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <NavbarItem key={item.href}>
-                <NextLink
-                  className={clsx(
-                    "text-[16px] text-[#fff] transition-all duration-200",
-                    isActive && "font-bold border-b border-[#fff]"
-                  )}
-                  href={item.href}
-                >
-                  <span className="">{item.label}</span>
-                </NextLink>
-              </NavbarItem>
-            );
-          })}
-        </ul>
-      </NavbarContent>
-
-      <NavbarContent className="hidden lg:flex" justify="end">
-        <LanguageSwitch />
-        <RippleButton variant="transparent" className="text-white w-[190px] justify-center ml-[10px] text-[16px] font-bold px-[18px] py-[10px] flex items-center gap-2 cursor-pointer" onClick={() => {
-          if (window.Intercom) {
-            window.Intercom('show');
-          }
-        }}>
-          <span className="">{tHome("hero.exchangeNow")}</span>
-          <ArrowRightIcon />
-        </RippleButton>
-        {/* <div
-          className="text-white w-[190px] justify-center ml-[10px] text-[16px] font-bold px-[18px] py-[10px] flex items-center gap-2 cursor-pointer"
-          style={{
-            borderRadius: "4px",
-            border: "1px solid rgba(255, 255, 255, 0.40)",
-          }}
-        >
-          <span className="">{tHome("hero.exchangeNow")}</span>
-          <ArrowRightIcon />
-        </div> */}
-      </NavbarContent>
-
-      <NavbarContent className="lg:hidden" justify="end">
-        <NavbarMenuToggle className="text-[#fff]" />
-      </NavbarContent>
-
-      <NavbarMenu className="bg-black">
-        <div>
-          <div className="mx-4 mt-2 flex flex-col gap-2">
-            {navItems.map((item, index) => {
+    <>
+      <HeroUINavbar
+        maxWidth="full"
+        position="sticky"
+        height="64px"
+        className="bg-black backdrop-blur-2xl"
+      >
+        <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
+          <NavbarBrand as="li" className="gap-3 max-w-fit">
+            <NextLink
+              className="flex justify-start items-center gap-1"
+              href="/"
+            >
+              <Logo size={20} />
+              <p className="font-bold text-[#fff] ">{tHome("hero.title")}</p>
+            </NextLink>
+          </NavbarBrand>
+          <ul className="hidden lg:flex gap-4 justify-start ml-2">
+            {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
-                <NavbarMenuItem
-                  key={`${item.href}-${index}`}
-                  className="text-center"
-                >
+                <NavbarItem key={item.href}>
                   <NextLink
-                    href={item.href}
                     className={clsx(
-                      "text-[#fff] text-[16px] transition-all duration-200",
+                      "text-[16px] text-[#fff] transition-all duration-200",
                       isActive && "font-bold border-b border-[#fff]"
                     )}
+                    href={item.href}
                   >
                     <span className="">{item.label}</span>
                   </NextLink>
-                </NavbarMenuItem>
+                </NavbarItem>
               );
             })}
+          </ul>
+        </NavbarContent>
+
+        <NavbarContent className="hidden lg:flex" justify="end">
+          <LanguageSwitch />
+          <RippleButton
+            variant="transparent"
+            className="text-white w-[190px] justify-center ml-[10px] text-[16px] font-bold px-[18px] py-[10px] flex items-center gap-2 cursor-pointer"
+            onClick={() => {
+              if (window.Intercom) {
+                window.Intercom("show");
+              }
+            }}
+          >
+            <span className="">{tHome("hero.exchangeNow")}</span>
+            <ArrowRightIcon />
+          </RippleButton>
+        </NavbarContent>
+
+        <NavbarContent className="lg:hidden" justify="end">
+          <button
+            className="text-[#fff] p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </NavbarContent>
+      </HeroUINavbar>
+
+      <div
+        className={clsx(
+          "fixed left-0 right-0 bg-black h-full z-40 lg:hidden overflow-hidden transition-all duration-300 ease-in-out",
+          isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        )}
+        style={{ top: "64px" }}
+      >
+        <div className="flex flex-col relative">
+          {/* 菜单项 */}
+          <div className="flex-1 overflow-y-auto">
+            <div className="mx-4 mt-[10px] flex flex-col gap-4">
+              {navItems.map((item, index) => {
+                const isActive = pathname === item.href;
+                return (
+                  <NextLink
+                    key={`${item.href}-${index}`}
+                    href={item.href}
+                    className={clsx(
+                      "text-[#fff] text-[16px] py-1 text-center transition-all duration-200 rounded-lg"
+                    )}
+                  >
+                    <span className={clsx(isActive && "border-b border-[#fff]")}>{item.label}</span>
+                  </NextLink>
+                );
+              })}
+            </div>
           </div>
-          <div className="absolute w-[350px] border-t border-[#fff] bottom-0 left-[50%] translate-x-[-50%] p-[20px] border-box text-center text-[20px] font-bold">
+          {/* 语言切换 - 固定在底部 */}
+          <div className="border-t mt-[30px] w-[80%] mx-auto border-[#fff]/20 p-[10px]">
             <MobileLanguageSwitch />
           </div>
         </div>
-      </NavbarMenu>
-    </HeroUINavbar>
+      </div>
+
+      {/* 背景遮罩 */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+          style={{ top: "64px" }}
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
+    </>
   );
 };
