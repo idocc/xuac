@@ -47,7 +47,7 @@ export default function About() {
 
       {/* 副标题 */}
       <motion.div
-        className="text-[20px] lg:text-[40px] font-bold flex items-center justify-center px-[20px]"
+        className="text-[16px] text-center lg:text-[40px] font-bold flex items-center justify-center px-[20px]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.3 }}
