@@ -214,6 +214,16 @@
     "disclaimer": "免责声明",
     "copyright": "© 2025 OnePort 保留所有权利",
     "description": "所有产品图片和模拟均仅用于信息和演示目的。并非所有功能都适用于所有客户。"
+  },
+  "CryptoSwapBox": {
+    "inputPlaceholder": "请输入法币金额",
+    "loading": "加载中...",
+    "realTimeRate": "实时汇率",
+    "fee": "手续费",
+    "feeValue": "以实际为准",
+    "estimatedTime": "预计到账时间",
+    "estimatedTimeValue": "1小时以内",
+    "exchangeNow": "立即兑换"
   }
 }
 

@@ -1,21 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowDownIcon, ArrowRightIcon } from "./icons";
+import { ArrowRightIcon } from "./icons";
 import { Button } from "@heroui/button";
-
-const DEFAULT_NETWORK = {
-  name: "Ethereum",
-  chainId: 1,
-};
-
-interface TokenInfo {
-  symbol: string;
-  name: string;
-  address: string;
-  logoURI?: string;
-}
+import { useTranslations } from "next-intl";
 
 const CryptoSwapBox: React.FC = () => {
+  const t = useTranslations("CryptoSwapBox");
   const [inputValue, setInputValue] = useState("");
   const [debouncedValue, setDebouncedValue] = useState("");
   const [exchangeResult, setExchangeResult] = useState("--");
@@ -143,7 +133,7 @@ const CryptoSwapBox: React.FC = () => {
         <input
           className="w-full text-[32px] font-bold bg-transparent outline-none text-black [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           type="number"
-          placeholder="请输入法币金额"
+          placeholder={t("inputPlaceholder")}
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
@@ -153,11 +143,11 @@ const CryptoSwapBox: React.FC = () => {
             <img
               src={toFiat.logoURI}
               alt={toFiat.symbol}
-              className="w-[30px] h-[30px] object-cover mr-2 rounded-full border border-[#000]"
+              className="w-[30px] h-[30px] object-cover rounded-full border border-[#000]"
             />
           )}
           <select
-            className="bg-transparent w-[110px] text-black outline-none cursor-pointer text-[28px] font-bold"
+            className="bg-transparent w-[110px] text-center text-black outline-none cursor-pointer text-[28px] font-bold"
             value={toFiat.symbol}
             onChange={(e) => {
               const selected = FIAT_CURRENCIES.find(
@@ -183,17 +173,17 @@ const CryptoSwapBox: React.FC = () => {
       <div className="bg-[#F2F2F2] h-[124px] rounded-[8px] px-[20px] flex justify-between items-center">
         <div>
           <div className="text-[48px] w-full text-[#00000033] flex items-center">
-            {loading ? "Loading..." : exchangeResult}
+            {loading ? t("loading") : exchangeResult}
           </div>
         </div>
         <div className="flex items-center text-black shrink-0">
           <img
             src={selectedToken.logoURI}
             alt={selectedToken.symbol}
-            className="w-[30px] h-[30px] object-cover rounded-full border border-[#000] mr-2"
+            className="w-[30px] h-[30px] object-cover rounded-full border border-[#000]"
           />
           <select
-            className="bg-transparent w-[110px] text-black outline-none cursor-pointer text-[28px] font-bold"
+            className="bg-transparent w-[110px] text-center text-black outline-none cursor-pointer text-[28px] font-bold"
             value={selectedToken.symbol}
             onChange={(e) => {
               const token = TOKENS.find((t) => t.symbol === e.target.value);
@@ -215,22 +205,18 @@ const CryptoSwapBox: React.FC = () => {
       {/* 汇率、手续费、时间（可自定义） */}
       <div className="text-[#2C2C2C] mt-[30px] space-y-[15px]">
         <div className="flex justify-between">
-          <span className="text-[#9F9F9F]">实时汇率</span>
-          <span>{toFiat.symbol} / --</span>
+          <span className="text-[#9F9F9F]">{t("fee")}</span>
+          <span>{t("feeValue")}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-[#9F9F9F]">手续费</span>
-          <span>0</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-[#9F9F9F]">预计到账时间</span>
-          <span>实时</span>
+          <span className="text-[#9F9F9F]">{t("estimatedTime")}</span>
+          <span>{t("estimatedTimeValue")}</span>
         </div>
       </div>
       {/* 兑换按钮 */}
       <div className="mt-[20px]">
         <Button className="text-black w-full px-[42px] py-[35px] mx-auto text-[24px] border-none bg-primary font-bold cursor-pointer">
-          <span>立即兑换</span>
+          <span>{t("exchangeNow")}</span>
           <ArrowRightIcon color="black" />
         </Button>
       </div>

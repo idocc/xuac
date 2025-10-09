@@ -214,5 +214,15 @@
     "disclaimer": "Disclaimer",
     "copyright": "© 2025 OnePort All rights reserved",
     "description": "All product images and simulations presented are for informational and demonstrative purposes only. Not all features may be available to all customers."
+  },
+  "CryptoSwapBox": {
+    "inputPlaceholder": "Enter fiat amount",
+    "loading": "Loading...",
+    "realTimeRate": "Real-time Rate",
+    "fee": "Fee",
+    "feeValue": "Subject to actual rate",
+    "estimatedTime": "Estimated Arrival",
+    "estimatedTimeValue": "Within 1 hour",
+    "exchangeNow": "Exchange Now"
   }
 }
