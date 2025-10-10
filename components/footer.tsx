@@ -57,9 +57,9 @@ export const Footer = () => {
     },
     {
       icon: inIcon,
-      alt: "linkedin",
-      href: "https://www.linkedin.com",
-      name: "linkedin"
+      alt: "ins",
+      href: "https://www.instagram.com",
+      name: "instagram"
     }
   ];
 
