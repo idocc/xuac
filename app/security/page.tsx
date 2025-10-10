@@ -12,15 +12,15 @@ export default function Security() {
   return (
     <div>
       <div className="min-h-[600px] lg:min-h-[900px] pt-[80px] lg:pt-[130px] relative overflow-hidden pb-[40px]">
-        <div
-          className="absolute inset-0 w-full h-full"
-          style={{
-            backgroundImage: `url(/images/top_img.webp)`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-          }}
-        />
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/allbg.mp4" type="video/mp4" />
+        </video>
         <div className="relative z-10 px-[20px] lg:px-[110px]">
           <motion.div
             className="text-[30px] lg:text-[78px] text-[#fff] text-center lg:text-left"

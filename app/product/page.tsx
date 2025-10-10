@@ -8,15 +8,15 @@ export default function Product() {
   return (
     <div>
       <div className="lg:min-h-[520px] min-h-[300px] lg:pt-[130px] pt-[80px] py relative overflow-hidden">
-        <div
-          className="absolute inset-0 w-full h-full"
-          style={{
-            backgroundImage: `url(/images/top_img.webp)`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-          }}
-        />
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/allbg.mp4" type="video/mp4" />
+        </video>
         <motion.div
           className="relative z-10 lg:pl-[110px] text-center lg:text-left"
           initial={{ opacity: 0, y: 50 }}

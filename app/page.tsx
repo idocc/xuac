@@ -649,16 +649,16 @@ export default function Home() {
   return (
     <div>
       <div className="lg:min-h-[900px] pt-[160px] px-[12px] relative overflow-hidden">
-        <div
-          className="absolute inset-0 w-full h-full"
-          style={{
-            backgroundImage: `url(/images/top_img.webp)`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-          }}
-        />
-        <div className="absolute top-0 left-0 w-full h-full">
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/allbg.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute top-0 left-0 w-full">
           <TradingViewWidget />
         </div>
 
