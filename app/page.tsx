@@ -302,7 +302,7 @@ function Introduce() {
         {navMenuData.map((item, index) => (
           <Link href={item.href} key={item.id}>
             <motion.div
-              className="lg:px-[108px] lg:pr-[40px] px-[10px] text-[#000] relative group hover-effect"
+              className="lg:px-[108px] px-[10px] text-[#000] relative group hover-effect"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
