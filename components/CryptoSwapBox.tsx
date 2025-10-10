@@ -11,7 +11,7 @@ const CryptoSwapBox: React.FC = () => {
   const [exchangeResult, setExchangeResult] = useState("--");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const FEE_RATE = 0.01; // 1% 手续费
+  const [isReversed, setIsReversed] = useState(false); // 是否反转输入输出
 
   // 防抖处理
   useEffect(() => {
@@ -85,10 +85,13 @@ const CryptoSwapBox: React.FC = () => {
   const [selectedToken, setSelectedToken] = useState(TOKENS[0]);
 
   // 获取汇率并计算兑换结果
+  const [exchangeRate, setExchangeRate] = useState<number | null>(null);
+  
   useEffect(() => {
     const fetchRate = async () => {
       if (!debouncedValue || isNaN(Number(debouncedValue))) {
         setExchangeResult("--");
+        setExchangeRate(null);
         setError(null);
         return;
       }
@@ -111,29 +114,48 @@ const CryptoSwapBox: React.FC = () => {
         if (!res.ok) {
           setError(t("fetchError"));
           setExchangeResult("--");
+          setExchangeRate(null);
           return;
         }
         
         const data = await res.json();
         const price = data[tokenId]?.[fiat];
         if (price) {
-          // 法币金额 / 单价 = 可兑换数量
-          const result = (Number(debouncedValue) / price).toFixed(6);
-          setExchangeResult(result);
+          setExchangeRate(price);
+          // 根据是否反转，计算不同方向
+          if (isReversed) {
+            // 反转：输入加密货币，输出法币
+            const result = (Number(debouncedValue) * price).toFixed(2);
+            setExchangeResult(result);
+          } else {
+            // 正常：输入法币，输出加密货币
+            const result = (Number(debouncedValue) / price).toFixed(6);
+            setExchangeResult(result);
+          }
           setError(null);
         } else {
           setError(t("fetchError"));
           setExchangeResult("--");
+          setExchangeRate(null);
         }
       } catch (e) {
         setError(t("fetchError"));
         setExchangeResult("--");
+        setExchangeRate(null);
       } finally {
         setLoading(false);
       }
     };
     fetchRate();
-  }, [debouncedValue, selectedToken, toFiat, t]);
+  }, [debouncedValue, selectedToken, toFiat, t, isReversed]);
+
+  // 交换输入输出
+  const handleSwap = () => {
+    setIsReversed(!isReversed);
+    setInputValue("");
+    setExchangeResult("--");
+    setError(null);
+  };
 
   return (
     <motion.div
@@ -143,7 +165,7 @@ const CryptoSwapBox: React.FC = () => {
       transition={{ duration: 0.8, delay: 0.2 }}
       viewport={{ once: true }}
     >
-      {/* 输入金额和币种选择 */}
+      {/* 第一个输入框（根据isReversed显示法币或加密货币） */}
       <div className="flex py-[10px] justify-between h-[60px] lg:h-[124px] rounded-[8px] border border-[rgba(0,0,0,0.10)] bg-[rgba(255,255,255,0.00)] px-[10px] lg:px-[20px]">
         <input
           className="w-full lg:text-[32px] text-[24px] font-bold bg-transparent outline-none text-black [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
@@ -152,85 +174,179 @@ const CryptoSwapBox: React.FC = () => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        {/* 目标币种选择（法币下拉） */}
-        <div className="flex items-center shrink-0">
-          {toFiat.logoURI && (
+        {/* 币种选择 */}
+        {!isReversed ? (
+          // 法币
+          <div className="flex items-center shrink-0">
+            {toFiat.logoURI && (
+              <img
+                src={toFiat.logoURI}
+                alt={toFiat.symbol}
+                className="lg:w-[30px] lg:h-[30px] w-[20px] h-[20px] object-cover rounded-full border border-[#000]"
+              />
+            )}
+            <select
+              className="bg-transparent lg:w-[110px] w-[70px] text-center text-black outline-none cursor-pointer lg:text-[28px] text-[18px] font-bold"
+              value={toFiat.symbol}
+              onChange={(e) => {
+                const selected = FIAT_CURRENCIES.find(
+                  (f) => f.symbol === e.target.value
+                );
+                if (selected) setToFiat(selected);
+              }}
+            >
+              {FIAT_CURRENCIES.map((fiat) => (
+                <option
+                  key={fiat.symbol}
+                  value={fiat.symbol}
+                  className="text-black"
+                >
+                  {fiat.symbol}
+                </option>
+              ))}
+            </select>
+          </div>
+        ) : (
+          // 加密货币
+          <div className="flex items-center text-black shrink-0">
             <img
-              src={toFiat.logoURI}
-              alt={toFiat.symbol}
+              src={selectedToken.logoURI}
+              alt={selectedToken.symbol}
               className="lg:w-[30px] lg:h-[30px] w-[20px] h-[20px] object-cover rounded-full border border-[#000]"
             />
-          )}
-          <select
-            className="bg-transparent lg:w-[110px] w-[70px] text-center text-black outline-none cursor-pointer lg:text-[28px] text-[18px] font-bold"
-            value={toFiat.symbol}
-            onChange={(e) => {
-              const selected = FIAT_CURRENCIES.find(
-                (f) => f.symbol === e.target.value
-              );
-              if (selected) setToFiat(selected);
-            }}
-          >
-            {FIAT_CURRENCIES.map((fiat) => (
-              <option
-                key={fiat.symbol}
-                value={fiat.symbol}
-                className="text-black"
-              >
-                {fiat.symbol}
-              </option>
-            ))}
-          </select>
-        </div>
+            <select
+              className="bg-transparent lg:w-[110px] w-[70px] text-center text-black outline-none cursor-pointer lg:text-[28px] text-[18px] font-bold"
+              value={selectedToken.symbol}
+              onChange={(e) => {
+                const token = TOKENS.find((t) => t.symbol === e.target.value);
+                if (token) setSelectedToken(token);
+              }}
+            >
+              {TOKENS.map((token) => (
+                <option
+                  key={token.symbol}
+                  value={token.symbol}
+                  className="text-black"
+                >
+                  {token.symbol}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
       </div>
 
-      {/* 错误提示 */}
-      {error && (
-        <div className="mt-[10px] text-red-500 text-[14px] lg:text-[16px] px-[10px]">
-          {error}
-        </div>
-      )}
+      {/* 交换图标 */}
+      <div className="flex justify-center my-[15px]">
+        <button
+          onClick={handleSwap}
+          className="p-[10px] rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
+          aria-label="Swap currencies"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-gray-600"
+          >
+            <path
+              d="M7 10L12 5L17 10M17 14L12 19L7 14"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
 
-      {/* 代币下拉 */}
+      {/* 第二个输入框（输出结果） */}
       <div className="bg-[#F2F2F2] lg:h-[124px] h-[60px] rounded-[8px] px-[10px] lg:px-[20px] flex justify-between items-center">
         <div className="lg:text-[28px] text-[18px] w-full h-full text-[#00000033] flex items-center">
           {loading ? t("loading") : exchangeResult}
         </div>
 
-        <div className="flex items-center text-black shrink-0">
-          <img
-            src={selectedToken.logoURI}
-            alt={selectedToken.symbol}
-            className="lg:w-[30px] lg:h-[30px] w-[20px] h-[20px] object-cover rounded-full border border-[#000]"
-          />
-          <select
-            className="bg-transparent lg:w-[110px] w-[70px] text-center text-black outline-none cursor-pointer lg:text-[28px] text-[18px] font-bold"
-            value={selectedToken.symbol}
-            onChange={(e) => {
-              const token = TOKENS.find((t) => t.symbol === e.target.value);
-              if (token) setSelectedToken(token);
-            }}
-          >
-            {TOKENS.map((token) => (
-              <option
-                key={token.symbol}
-                value={token.symbol}
-                className="text-black"
-              >
-                {token.symbol}
-              </option>
-            ))}
-          </select>
-        </div>
+        {/* 币种选择 */}
+        {!isReversed ? (
+          // 加密货币
+          <div className="flex items-center text-black shrink-0">
+            <img
+              src={selectedToken.logoURI}
+              alt={selectedToken.symbol}
+              className="lg:w-[30px] lg:h-[30px] w-[20px] h-[20px] object-cover rounded-full border border-[#000]"
+            />
+            <select
+              className="bg-transparent lg:w-[110px] w-[70px] text-center text-black outline-none cursor-pointer lg:text-[28px] text-[18px] font-bold"
+              value={selectedToken.symbol}
+              onChange={(e) => {
+                const token = TOKENS.find((t) => t.symbol === e.target.value);
+                if (token) setSelectedToken(token);
+              }}
+            >
+              {TOKENS.map((token) => (
+                <option
+                  key={token.symbol}
+                  value={token.symbol}
+                  className="text-black"
+                >
+                  {token.symbol}
+                </option>
+              ))}
+            </select>
+          </div>
+        ) : (
+          // 法币
+          <div className="flex items-center shrink-0">
+            {toFiat.logoURI && (
+              <img
+                src={toFiat.logoURI}
+                alt={toFiat.symbol}
+                className="lg:w-[30px] lg:h-[30px] w-[20px] h-[20px] object-cover rounded-full border border-[#000]"
+              />
+            )}
+            <select
+              className="bg-transparent lg:w-[110px] w-[70px] text-center text-black outline-none cursor-pointer lg:text-[28px] text-[18px] font-bold"
+              value={toFiat.symbol}
+              onChange={(e) => {
+                const selected = FIAT_CURRENCIES.find(
+                  (f) => f.symbol === e.target.value
+                );
+                if (selected) setToFiat(selected);
+              }}
+            >
+              {FIAT_CURRENCIES.map((fiat) => (
+                <option
+                  key={fiat.symbol}
+                  value={fiat.symbol}
+                  className="text-black"
+                >
+                  {fiat.symbol}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
       </div>
-      {/* 汇率、手续费、时间（可自定义） */}
+
+      {/* 错误提示（移到下面） - 预留固定高度 */}
+      <div className="mt-[10px] min-h-[24px] lg:min-h-[28px]">
+        {error && (
+          <div className="text-red-500 text-[14px] lg:text-[16px] px-[10px]">
+            {error}
+          </div>
+        )}
+      </div>
+
+      {/* 汇率、时间信息 */}
       <div className="text-[#2C2C2C] mt-[30px] space-y-[15px]">
         <div className="flex justify-between">
-          <span className="text-[#9F9F9F]">{t("fee")}</span>
+          <span className="text-[#9F9F9F]">{t("exchangeRate")}</span>
           <span>
-            {inputValue && !isNaN(Number(inputValue))
-              ? `${(Number(inputValue) * FEE_RATE).toFixed(2)} ${toFiat.symbol}`
-              : t("feeValue")}
+            {exchangeRate
+              ? `1 ${selectedToken.symbol} ≈ ${exchangeRate.toLocaleString()} ${toFiat.symbol}`
+              : "-/-"}
           </span>
         </div>
         <div className="flex justify-between">

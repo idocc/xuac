@@ -282,6 +282,8 @@
     "realTimeRate": "实时汇率",
     "fee": "手续费",
     "feeValue": "以实际为准",
+    "exchangeRate": "汇率",
+    "exchangeRateValue": "加载中...",
     "estimatedTime": "预计到账时间",
     "estimatedTimeValue": "1小时以内",
     "exchangeNow": "立即兑换",

@@ -282,6 +282,8 @@
     "realTimeRate": "Real-time Rate",
     "fee": "Fee",
     "feeValue": "Subject to actual rate",
+    "exchangeRate": "Exchange Rate",
+    "exchangeRateValue": "Loading...",
     "estimatedTime": "Estimated Arrival",
     "estimatedTimeValue": "Within 1 hour",
     "exchangeNow": "Exchange Now",
