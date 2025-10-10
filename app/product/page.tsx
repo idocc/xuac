@@ -18,7 +18,7 @@ export default function Product() {
           <source src="/allbg.mp4" type="video/mp4" />
         </video>
         <motion.div
-          className="relative z-10 lg:pl-[110px] text-center lg:text-left"
+          className="relative z-10 lg:pl-[120px] text-center lg:text-left"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}

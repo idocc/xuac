@@ -387,7 +387,7 @@ function Introduce() {
                 </span>
                 <RippleButton 
                   variant="green"
-                  className="text-black px-[15px] py-[10px] rounded-[4px] text-[20px] border-none font-bold"
+                  className="text-black px-[10px] py-[10px] rounded-[4px] text-[16px] border-none font-bold"
                   onClick={() => {
                     if (window.Intercom) {
                       window.Intercom('show');
@@ -752,7 +752,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="lg:h-[830px] text-center py-[20px] lg:pt-[100px] relative overflow-hidden">
+      <div className="lg:h-[900px] text-center py-[20px] lg:pt-[100px] relative overflow-hidden">
         <div className="hidden lg:block">
           {blurImagesData.map((image) => (
             <div
@@ -792,7 +792,7 @@ export default function Home() {
       <div
         className={clsx(
           "py-[20px] px-[15px]",
-          "lg:py-[50px] lg:flex lg:justify-center lg:space-x-[150px]"
+          "lg:py-[50px] lg:flex lg:justify-between lg:px-[108px] lg:space-x-[150px]"
         )}
       >
         <motion.div
