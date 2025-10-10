@@ -13,7 +13,7 @@ export default function Security() {
     <div>
       <div className="min-h-[600px] lg:min-h-[900px] pt-[80px] lg:pt-[130px] relative overflow-hidden pb-[40px]">
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover bg-[#000]"
           autoPlay
           loop
           muted

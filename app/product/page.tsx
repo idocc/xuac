@@ -9,7 +9,7 @@ export default function Product() {
     <div>
       <div className="lg:min-h-[520px] min-h-[300px] lg:pt-[130px] pt-[80px] py relative overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover bg-[#000]"
           autoPlay
           loop
           muted
