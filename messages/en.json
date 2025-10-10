@@ -102,6 +102,14 @@
     "confirm": "Confirm",
     "cancel": "Cancel"
   },
+  "Loading": {
+    "initializing": "Initializing...",
+    "loadingResources": "Loading resources...",
+    "preparingExperience": "Preparing experience...",
+    "almostReady": "Almost ready...",
+    "welcome": "Welcome!",
+    "tagline": "Preparing the best crypto exchange experience..."
+  },
   "ProductPage": {
     "title": "Products & Services",
     "subtitle": "Products & Services",

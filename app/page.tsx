@@ -12,6 +12,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import CryptoSwapBox from "../components/CryptoSwapBox";
 import clsx from "clsx";
+import Image from "next/image";
 
 // Mock数据 - 交易所特色功能 - 将在组件内部使用 t() 动态生成
 const getExchangeFeatures = (t: any) => [
@@ -74,8 +75,8 @@ const blurImagesData = [
     src: "/images/blur/4.png",
     left: "15%",
     top: "20%",
-    width: "100px",
-    height: "100px",
+    width: 100,
+    height: 100,
     animationDelay: "0s",
   },
   {
@@ -83,8 +84,8 @@ const blurImagesData = [
     src: "/images/blur/5.png",
     left: "-3%",
     top: "50%",
-    width: "170px",
-    height: "170px",
+    width: 170,
+    height: 170,
     animationDelay: "0.5s",
   },
   {
@@ -92,8 +93,8 @@ const blurImagesData = [
     src: "/images/blur/6.png",
     left: "25%",
     top: "80%",
-    width: "160px",
-    height: "160px",
+    width: 160,
+    height: 160,
     animationDelay: "1s",
   },
   {
@@ -101,8 +102,8 @@ const blurImagesData = [
     src: "/images/blur/8.png",
     left: "68%",
     top: "60%",
-    width: "150px",
-    height: "150px",
+    width: 150,
+    height: 150,
     animationDelay: "1.5s",
   },
   {
@@ -110,8 +111,8 @@ const blurImagesData = [
     src: "/images/blur/7.png",
     left: "85%",
     top: "20%",
-    width: "90px",
-    height: "90px",
+    width: 90,
+    height: 90,
     animationDelay: "2s",
   },
   {
@@ -119,8 +120,8 @@ const blurImagesData = [
     src: "/images/blur/3.png",
     left: "97%",
     top: "80%",
-    width: "60px",
-    height: "60px",
+    width: 60,
+    height: 60,
     animationDelay: "2s",
   },
 ];
@@ -760,14 +761,16 @@ export default function Home() {
               style={{
                 left: image.left,
                 top: image.top,
-                width: image.width,
-                height: image.height,
+                width: `${image.width}px`,
+                height: `${image.height}px`,
                 animationDelay: image.animationDelay,
               }}
             >
-              <img
+              <Image
                 src={image.src}
                 alt=""
+                width={image.width}
+                height={image.height}
                 className="blur-image w-full h-full"
               />
             </div>

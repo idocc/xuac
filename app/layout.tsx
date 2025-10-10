@@ -10,6 +10,7 @@ import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { Intercom } from "@/components/intercom";
 import { NextIntlClientProvider } from "next-intl";
+import { RootLayoutClient } from "./layout-client";
 
 export const metadata: Metadata = {
   title: {
@@ -40,15 +41,17 @@ export default function RootLayout({
       <body className={clsx("antialiased", fontSans.variable)}>
         <div className="h-full bg-[#000]"></div>
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <div className="relative flex flex-col">
-            <ScrollProgress />
-            <NextIntlClientProvider>
-              <Navbar />
-              <main className="text-[#fff]">{children}</main>
-              <Footer />
-            </NextIntlClientProvider>
-            <Intercom />
-          </div>
+          <RootLayoutClient>
+            <div className="relative flex flex-col">
+              <ScrollProgress />
+              <NextIntlClientProvider>
+                <Navbar />
+                <main className="text-[#fff]">{children}</main>
+                <Footer />
+              </NextIntlClientProvider>
+              <Intercom />
+            </div>
+          </RootLayoutClient>
         </Providers>
         <SpeedInsights />
       </body>

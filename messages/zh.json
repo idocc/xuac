@@ -102,6 +102,14 @@
     "confirm": "确认",
     "cancel": "取消"
   },
+  "Loading": {
+    "initializing": "初始化中...",
+    "loadingResources": "加载资源中...",
+    "preparingExperience": "准备体验...",
+    "almostReady": "即将完成...",
+    "welcome": "欢迎！",
+    "tagline": "为您准备最佳的加密货币交易体验..."
+  },
   "ProductPage": {
     "title": "产品与服务",
     "subtitle": "Products & Services",
