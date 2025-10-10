@@ -46,19 +46,19 @@ export const Footer = () => {
     {
       icon: whatsapp,
       alt: "whatsapp",
-      href: "/",
+      href: "https://www.whatsapp.com",
       name: "whatsapp"
     },
     {
       icon: x,
       alt: "x",
-      href: "/",
+      href: "https://x.com",
       name: "x"
     },
     {
       icon: inIcon,
       alt: "linkedin",
-      href: "/",
+      href: "https://www.linkedin.com",
       name: "linkedin"
     }
   ];
@@ -84,7 +84,7 @@ export const Footer = () => {
         <ul className="lg:space-x-[50px] space-x-[20px] flex lg:pl-[15px]">
           {socialMediaItems.map((item) => (
             <li key={item.name}>
-              <Link href={item.href} className="block">
+              <Link href={item.href} target="_blank" rel="noopener noreferrer" className="block">
                 <img src={item.icon.src} alt={item.alt} className="w-[23px]" />
               </Link>
             </li>
