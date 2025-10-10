@@ -4,51 +4,10 @@ import { Logo } from "@/components/icons";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-const countries = [
-  "马来西亚 (Malaysia)",
-  "新加坡 (Singapore)",
-  "泰国 (Thailand)",
-  "越南 (Vietnam)",
-  "印度尼西亚 (Indonesia)",
-  "菲律宾 (Philippines)",
-  "日本 (Japan)",
-  "韩国 (South Korea)",
-  "中国 (China)",
-  "印度 (India)",
-  "澳大利亚 (Australia)",
-  "新西兰 (New Zealand)",
-  "美国 (United States)",
-  "加拿大 (Canada)",
-  "英国 (United Kingdom)",
-  "法国 (France)",
-  "德国 (Germany)",
-  "意大利 (Italy)",
-  "西班牙 (Spain)",
-  "荷兰 (Netherlands)",
-  "瑞士 (Switzerland)",
-  "瑞典 (Sweden)",
-  "挪威 (Norway)",
-  "丹麦 (Denmark)",
-  "阿联酋 (UAE)",
-  "沙特阿拉伯 (Saudi Arabia)",
-  "卡塔尔 (Qatar)",
-  "土耳其 (Turkey)",
-  "巴西 (Brazil)",
-  "墨西哥 (Mexico)",
-  "阿根廷 (Argentina)",
-  "智利 (Chile)",
-  "南非 (South Africa)",
-  "埃及 (Egypt)",
-  "俄罗斯 (Russia)",
-  "波兰 (Poland)",
-  "捷克 (Czech Republic)",
-  "奥地利 (Austria)",
-  "比利时 (Belgium)",
-  "葡萄牙 (Portugal)",
-];
-
 export default function Global() {
   const t = useTranslations("GlobalPage");
+  const countriesTop = t.raw("countriesTop") as string[];
+  const countriesBottom = t.raw("countriesBottom") as string[];
 
   const specialSupport = [
     {
@@ -70,7 +29,7 @@ export default function Global() {
   ];
   return (
     <div>
-      <div className="h-[300px] lg:h-[520px] pt-[80px] lg:pt-[130px] relative overflow-hidden">
+      <div className="h-[300px] lg:h-[530px] pt-[80px] lg:pt-[130px] relative overflow-hidden">
         <motion.div
           className="text-[30px] lg:text-[78px] text-[#000] pl-[20px] lg:pl-[130px] relative text-center lg:text-left"
           initial={{ opacity: 0, y: 50 }}
@@ -80,8 +39,12 @@ export default function Global() {
         >
           <span className="font-bold">{t("title")}</span>
           <div className="space-x-[16px] lg:space-x-[40px] font-bold">
-            <span className="text-[#BDEE63]">Global</span>
-            <span>Reach</span>
+            <span className="text-[#BDEE63]">
+              Covering 30+
+              <br/>
+              <span>countries</span> 
+              <span className="text-[#000] ml-[20px]">worldwide</span>
+            </span>
           </div>
           <motion.img
             src="/images/global/earth.webp"
@@ -124,11 +87,11 @@ export default function Global() {
 
         {/* First row - scrolling right */}
         <div className="w-full overflow-hidden mt-[20px] lg:mt-[30px]">
-          <div className="flex animate-scroll-right">
-            {[...countries, ...countries].map((country, index) => (
+          <div className="flex gap-[8px] lg:gap-[12px] animate-scroll-right">
+            {[...countriesTop, ...countriesTop].map((country, index) => (
               <div
                 key={index}
-                className="bg-[#FF6D7F26] text-[#fff] opacity-70 flex justify-center items-center px-[20px] lg:px-[30px] h-[40px] lg:h-[58px] text-[12px] lg:text-[16px] border border-[#FF6D7F40] rounded-[200px] mx-[6px] lg:mx-[10px] whitespace-nowrap transition-all duration-300 hover:bg-[#1BA27A40] hover:border-[#1BA27A] hover:opacity-100 cursor-pointer flex-shrink-0"
+                className="bg-[#FF6D7F26] text-[#fff] opacity-70 flex justify-center items-center px-[20px] lg:px-[30px] h-[40px] lg:h-[58px] text-[12px] lg:text-[16px] border border-[#FF6D7F40] rounded-[200px] whitespace-nowrap transition-all duration-300 hover:bg-[#1BA27A40] hover:border-[#1BA27A] hover:opacity-100 cursor-pointer flex-shrink-0"
               >
                 {country}
               </div>
@@ -138,11 +101,11 @@ export default function Global() {
 
         {/* Second row - scrolling left */}
         <div className="w-full overflow-hidden mt-[12px] lg:mt-[20px]">
-          <div className="flex animate-scroll-left">
-            {[...countries, ...countries].map((country, index) => (
+          <div className="flex gap-[8px] lg:gap-[12px] animate-scroll-left">
+            {[...countriesBottom, ...countriesBottom].map((country, index) => (
               <div
                 key={index}
-                className="bg-[#FF6D7F26] text-[#fff] opacity-70 flex justify-center items-center px-[20px] lg:px-[30px] h-[40px] lg:h-[58px] text-[12px] lg:text-[16px] border border-[#FF6D7F40] rounded-[200px] mx-[6px] lg:mx-[10px] whitespace-nowrap transition-all duration-300 hover:bg-[#1BA27A40] hover:border-[#1BA27A] hover:opacity-100 cursor-pointer flex-shrink-0"
+                className="bg-[#FF6D7F26] text-[#fff] opacity-70 flex justify-center items-center px-[20px] lg:px-[30px] h-[40px] lg:h-[58px] text-[12px] lg:text-[16px] border border-[#FF6D7F40] rounded-[200px] whitespace-nowrap transition-all duration-300 hover:bg-[#1BA27A40] hover:border-[#1BA27A] hover:opacity-100 cursor-pointer flex-shrink-0"
               >
                 {country}
               </div>
@@ -293,29 +256,31 @@ export default function Global() {
 
       <style jsx>{`
         @keyframes scroll-right {
-          0% {
+          from {
             transform: translateX(0);
           }
-          100% {
+          to {
             transform: translateX(-50%);
           }
         }
 
         @keyframes scroll-left {
-          0% {
+          from {
             transform: translateX(-50%);
           }
-          100% {
+          to {
             transform: translateX(0);
           }
         }
 
         .animate-scroll-right {
-          animation: scroll-right 30s linear infinite;
+          animation: scroll-right 50s linear infinite;
+          width: max-content;
         }
 
         .animate-scroll-left {
-          animation: scroll-left 30s linear infinite;
+          animation: scroll-left 50s linear infinite;
+          width: max-content;
         }
 
         .animate-scroll-right:hover,

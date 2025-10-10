@@ -127,8 +127,9 @@ export default function Process() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="lg:text-[78px] text-[36px] font-bold"
           >
-            <span>How it</span>
-            <span className="text-[#BDEE63] ml-[10px]">Works</span>
+            <span className="text-[#BDEE63]">Simple.</span>
+            <span className="mx-[10px]">Secure.</span>
+            <span className="text-[#BDEE63]">Seamless.</span>
           </motion.span>
 
           <div className="lg:py-[120px] py-[30px]">

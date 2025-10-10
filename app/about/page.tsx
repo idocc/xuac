@@ -5,7 +5,6 @@ import {
   AboutIcon3,
   AboutIcon4,
 } from "@/components/icons";
-import { Button } from "@heroui/button";
 import { ArrowRightIcon } from "@/components/icons";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -34,7 +33,7 @@ export default function About() {
         transition={{ duration: 0.8 }}
       >
         <div>{t("title")}</div>
-        <div className="text-[#BDEE63]">About Us</div>
+        <div className="text-[#BDEE63]">Who We Are</div>
         <motion.img
           src="/images/about/logo.png"
           className="w-[180px] h-[160px] lg:w-[380px] lg:h-[340px] absolute top-[80px] lg:top-[130px] left-[50%] translate-x-[-50%]"
@@ -53,10 +52,10 @@ export default function About() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8 }}
       >
-        <AboutIcon4 width={23} height={30} className="lg:w-[46px] lg:h-[60px]" color="#BDEE63" />
+        <AboutIcon4 width={46} height={60}  color="#BDEE63" />
         {t("platformName")}
         <div className="rotate-180">
-          <AboutIcon4 width={23} height={30} className="lg:w-[46px] lg:h-[60px]" color="#BDEE63" />
+          <AboutIcon4 width={46} height={60} color="#BDEE63" />
         </div>
       </motion.div>
 
@@ -165,10 +164,10 @@ export default function About() {
           transition={{ duration: 0.6 }}
         >
           <span>{t("recentActivities")}</span>
-          <Button className="text-black px-[15px] lg:px-[20px] py-[20px] lg:py-[30px] rounded-[4px] text-[14px] lg:text-[20px] border-none bg-primary font-bold cursor-pointer">
-            <span>{t("viewMore")}</span>
+          <Link href={"/new"} className="text-black flex items-center px-[15px] lg:px-[20px] py-[10px] lg:py-[15px] rounded-[4px] text-[14px] lg:text-[20px] border-none bg-primary font-bold cursor-pointer">
+            <span className="mr-[5px]">{t("viewMore")}</span>
             <ArrowRightIcon color="black" />
-          </Button>
+          </Link>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-[30px] lg:gap-[30px] mt-[30px] lg:mt-[50px]">

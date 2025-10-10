@@ -38,9 +38,9 @@ export default function Product() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <span className="text-[#BDEE63]">Products</span>
+              <span className="text-[#BDEE63]">Solutions</span>
               <span>&</span>
-              <span>Services</span>
+              <span>Features</span>
             </motion.div>
             <motion.div
               className="lg:text-[28px] text-[14px]"

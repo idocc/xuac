@@ -94,9 +94,11 @@ const MobileLanguageSwitch = () => {
     router.refresh();
   };
 
+  const tNav = useTranslations("Navbar");
+  
   return (
     <div className="flex items-center justify-center gap-2">
-      <span className="text-white">语言:</span>
+      <span className="text-white">{tNav("language")}</span>
       <span
         className={`cursor-pointer transition-all duration-200 ${
           !isEnglish ? "text-white" : "text-white/70"

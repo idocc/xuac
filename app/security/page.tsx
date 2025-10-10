@@ -30,9 +30,8 @@ export default function Security() {
           >
             <span className="font-bold">{t("title")}</span>
             <div className="space-x-[16px] lg:space-x-[40px] font-bold">
-              <span className="text-[#BDEE63]">Security</span>
-              <span>&</span>
-              <span>Compliance</span>
+              <span className="text-[#BDEE63]">Three Layers of</span>
+              <span>Protection</span>
             </div>
           </motion.div>
 

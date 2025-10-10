@@ -10,6 +10,7 @@ const CryptoSwapBox: React.FC = () => {
   const [debouncedValue, setDebouncedValue] = useState("");
   const [exchangeResult, setExchangeResult] = useState("--");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const FEE_RATE = 0.01; // 1% 手续费
 
   // 防抖处理
@@ -88,9 +89,11 @@ const CryptoSwapBox: React.FC = () => {
     const fetchRate = async () => {
       if (!debouncedValue || isNaN(Number(debouncedValue))) {
         setExchangeResult("--");
+        setError(null);
         return;
       }
       setLoading(true);
+      setError(null);
       try {
         // CoinGecko simple/price API
         // 例：https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd
@@ -103,23 +106,34 @@ const CryptoSwapBox: React.FC = () => {
         const fiat = toFiat.symbol.toLowerCase();
         const url = `https://api.coingecko.com/api/v3/simple/price?ids=${tokenId}&vs_currencies=${fiat}`;
         const res = await fetch(url);
+        
+        // 检查响应状态
+        if (!res.ok) {
+          setError(t("fetchError"));
+          setExchangeResult("--");
+          return;
+        }
+        
         const data = await res.json();
         const price = data[tokenId]?.[fiat];
         if (price) {
           // 法币金额 / 单价 = 可兑换数量
           const result = (Number(debouncedValue) / price).toFixed(6);
           setExchangeResult(result);
+          setError(null);
         } else {
+          setError(t("fetchError"));
           setExchangeResult("--");
         }
       } catch (e) {
+        setError(t("fetchError"));
         setExchangeResult("--");
       } finally {
         setLoading(false);
       }
     };
     fetchRate();
-  }, [debouncedValue, selectedToken, toFiat]);
+  }, [debouncedValue, selectedToken, toFiat, t]);
 
   return (
     <motion.div
@@ -169,6 +183,13 @@ const CryptoSwapBox: React.FC = () => {
           </select>
         </div>
       </div>
+
+      {/* 错误提示 */}
+      {error && (
+        <div className="mt-[10px] text-red-500 text-[14px] lg:text-[16px] px-[10px]">
+          {error}
+        </div>
+      )}
 
       {/* 代币下拉 */}
       <div className="bg-[#F2F2F2] lg:h-[124px] h-[60px] rounded-[8px] px-[10px] lg:px-[20px] flex justify-between items-center">

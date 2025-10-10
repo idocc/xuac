@@ -92,7 +92,8 @@
     "security": "Security & Compliance",
     "global": "Global Coverage",
     "about": "About Us",
-    "news": "News"
+    "news": "News",
+    "language": "Language:"
   },
   "Common": {
     "loading": "Loading...",
@@ -178,7 +179,59 @@
     "india": "India",
     "indiaDesc": "Supports fast INR exchange, covering high-frequency scenarios such as overseas remittances and education payments.",
     "uk": "United Kingdom",
-    "thailand": "Thailand"
+    "thailand": "Thailand",
+    "countriesTop": [
+      "Malaysia",
+      "Singapore",
+      "Thailand",
+      "Vietnam",
+      "Indonesia",
+      "Philippines",
+      "Japan",
+      "South Korea",
+      "China",
+      "India",
+      "Australia",
+      "New Zealand",
+      "United States",
+      "Canada",
+      "Mexico",
+      "Brazil",
+      "Argentina",
+      "Chile",
+      "Colombia",
+      "Peru",
+      "Venezuela",
+      "Ecuador",
+      "Uruguay",
+      "Paraguay"
+    ],
+    "countriesBottom": [
+      "United Kingdom",
+      "France",
+      "Germany",
+      "Italy",
+      "Spain",
+      "Netherlands",
+      "Switzerland",
+      "Sweden",
+      "Norway",
+      "Denmark",
+      "Finland",
+      "Belgium",
+      "Austria",
+      "Poland",
+      "Portugal",
+      "Greece",
+      "Czech Republic",
+      "Ireland",
+      "Russia",
+      "Turkey",
+      "UAE",
+      "Saudi Arabia",
+      "South Africa",
+      "Egypt"
+    ]
   },
   "NewsPage": {
     "title": "24EXC",
@@ -190,21 +243,21 @@
         "id": 1,
         "title": "24EXC Officially Launches BTC, ETH Fiat Exchange Service, Ushering in a New Era of Global 24-Hour Crypto Exchange",
         "description": "Global next-generation cryptocurrency exchange platform 24EXC announced today the official opening of real-time exchange services for BTC, ETH and multiple fiat currencies (USD, EUR, BRL, INR), providing global users with a secure, compliant, minute-level digital asset exchange experience.",
-        "date": "November 23, 2024",
+        "date": "March 15, 2025",
         "content": "<p>24EXC is committed to freeing global users from the time and geographical limitations of traditional exchange channels, achieving 7×24 hour uninterrupted service. The platform is based on multi-signature cold wallet technology and real-time risk control system, ensuring every transaction is safe and reliable. Meanwhile, corporate users can also achieve automated large-scale settlement through API interfaces, improving efficiency and transparency.</p><p><strong>\"We believe that financial services in the decentralized era should be as readily available as air,\" said the 24EXC product manager. \"BTC and ETH are core assets of the digital economy, and our goal is to enable more users to participate with lower barriers and higher efficiency.\"</strong></p><p>In the future, 24EXC will gradually open exchange for more mainstream coins and emerging market fiat currencies, building a truly global cryptocurrency circulation network.</p>"
       },
       {
         "id": 2,
         "title": "From Crypto to Real World: 24EXC Bridges BTC/ETH to Global Fiat Currencies",
         "description": "As a new generation cryptocurrency exchange platform, 24EXC provides real-time exchange and minute-level arrival service experience. Users can complete exchanges anytime through web or mobile, without complicated operations. The platform has built-in KYC/AML review mechanisms, following international standards to ensure compliance and fund security for every transaction.",
-        "date": "November 20, 2024",
+        "date": "July 22, 2025",
         "content": "<p>As a new generation cryptocurrency exchange platform, 24EXC provides real-time exchange and minute-level arrival service experience. Users can complete exchanges anytime through web or mobile, without complicated operations. The platform has built-in KYC/AML review mechanisms, following international standards to ensure compliance and fund security for every transaction.</p><p><br></p><p>Corporate users also benefit greatly. Cross-border e-commerce, freelancers, financial institutions, etc. can achieve batch settlement and financial automation through 24EXC's API enterprise interface, helping improve global fund circulation efficiency.</p><p>The launch of 24EXC marks cryptocurrency officially entering mainstream payment ecosystems, becoming an important bridge connecting digital assets and the real economy.</p><p><br></p>"
       },
       {
         "id": 3,
         "title": "Beginners Guide! Understand BTC/ETH to Fiat Exchange in One Minute",
         "description": "Safe · Compliant · Global Coverage 24EXC —— Making Digital Asset Flow More Free.",
-        "date": "November 18, 2024",
+        "date": "September 8, 2025",
         "content": "<p>For many users new to cryptocurrency, \"How to exchange Bitcoin or Ethereum for fiat currency?\" is the most common question. Actually, you can easily get started by mastering a few key steps:</p><p><br></p><p>1. Register an account and complete identity verification (KYC) 👉 This is an important step to ensure transaction security and prevent fraud.</p><p>2. Select the coin to exchange (BTC / ETH / USDT) and target fiat currency (such as USD / CNY / EUR, etc.) 👉 24EXC supports free exchange between mainstream global coins and fiat currencies.</p><p>3. Submit exchange request and wait for arrival 👉 Average arrival time is less than 5 minutes, with guaranteed fund security.</p><p><br></p><p>24EXC provides 24-hour online customer service to help new users quickly understand the process. If you are using cryptocurrency for the first time, or want to legally and safely withdraw digital assets to fiat currency —— 24EXC is your first choice tool.</p>"
       }
     ]
@@ -223,6 +276,7 @@
     "feeValue": "Subject to actual rate",
     "estimatedTime": "Estimated Arrival",
     "estimatedTimeValue": "Within 1 hour",
-    "exchangeNow": "Exchange Now"
+    "exchangeNow": "Exchange Now",
+    "fetchError": "Failed to get exchange rate, please try again later"
   }
 }
