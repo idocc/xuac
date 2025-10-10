@@ -651,7 +651,7 @@ export default function Home() {
     <div>
       <div className="lg:min-h-[900px] pt-[160px] px-[12px] relative overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover bg-[#000]"
           autoPlay
           loop
           muted

@@ -10,7 +10,6 @@ interface PreloadResourcesProps {
 export default function PreloadResources({ onLoadComplete }: PreloadResourcesProps) {
  
   const [progress, setProgress] = useState(0);
-  const [loadingText, setLoadingText] = useState("");
   const [isComplete, setIsComplete] = useState(false);
 
   // 关键资源列表
@@ -22,14 +21,6 @@ export default function PreloadResources({ onLoadComplete }: PreloadResourcesPro
     "/images/icon1.png",
     "/images/icon2.png",
     "/images/icon3.png",
-    "/images/blur/1.png",
-    "/images/blur/2.png",
-    "/images/blur/3.png",
-    "/images/blur/4.png",
-    "/images/blur/5.png",
-    "/images/blur/6.png",
-    "/images/blur/7.png",
-    "/images/blur/8.png",
     "/images/global/earth.webp",
     "/images/footer_abc.webp",
   ];
@@ -81,17 +72,6 @@ export default function PreloadResources({ onLoadComplete }: PreloadResourcesPro
         
         if (mounted) {
           setProgress(currentProgress);
-
-          // 更新加载文本
-          if (currentProgress < 30) {
-            setLoadingText("Loading resources...");
-          } else if (currentProgress < 60) {
-            setLoadingText("Preparing experience...");
-          } else if (currentProgress < 90) {
-            setLoadingText("Almost ready...");
-          } else {
-            setLoadingText("Welcome!");
-          }
         }
       }
 
