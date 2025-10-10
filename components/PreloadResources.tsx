@@ -135,7 +135,7 @@ export default function PreloadResources({ onLoadComplete }: PreloadResourcesPro
               transition={{ duration: 0.5 }}
             >
               <div className="lg:text-6xl text-4xl font-bold text-white mb-4">
-                <span className="text-[#BDEE63]">24</span>exc
+                <span className="text-[#BDEE63]">24</span>EXC
               </div>
             </motion.div>
 
@@ -150,17 +150,8 @@ export default function PreloadResources({ onLoadComplete }: PreloadResourcesPro
                 />
               </div>
 
-              {/* 百分比和加载文本 */}
-              <div className="flex justify-between items-center text-sm">
-                <motion.span
-                  className="text-gray-400"
-                  key={loadingText}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {loadingText}
-                </motion.span>
+              {/* 百分比 */}
+              <div className="flex justify-center items-center text-sm">
                 <span className="text-[#BDEE63] font-bold tabular-nums">
                   {progress}%
                 </span>
@@ -185,16 +176,6 @@ export default function PreloadResources({ onLoadComplete }: PreloadResourcesPro
                 />
               ))}
             </div>
-
-            {/* 加载提示 */}
-            <motion.p
-              className="text-gray-500 text-xs mt-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-            >
-              Preparing the best crypto exchange experience...
-            </motion.p>
           </div>
         </motion.div>
       )}
