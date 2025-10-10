@@ -114,7 +114,7 @@ export default function Global() {
         </div>
       </div>
 
-      <div className="text-center px-[20px] lg:px-0">
+      <div className="text-center px-[20px] overflow-hidden lg:px-0">
         <motion.div
           className="text-[30px] lg:text-[140px] font-bold opacity-40 text-[#BDEE63] overflow-hidden"
           initial={{ opacity: 0, y: -30 }}

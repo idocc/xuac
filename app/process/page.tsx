@@ -125,10 +125,10 @@ export default function Process() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="lg:text-[78px] text-[36px] font-bold"
+            className="lg:text-[78px] text-[36px] font-bold flex justify-center flex-wrap"
           >
-            <span className="text-[#BDEE63]">Simple.</span>
-            <span className="mx-[10px]">Secure.</span>
+            <span className="text-[#BDEE63]">Simple.&nbsp;</span>
+            <span>Secure.&nbsp;</span>
             <span className="text-[#BDEE63]">Seamless.</span>
           </motion.span>
 
