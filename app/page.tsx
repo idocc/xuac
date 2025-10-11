@@ -456,7 +456,7 @@ function CommentCarousel() {
   };
 
   return (
-    <div className="bg-[#000] text-center py-[75px] lg:px-[108px] px-[12px]">
+    <div className="bg-[#000] text-center py-[50px] lg:px-[108px] px-[12px]">
       <motion.h1
         className="lg:text-[68px] text-[36px] font-bold"
         initial={{ opacity: 0, y: 30 }}
@@ -467,8 +467,8 @@ function CommentCarousel() {
         {t("testimonials.title")}
       </motion.h1>
 
-      {/* 固定高度的容器 */}
-      <div className="relative overflow-hidden min-h-[320px] lg:mt-[72px] mt-[30px]">
+      {/* 固定高度容器，内容垂直居中 */}
+      <div className="relative overflow-hidden min-h-[320px] lg:mt-[72px] flex items-center">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={currentIndex}
@@ -483,7 +483,7 @@ function CommentCarousel() {
             }}
             className="absolute w-full"
           >
-            <div className="lg:text-[24px] text-[16px] text-left">
+            <div className="lg:text-[24px] text-[16px] text-left lg:leading-[36px] leading-[24px]">
               {commentsData[currentIndex].id === 1 &&
               commentsData[currentIndex].highlight ? (
                 <>

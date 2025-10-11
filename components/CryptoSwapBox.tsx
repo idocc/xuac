@@ -159,7 +159,7 @@ const CryptoSwapBox: React.FC = () => {
 
   return (
     <motion.div
-      className="mt-[25px] mx-auto w-[350px] lg:w-[756px] rounded-[12px] p-[30px] bg-white shadow-[0_9px_20px_0_rgba(0,0,0,0.06)] relative z-10"
+      className="mt-[10px] mx-auto w-[350px] lg:w-[756px] rounded-[12px] p-[30px] bg-white shadow-[0_9px_20px_0_rgba(0,0,0,0.06)] relative z-10"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
@@ -237,7 +237,7 @@ const CryptoSwapBox: React.FC = () => {
       </div>
 
       {/* 交换图标 */}
-      <div className="flex justify-center my-[15px]">
+      <div className="flex justify-center my-[5px] lg:my-[15px]">
         <button
           onClick={handleSwap}
           className="p-[10px] rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
@@ -331,7 +331,7 @@ const CryptoSwapBox: React.FC = () => {
       </div>
 
       {/* 错误提示（移到下面） - 预留固定高度 */}
-      <div className="mt-[10px] min-h-[24px] lg:min-h-[28px]">
+      <div className="mt-[5px] min-h-[24px] lg:min-h-[28px]">
         {error && (
           <div className="text-red-500 text-[14px] lg:text-[16px] px-[10px]">
             {error}
@@ -340,7 +340,7 @@ const CryptoSwapBox: React.FC = () => {
       </div>
 
       {/* 汇率、时间信息 */}
-      <div className="text-[#2C2C2C] mt-[30px] space-y-[15px]">
+      <div className="text-[#2C2C2C] mt-[20px] space-y-[15px]">
         <div className="flex justify-between">
           <span className="text-[#9F9F9F]">{t("exchangeRate")}</span>
           <span>
