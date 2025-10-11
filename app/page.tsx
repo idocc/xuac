@@ -799,7 +799,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <span className="font-bold" style={{ whiteSpace: "pre-line" }}>
+          <span className="font-bold" style={{ whiteSpace: "pre-wrap" }}>
             {t("stats.platformTitle")} {t("stats.platformSubtitle")}
           </span>
         </motion.div>

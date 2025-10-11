@@ -3,26 +3,26 @@
     "hero": {
       "title": "24EXC",
       "subtitle": "24/7 Global Digital Asset Exchange",
-      "description": "Safe, Fast, Compliant - Supporting Stablecoin and Fiat Exchange, Anytime, Anywhere",
+      "description": "Secure · Fast · Compliant — Seamless exchange between stablecoins and fiat currencies, anytime and anywhere.",
       "exchangeNow": "Exchange Now"
     },
     "features": {
-      "mainCoins": "Main Coins",
-      "mainCoinsDesc": "Supporting BTC/ETH/USDT,direct exchange to USD, EUR, SGD and other major fiat currencies.",
-      "fastDeposit": "Fast Deposit",
-      "fastDepositDesc": "Minute-level arrival,reducing capital occupation and waiting time.",
+      "mainCoins": "Supported Assets",
+      "mainCoinsDesc": "Exchange BTC, ETH, and USDT directly into major fiat currencies including USD, EUR, and SGD.",
+      "fastDeposit": "Instant Settlement",
+      "fastDepositDesc": "Funds credited within minutes — minimizing idle capital and wait times.",
       "globalCoverage": "Global Coverage",
-      "globalCoverageDesc": "Access to multi-national fiat currencies and payment channels,covering Brazil, Southeast Asia, Europe and other markets.",
-      "available24": "24/7 Available",
-      "available24Desc": "24/7 exchange available,global users without time zone waiting."
+      "globalCoverageDesc": "Access multi-currency payment rails across Brazil, Southeast Asia, Europe, and more markets worldwide.",
+      "available24": "Available 24/7",
+      "available24Desc": "Round-the-clock exchange with no time‑zone delays for global users."
     },
     "exchange": {
       "title": "Exchange Anytime, Anywhere",
       "placeholder": "0",
-      "selectToken": "Select Token",
-      "realTimeRate": "Real-time Rate",
+      "selectToken": "Select Asset",
+      "realTimeRate": "Live Exchange Rate",
       "fee": "Fee",
-      "estimatedTime": "Estimated Arrival",
+      "estimatedTime": "Estimated Settlement",
       "within1Hour": "Within 1 hour"
     },
     "stats": {
@@ -32,8 +32,8 @@
       "volumeDesc": "Trading Volume as of 2025",
       "countries": "30+",
       "countriesDesc": "Countries and Regions",
-      "service": "7x24h",
-      "serviceDesc": "24/7 Service",
+      "service": "24/7",
+      "serviceDesc": "Continuous Global Service",
       "satisfaction": "95%",
       "satisfactionDesc": "User Satisfaction"
     },
@@ -46,43 +46,43 @@
     "steps": {
       "stepOne": "STEP ONE",
       "stepOneTitle": "Contact Support",
-      "stepOneDesc": "Submit your exchange request (coin type and amount) via online chat, Telegram, or WhatsApp.",
+      "stepOneDesc": "Submit your exchange request (asset type and amount) via online chat, Telegram, or WhatsApp.",
       "stepTwo": "STEP TWO",
-      "stepTwoTitle": "Payment & Receipt",
-      "stepTwoDesc": "Transfer cryptocurrency to the designated address. Platform completes fiat settlement quickly after confirmation.",
+      "stepTwoTitle": "Payment & Settlement",
+      "stepTwoDesc": "Transfer the cryptocurrency to the designated wallet address. Once confirmed on-chain, fiat settlement is processed promptly.",
       "stepThree": "STEP THREE",
       "stepThreeTitle": "Transaction Complete",
-      "stepThreeDesc": "Exchange successful. Track order progress in real-time with full transparency throughout the process.",
+      "stepThreeDesc": "Exchange completed — track status in real time with full transparency at every step.",
       "quickExchange": "Quick Exchange in 3 Steps",
-      "description": "24EXC provides secure, transparent, and compliant digital asset exchange services for global individuals and businesses. Supporting fast settlement between stablecoins, major cryptocurrencies, and fiat currencies, available 24/7 worldwide. No account registration required. Simply inform us of your exchange needs via online chat / Telegram / WhatsApp, confirm the rate, complete payment and receipt, and finish the transaction in minutes."
+      "description": "24EXC provides secure, transparent, and compliant exchange services for individuals and businesses. Settle quickly between major cryptocurrencies, stablecoins, and fiat currencies — available 24/7 worldwide. No account registration required: contact us, confirm your rate, complete payment and receipt, and finish the transaction within minutes."
     },
     "testimonials": {
       "title": "User Testimonials",
       "user1Name": "George",
       "user1Time": "Reviewed 3 days ago",
-      "user1Content": "Large corporate exchanges are most concerned about compliance risks. Here, complete KYC/AML and standardized identity verification, fund isolation + real-time risk control, large orders followed by dedicated staff; also provides corporate API and batch integration, smoother deposits/withdrawals and reconciliation; 7x24 customer service covering multiple languages and time zones, cross-border settlement is secure.",
-      "user1Highlight": "Here, complete KYC/AML and standardized identity verification, fund isolation + real-time risk control, large orders followed by dedicated staff;",
+      "user1Content": "For corporate transactions, compliance and reliability are essential. 24EXC delivers full KYC/AML verification, segregated client funds, real-time risk monitoring, and dedicated managers for large-volume orders. The corporate API and batch integration streamline deposits, withdrawals, and reconciliation across time zones.",
+      "user1Highlight": "KYC/AML, segregated funds, real-time risk controls, and dedicated large‑order support.",
       "user2Name": "Sarah",
       "user2Time": "Reviewed 5 days ago",
-      "user2Content": "As an individual investor, I value security and convenience most. This platform has great user experience, clean interface, smooth operation. It supports multiple payment methods, fast arrival, responsive customer service, professional problem-solving.",
+      "user2Content": "As an individual investor, I value security and ease of use. The interface is clean and intuitive, settlement is fast, and support is responsive and professional.",
       "user3Name": "Michael",
       "user3Time": "Reviewed 1 week ago",
-      "user3Content": "Globalized digital asset exchange services are truly valuable. Rich coin selection, transparent and fair exchange rates, no hidden fees. Especially the cross-border transfer function, much faster than traditional banks with lower fees. Recommended for friends with international business."
+      "user3Content": "Truly global exchange services with transparent rates and no hidden fees. Cross-border transfers are faster and lower cost than traditional banks — great for international business."
     },
     "partners": {
       "title": "Partners",
-      "description": "We have established long-term cooperation networks with international banks, trading and market making firms, custody and compliance institutions, covering payment settlement, liquidity, KYC/AML and legal compliance, fully supporting 24/7 global exchange capabilities."
+      "description": "We maintain long-term collaborations with banks, liquidity providers, custodians, and compliance institutions to support payment settlement, market liquidity, KYC/AML, and legal compliance — enabling secure 24/7 global exchange capabilities."
     },
     "faq": {
       "title": "FAQ",
-      "question1": "What coins and fiat currencies are supported?",
-      "answer1": "Currently supporting major cryptocurrencies like BTC, ETH, USDT, as well as multiple fiat currencies including USD, EUR, SGD, BRL, INR. Covering payment channels in 30+ countries and regions worldwide, with continuous expansion of more coins and markets to provide users with more convenient exchange services.",
-      "question2": "Is my fund safe?",
-      "answer2": "We adopt bank-level security standards, including multi-signature cold and hot wallet isolation, SSL encrypted transmission, real-time risk control monitoring system. All transactions comply with international KYC/AML requirements, cooperating with licensed financial institutions to ensure your fund security. Platform monitors abnormal transactions 24/7, providing full protection for every order.",
+      "question1": "Which cryptocurrencies and fiat currencies are supported?",
+      "answer1": "We currently support major cryptocurrencies such as BTC, ETH, and USDT, as well as multiple fiat currencies including USD, EUR, SGD, BRL, and INR. Our global coverage continues to expand to offer convenient exchange services worldwide.",
+      "question2": "How are my funds protected?",
+      "answer2": "We adopt bank-grade security standards, including multi-signature wallets, cold/hot wallet separation, SSL-encrypted transmission, and real-time risk monitoring. All transactions follow international KYC/AML requirements and are processed through licensed financial partners. The platform monitors anomalies 24/7 to safeguard every order.",
       "question3": "Is identity verification (KYC) required?",
-      "answer3": "To ensure transaction security and comply with international anti-money laundering regulations, we require users to complete basic identity verification. Small transactions only need simple identity information, while large transactions require more detailed KYC certification. The entire process is quick and convenient, usually completed within 5-10 minutes, with all information encrypted and stored.",
+      "answer3": "Yes. To ensure transaction security and comply with international AML rules, users complete KYC verification. Small transactions require basic information, while larger ones require additional documentation. The process is quick and typically completed within 5–10 minutes; all information is encrypted and securely stored.",
       "question4": "What are the fees?",
-      "answer4": "We use a transparent tiered fee structure, charging 0.5%-2% based on transaction amount and coin type. Large transactions enjoy more favorable rates, corporate clients can apply for customized rate plans. All fees are clearly displayed before transaction, no hidden fees, allowing you to clearly understand the cost of each transaction."
+      "answer4": "We use a transparent tiered fee structure of 0.5%–2%, depending on transaction amount and asset type. Larger transactions receive more favorable rates, and corporate clients can request customized pricing. All fees are shown clearly before confirmation — no hidden charges."
     }
   },
   "Navbar": {
@@ -97,7 +97,7 @@
   },
   "Common": {
     "loading": "Loading...",
-    "error": "Error occurred",
+    "error": "An error occurred",
     "success": "Success",
     "confirm": "Confirm",
     "cancel": "Cancel"
@@ -105,65 +105,65 @@
   "Loading": {
     "initializing": "Initializing...",
     "loadingResources": "Loading resources...",
-    "preparingExperience": "Preparing experience...",
+    "preparingExperience": "Preparing your experience...",
     "almostReady": "Almost ready...",
     "welcome": "Welcome!",
-    "tagline": "Preparing the best crypto exchange experience..."
+    "tagline": "Preparing the best crypto-fiat exchange experience..."
   },
   "ProductPage": {
     "title": "Products & Services",
     "subtitle": "Products & Services",
-    "tagline": "Multi-Currency Exchange · Cross-Border Settlement · Safe and Efficient",
+    "tagline": "Multi-Currency Exchange · Cross-Border Settlement · Secure & Efficient",
     "supportedCrypto": "Supported Cryptocurrencies",
     "supportedFiat": "Supported Fiat Currencies",
-    "serviceModesTitle": "Rich Service Modes",
-    "normalExchange": "Normal Exchange",
-    "bulkExchange": "Bulk Exchange",
+    "serviceModesTitle": "Service Options",
+    "normalExchange": "Standard Exchange",
+    "bulkExchange": "High-Volume Exchange",
     "apiIntegration": "API Integration",
-    "scenariosTitle": "Meeting Three Major Application Scenarios",
+    "scenariosTitle": "Three Core Use Cases",
     "personalWithdrawal": "Personal Withdrawal",
-    "personalWithdrawalDesc": "This is a scenario where users quickly exchange digital assets for fiat currency and transfer it to bank cards or payment tools. The platform provides 24/7 service, supports BTC, ETH, USDT and other currencies, with quick arrival, reducing capital occupation risks. Through KYC certification and risk control mechanisms, the withdrawal process is safe and reliable, avoiding fraud and money laundering issues. For freelancers, investors, and ordinary users, this convenient withdrawal channel enhances fund liquidity and user experience.",
+    "personalWithdrawalDesc": "Quickly convert digital assets to fiat and transfer to bank accounts or supported payment methods. Available 24/7 for BTC, ETH, USDT, and more. Instant settlement reduces idle capital. KYC and risk controls ensure a secure and compliant experience for freelancers, investors, and everyday users.",
     "crossBorderSettlement": "Cross-Border Settlement",
-    "crossBorderSettlementDesc": "Mainly meets the international fund flow needs of enterprises, cross-border e-commerce, and individuals. Through the platform, users can achieve multi-currency exchange and fast settlement, avoiding the high fees and long waits of traditional international remittances. Based on blockchain clearing technology, transactions are transparent and traceable, with compliance guarantees reducing risks. Whether it's tuition, living expenses, or large corporate settlements, all can be completed efficiently, facilitating global fund flow.",
+    "crossBorderSettlementDesc": "Meet international payment needs for enterprises, cross-border e-commerce, and individuals. Achieve fast multi-currency settlement without the high fees and long waits of traditional remittances. Built on blockchain settlement infrastructure for transparent, auditable transactions and reduced counterparty risk — from tuition and living expenses to large corporate payouts.",
     "fiatDeposit": "Fiat Deposit",
-    "fiatDepositDesc": "This is the process of users depositing fiat currencies such as USD, SGD, EUR into their platform accounts, an important entry point into the digital asset ecosystem. The platform supports various methods such as bank card transfers and third-party payments, emphasizing simple operation and fast arrival. To ensure compliance, the system conducts identity verification and fund source review. A convenient deposit experience not only enhances user trust but also determines the platform's market competitiveness and user growth rate."
+    "fiatDepositDesc": "Deposit USD, SGD, EUR, and other fiat currencies as an easy on-ramp to digital assets. Supports bank transfers and approved third-party payments with a simple flow and rapid crediting. Identity verification and source-of-funds checks ensure compliance and build user trust."
   },
   "ProcessPage": {
     "title": "How It Works",
-    "subtitle": "How it Works",
+    "subtitle": "How It Works",
     "contactSupport": "Contact Support",
-    "contactSupportDesc": "Submit your exchange request (coin type and amount) via online chat, Telegram, or WhatsApp.",
-    "paymentReceipt": "Payment & Receipt",
-    "paymentReceiptDesc": "Submit your exchange request (coin type and amount) via online chat, Telegram, or WhatsApp.",
+    "contactSupportDesc": "Submit your exchange request (asset type and amount) via online chat, Telegram, or WhatsApp.",
+    "paymentReceipt": "Payment & Settlement",
+    "paymentReceiptDesc": "Transfer the cryptocurrency to the designated wallet address. After on-chain confirmation, we process fiat settlement promptly.",
     "transactionComplete": "Transaction Complete",
-    "transactionCompleteDesc": "Submit your exchange request (coin type and amount) via online chat, Telegram, or WhatsApp.",
-    "faqTitle": "Frequently Asked Questions Q&A",
+    "transactionCompleteDesc": "Exchange successful. Track progress in real time with full transparency throughout the process.",
+    "faqTitle": "Frequently Asked Questions (FAQ)",
     "faq1Question": "Who can I send Singapore Dollars (SGD) to?",
-    "faq1Answer": "You can send Singapore Dollars to any individual or business with a Singapore bank account. We support transfer services to major Singapore banks, including DBS, OCBC, UOB, etc. Simply provide the recipient's bank account information, and we will quickly complete the SGD transfer after confirming your cryptocurrency arrival.",
-    "faq2Question": "Is my fund safe?",
-    "faq2Answer": "Your fund security is our top priority. We employ multiple security measures to protect your assets: including cold and hot wallet separation, multi-signature technology, real-time risk control monitoring system, and strict KYC/AML compliance procedures. All transactions are transmitted through encrypted channels, and funds are kept isolated by professional custody institutions to ensure your assets are safe and secure.",
+    "faq1Answer": "You can send SGD to any individual or business with a Singapore bank account. We support transfers to major banks including DBS, OCBC, and UOB. Provide the recipient’s bank details and we will complete the SGD transfer after confirming your crypto deposit.",
+    "faq2Question": "How are my funds protected?",
+    "faq2Answer": "Security is our top priority. We use cold/hot wallet separation, multi-signature controls, real-time risk monitoring, and strict KYC/AML procedures. All transactions are transmitted over encrypted channels, and client assets are held in segregated accounts with qualified custodians.",
     "faq3Question": "Is identity verification (KYC) required?",
-    "faq3Answer": "To comply with international anti-money laundering (AML) and know your customer (KYC) regulations, we need to verify user identities. Small transactions may only require basic information, while large transactions require identity documents. This is not only a legal requirement but also an important measure to protect your fund security. The authentication process is simple and quick, usually completed within minutes.",
+    "faq3Answer": "Yes. To comply with AML/KYC regulations and protect users, we verify identities. Small transactions may require basic information, while larger ones require official ID documents. The process is straightforward and typically completed within minutes.",
     "faq4Question": "What are the fees?",
-    "faq4Answer": "Our fees vary based on transaction amount and currency type, but remain transparent at all times. Generally, fees range from 0.5%-2%, with specific rates clearly displayed before you confirm the transaction. Large transactions enjoy more favorable rates. We promise no hidden fees, all costs will be clearly listed before the transaction, giving you peace of mind."
+    "faq4Answer": "Fees vary by transaction size and currency and remain fully transparent. Typical fees range from 0.5%–2%, with exact pricing shown before you confirm the transaction. Larger transactions may receive preferential rates. No hidden fees."
   },
   "SecurityPage": {
     "title": "Security & Compliance",
     "subtitle": "Security & Compliance",
     "securityMeasures": "Security Measures",
-    "securityMeasuresDesc": "Multi-signature, cold wallet storage, real-time risk control",
+    "securityMeasuresDesc": "Multi-signature protection, cold wallet custody, and real-time risk monitoring",
     "complianceStatement": "Compliance Statement",
-    "complianceStatementDesc": "Comply with KYC/AML, do not serve sanctioned countries",
+    "complianceStatementDesc": "Fully compliant with international KYC/AML standards; services are unavailable in sanctioned or restricted jurisdictions",
     "protectionMechanism": "Protection Mechanism",
-    "protectionMechanismDesc": "Fund isolation, dedicated handling for large amounts, compensation plan",
-    "detailDescription": "In the field of digital asset trading, security and compliance are the cornerstones of building user trust. 24EXC ensures user assets are protected from hacker attacks and single-point risks through multi-layered security architecture, adopting multi-signature mechanisms and cold wallet storage. Meanwhile, the system is configured with real-time risk control and big data monitoring, capable of quickly identifying and intercepting abnormal transactions to ensure fund security. At the compliance level, the platform strictly follows international KYC (identity authentication) and AML (anti-money laundering) standards, comprehensively reviewing user identities and fund sources, refusing to serve sanctioned countries and high-risk users. In addition, the platform has established a fund isolation system, keeping user assets separate from platform proprietary funds, and equipped with dedicated personnel handling and compensation plans for large amounts, minimizing risk exposure to the greatest extent. Through a comprehensive security and compliance system, 24EXC provides users with a transparent and trustworthy trading environment, establishing industry trust standards."
+    "protectionMechanismDesc": "Segregated client funds, dedicated handling for high-value transactions, and compensation safeguards",
+    "detailDescription": "Security and compliance are the cornerstones of user trust. 24EXC employs a layered security architecture — including multi-signature mechanisms and cold wallet storage — to mitigate single-point risks and protect against attacks. Real-time risk controls and data-driven monitoring rapidly identify and block anomalous transactions. On the compliance side, the platform follows international KYC (identity verification) and AML (anti–money laundering) standards, conducting comprehensive checks on user identities and sources of funds, and refrains from serving sanctioned jurisdictions. Client assets are strictly segregated from company operational funds, with dedicated handling and contingency plans for large-value transfers to minimize risk exposure and provide a transparent, trustworthy environment."
   },
   "AboutPage": {
     "title": "About Us",
     "subtitle": "About Us",
     "platformName": "Next Generation Cryptocurrency Exchange Platform",
     "visionTitle": "Our Vision",
-    "visionDesc": "24EXC is committed to disrupting the limitations of traditional exchange shops, creating a safe, compliant, and globalized next-generation cryptocurrency exchange platform. We believe that digital assets should be as convenient and reliable as daily payments, allowing individuals and businesses to freely and safely move funds globally. Our goal is not only to be transaction facilitators but also trusted financial infrastructure providers for users.",
+    "visionDesc": "24EXC is committed to moving beyond traditional currency exchange by delivering a secure, compliant, and global next‑generation crypto-fiat platform. We believe digital assets should be as seamless and reliable as everyday payments, enabling individuals and businesses to move funds worldwide with confidence. Our ambition is to be more than a facilitator — to become trusted financial infrastructure for our users.",
     "sayNo": "SAY NO",
     "breakBarriers": "Breaking Traditional Currency Exchange",
     "timeLimit": "Time Limitations",
@@ -176,16 +176,16 @@
   "GlobalPage": {
     "title": "Global Coverage",
     "subtitle": "Global Reach",
-    "intro": "By building a global service network, 24EXC not only achieves 24/7 cross-border exchange capabilities but also provides a unified entry point for individual and business users, truly achieving a 'one-stop global payment and settlement platform', demonstrating scale and international competitiveness.",
+    "intro": "By building a global service network, 24EXC not only enables 24/7 cross-border exchange but also provides a unified entry point for individual and enterprise users — a one‑stop platform for global payment and settlement with true scale and international competitiveness.",
     "specialSupportTitle": "Specially Supported Countries",
     "brazil": "Brazil",
-    "brazilDesc": "Supports BRL deposits and settlements, meeting the fund flow needs of cross-border e-commerce and freelancers.",
+    "brazilDesc": "Supports BRL deposits and settlements, meeting the needs of cross-border e-commerce and freelancers.",
     "europe": "Europe",
-    "europeDesc": "Fully complies with EU KYC/AML requirements, supports EUR settlements, ensuring compliance and security.",
+    "europeDesc": "Aligned with EU KYC/AML requirements; supports EUR settlements for compliant and secure transfers.",
     "southeastAsia": "Southeast Asia",
-    "southeastAsiaDesc": "Provides low-cost, fast-arrival services, adapted to mobile payment environments, empowering companies going global.",
+    "southeastAsiaDesc": "Low-cost, fast-arrival services tailored to mobile-first payment environments — empowering global expansion.",
     "india": "India",
-    "indiaDesc": "Supports fast INR exchange, covering high-frequency scenarios such as overseas remittances and education payments.",
+    "indiaDesc": "Fast INR exchange for high-frequency scenarios such as overseas remittances and education payments.",
     "uk": "United Kingdom",
     "thailand": "Thailand",
     "countriesTop": [
@@ -197,7 +197,6 @@
       "Philippines",
       "Japan",
       "South Korea",
-      "China",
       "India",
       "Australia",
       "New Zealand",
@@ -249,24 +248,24 @@
     "newsList": [
       {
         "id": 1,
-        "title": "24EXC Officially Launches BTC, ETH Fiat Exchange Service, Ushering in a New Era of Global 24-Hour Crypto Exchange",
-        "description": "Global next-generation cryptocurrency exchange platform 24EXC announced today the official opening of real-time exchange services for BTC, ETH and multiple fiat currencies (USD, EUR, BRL, INR), providing global users with a secure, compliant, minute-level digital asset exchange experience.",
+        "title": "24EXC Officially Launches BTC & ETH Fiat Exchange — Enabling 24/7 Global Conversion",
+        "description": "24EXC now offers live exchange for BTC, ETH, and multiple fiat currencies (USD, EUR, BRL, INR), delivering a secure, compliant, near‑instant experience for users worldwide.",
         "date": "March 15, 2025",
-        "content": "<p>24EXC is committed to freeing global users from the time and geographical limitations of traditional exchange channels, achieving 7×24 hour uninterrupted service. The platform is based on multi-signature cold wallet technology and real-time risk control system, ensuring every transaction is safe and reliable. Meanwhile, corporate users can also achieve automated large-scale settlement through API interfaces, improving efficiency and transparency.</p><p><strong>\"We believe that financial services in the decentralized era should be as readily available as air,\" said the 24EXC product manager. \"BTC and ETH are core assets of the digital economy, and our goal is to enable more users to participate with lower barriers and higher efficiency.\"</strong></p><p>In the future, 24EXC will gradually open exchange for more mainstream coins and emerging market fiat currencies, building a truly global cryptocurrency circulation network.</p>"
+        "content": "<p>24EXC removes time and geographic constraints with uninterrupted 24/7 service. The platform leverages multi‑signature cold wallet protection and a real‑time risk monitoring system to safeguard every transaction. Corporate users can also automate large‑volume settlement via APIs to improve efficiency and transparency.</p><p><strong>“In the decentralized era, financial services should be as accessible as air,” a 24EXC product manager said. “BTC and ETH are core digital assets, and our goal is to help more users participate with lower friction and higher efficiency.”</strong></p><p>24EXC will continue adding support for more mainstream assets and emerging‑market fiat currencies to build a truly global crypto‑fiat network.</p>"
       },
       {
         "id": 2,
-        "title": "From Crypto to Real World: 24EXC Bridges BTC/ETH to Global Fiat Currencies",
-        "description": "As a new generation cryptocurrency exchange platform, 24EXC provides real-time exchange and minute-level arrival service experience. Users can complete exchanges anytime through web or mobile, without complicated operations. The platform has built-in KYC/AML review mechanisms, following international standards to ensure compliance and fund security for every transaction.",
+        "title": "From Crypto to the Real World: Bridging BTC/ETH to Global Fiat",
+        "description": "As a next‑generation crypto‑fiat platform, 24EXC provides live rates and settlement within minutes. Users can exchange anytime on web or mobile, with built‑in KYC/AML checks for compliance and fund safety.",
         "date": "July 22, 2025",
-        "content": "<p>As a new generation cryptocurrency exchange platform, 24EXC provides real-time exchange and minute-level arrival service experience. Users can complete exchanges anytime through web or mobile, without complicated operations. The platform has built-in KYC/AML review mechanisms, following international standards to ensure compliance and fund security for every transaction.</p><p><br></p><p>Corporate users also benefit greatly. Cross-border e-commerce, freelancers, financial institutions, etc. can achieve batch settlement and financial automation through 24EXC's API enterprise interface, helping improve global fund circulation efficiency.</p><p>The launch of 24EXC marks cryptocurrency officially entering mainstream payment ecosystems, becoming an important bridge connecting digital assets and the real economy.</p><p><br></p>"
+        "content": "<p>Individuals and enterprises benefit alike. Cross‑border e‑commerce merchants, freelancers, and financial institutions can leverage 24EXC’s corporate APIs for batch settlement and treasury automation, accelerating global capital flows.</p><p>The launch underscores how crypto is integrating into mainstream payment ecosystems — becoming a crucial bridge between digital assets and the real economy.</p>"
       },
       {
         "id": 3,
-        "title": "Beginners Guide! Understand BTC/ETH to Fiat Exchange in One Minute",
-        "description": "Safe · Compliant · Global Coverage 24EXC —— Making Digital Asset Flow More Free.",
+        "title": "Beginner’s Guide: Exchange BTC/ETH to Fiat in One Minute",
+        "description": "Secure · Compliant · Global Coverage — 24EXC makes digital asset conversion effortless.",
         "date": "September 8, 2025",
-        "content": "<p>For many users new to cryptocurrency, \"How to exchange Bitcoin or Ethereum for fiat currency?\" is the most common question. Actually, you can easily get started by mastering a few key steps:</p><p><br></p><p>1. Register an account and complete identity verification (KYC) 👉 This is an important step to ensure transaction security and prevent fraud.</p><p>2. Select the coin to exchange (BTC / ETH / USDT) and target fiat currency (such as USD / SGD / EUR, etc.) 👉 24EXC supports free exchange between mainstream global coins and fiat currencies.</p><p>3. Submit exchange request and wait for arrival 👉 Average arrival time is less than 5 minutes, with guaranteed fund security.</p><p><br></p><p>24EXC provides 24-hour online customer service to help new users quickly understand the process. If you are using cryptocurrency for the first time, or want to legally and safely withdraw digital assets to fiat currency —— 24EXC is your first choice tool.</p>"
+        "content": "<p>New to crypto? Converting Bitcoin or Ethereum to fiat is simple with a few steps:</p><p>1. Complete KYC verification — a key step for safety and fraud prevention.</p><p>2. Choose the asset (BTC/ETH/USDT) and the target fiat (USD/SGD/EUR, etc.).</p><p>3. Submit your request and receive funds — average settlement completes within minutes with full fund security.</p><p>24EXC provides 24/7 online support to help first‑time users choose the best path to secure, compliant withdrawals.</p>"
       }
     ]
   },
@@ -274,19 +273,19 @@
     "brandName": "24EXC",
     "disclaimer": "Disclaimer",
     "copyright": "© 2025 24EXC All rights reserved",
-    "description": "All product images and simulations presented are for informational and demonstrative purposes only. Not all features may be available to all customers."
+    "description": "All product images and simulations are for illustrative purposes only. Features may vary by customer and region. 24EXC complies with international KYC/AML standards and does not offer services in sanctioned or restricted jurisdictions."
   },
   "CryptoSwapBox": {
     "inputPlaceholder": "0",
     "loading": "Loading...",
-    "realTimeRate": "Real-time Rate",
+    "realTimeRate": "Live Exchange Rate",
     "fee": "Fee",
     "feeValue": "Subject to actual rate",
     "exchangeRate": "Exchange Rate",
     "exchangeRateValue": "Loading...",
-    "estimatedTime": "Estimated Arrival",
+    "estimatedTime": "Estimated Settlement",
     "estimatedTimeValue": "Within 1 hour",
     "exchangeNow": "Exchange Now",
-    "fetchError": "Failed to get exchange rate, please try again later"
+    "fetchError": "Failed to retrieve exchange rates, please try again later."
   }
 }
