@@ -74,7 +74,7 @@ export default function Global() {
           >
             <Logo size={60} className="lg:w-[100px] lg:h-[100px]" />
             <motion.div
-              className="text-[14px] lg:text-[20px] mt-[30px] lg:mt-[50px] text-center leading-[24px] lg:leading-[40px]"
+              className="text-[14px] lg:text-[20px] mt-[30px] lg:mt-[50px] lg:text-center leading-[24px] lg:leading-[40px]"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}

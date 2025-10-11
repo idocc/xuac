@@ -8,7 +8,7 @@
     },
     "features": {
       "mainCoins": "Main Coins",
-      "mainCoinsDesc": "Supporting BTC/ETH/USDT,direct exchange to USD, EUR, CNY and other major fiat currencies.",
+      "mainCoinsDesc": "Supporting BTC/ETH/USDT,direct exchange to USD, EUR, SGD and other major fiat currencies.",
       "fastDeposit": "Fast Deposit",
       "fastDepositDesc": "Minute-level arrival,reducing capital occupation and waiting time.",
       "globalCoverage": "Global Coverage",
@@ -76,7 +76,7 @@
     "faq": {
       "title": "FAQ",
       "question1": "What coins and fiat currencies are supported?",
-      "answer1": "Currently supporting major cryptocurrencies like BTC, ETH, USDT, as well as multiple fiat currencies including USD, EUR, CNY, BRL, INR. Covering payment channels in 30+ countries and regions worldwide, with continuous expansion of more coins and markets to provide users with more convenient exchange services.",
+      "answer1": "Currently supporting major cryptocurrencies like BTC, ETH, USDT, as well as multiple fiat currencies including USD, EUR, SGD, BRL, INR. Covering payment channels in 30+ countries and regions worldwide, with continuous expansion of more coins and markets to provide users with more convenient exchange services.",
       "question2": "Is my fund safe?",
       "answer2": "We adopt bank-level security standards, including multi-signature cold and hot wallet isolation, SSL encrypted transmission, real-time risk control monitoring system. All transactions comply with international KYC/AML requirements, cooperating with licensed financial institutions to ensure your fund security. Platform monitors abnormal transactions 24/7, providing full protection for every order.",
       "question3": "Is identity verification (KYC) required?",
@@ -126,7 +126,7 @@
     "crossBorderSettlement": "Cross-Border Settlement",
     "crossBorderSettlementDesc": "Mainly meets the international fund flow needs of enterprises, cross-border e-commerce, and individuals. Through the platform, users can achieve multi-currency exchange and fast settlement, avoiding the high fees and long waits of traditional international remittances. Based on blockchain clearing technology, transactions are transparent and traceable, with compliance guarantees reducing risks. Whether it's tuition, living expenses, or large corporate settlements, all can be completed efficiently, facilitating global fund flow.",
     "fiatDeposit": "Fiat Deposit",
-    "fiatDepositDesc": "This is the process of users depositing fiat currencies such as USD, CNY, EUR into their platform accounts, an important entry point into the digital asset ecosystem. The platform supports various methods such as bank card transfers and third-party payments, emphasizing simple operation and fast arrival. To ensure compliance, the system conducts identity verification and fund source review. A convenient deposit experience not only enhances user trust but also determines the platform's market competitiveness and user growth rate."
+    "fiatDepositDesc": "This is the process of users depositing fiat currencies such as USD, SGD, EUR into their platform accounts, an important entry point into the digital asset ecosystem. The platform supports various methods such as bank card transfers and third-party payments, emphasizing simple operation and fast arrival. To ensure compliance, the system conducts identity verification and fund source review. A convenient deposit experience not only enhances user trust but also determines the platform's market competitiveness and user growth rate."
   },
   "ProcessPage": {
     "title": "How It Works",
@@ -266,7 +266,7 @@
         "title": "Beginners Guide! Understand BTC/ETH to Fiat Exchange in One Minute",
         "description": "Safe · Compliant · Global Coverage 24EXC —— Making Digital Asset Flow More Free.",
         "date": "September 8, 2025",
-        "content": "<p>For many users new to cryptocurrency, \"How to exchange Bitcoin or Ethereum for fiat currency?\" is the most common question. Actually, you can easily get started by mastering a few key steps:</p><p><br></p><p>1. Register an account and complete identity verification (KYC) 👉 This is an important step to ensure transaction security and prevent fraud.</p><p>2. Select the coin to exchange (BTC / ETH / USDT) and target fiat currency (such as USD / CNY / EUR, etc.) 👉 24EXC supports free exchange between mainstream global coins and fiat currencies.</p><p>3. Submit exchange request and wait for arrival 👉 Average arrival time is less than 5 minutes, with guaranteed fund security.</p><p><br></p><p>24EXC provides 24-hour online customer service to help new users quickly understand the process. If you are using cryptocurrency for the first time, or want to legally and safely withdraw digital assets to fiat currency —— 24EXC is your first choice tool.</p>"
+        "content": "<p>For many users new to cryptocurrency, \"How to exchange Bitcoin or Ethereum for fiat currency?\" is the most common question. Actually, you can easily get started by mastering a few key steps:</p><p><br></p><p>1. Register an account and complete identity verification (KYC) 👉 This is an important step to ensure transaction security and prevent fraud.</p><p>2. Select the coin to exchange (BTC / ETH / USDT) and target fiat currency (such as USD / SGD / EUR, etc.) 👉 24EXC supports free exchange between mainstream global coins and fiat currencies.</p><p>3. Submit exchange request and wait for arrival 👉 Average arrival time is less than 5 minutes, with guaranteed fund security.</p><p><br></p><p>24EXC provides 24-hour online customer service to help new users quickly understand the process. If you are using cryptocurrency for the first time, or want to legally and safely withdraw digital assets to fiat currency —— 24EXC is your first choice tool.</p>"
       }
     ]
   },

@@ -385,12 +385,12 @@ function Introduce() {
                 <span className="text-[48px] font-bold text-[#000] mr-[90px]">
                   {t("steps.quickExchange")}
                 </span>
-                <RippleButton 
+                <RippleButton
                   variant="green"
                   className="text-black px-[10px] py-[10px] rounded-[4px] text-[16px] border-none font-bold"
                   onClick={() => {
                     if (window.Intercom) {
-                      window.Intercom('show');
+                      window.Intercom("show");
                     }
                   }}
                 >
@@ -483,7 +483,7 @@ function CommentCarousel() {
             }}
             className="absolute w-full"
           >
-            <div className="lg:text-[24px] text-[16px] lg:text-left text-center">
+            <div className="lg:text-[24px] text-[16px] text-left">
               {commentsData[currentIndex].id === 1 &&
               commentsData[currentIndex].highlight ? (
                 <>
@@ -601,10 +601,7 @@ function FAQItem({
 
       {/* 移动端布局 */}
       <div className="lg:hidden">
-        <div
-          className="py-[20px] cursor-pointer"
-          onClick={toggleExpanded}
-        >
+        <div className="py-[20px] cursor-pointer" onClick={toggleExpanded}>
           <div className="flex items-start justify-between gap-[12px]">
             <div className="flex-1">
               <div className="flex items-start gap-[12px]">
@@ -622,14 +619,16 @@ function FAQItem({
                   isExpanded ? "rotate-90" : "rotate-0"
                 }`}
               >
-                <ArrowUpRightIcon size={24} color="#000"/>
+                <ArrowUpRightIcon size={24} color="#000" />
               </div>
             </div>
           </div>
 
           <div
             className={`text-[14px] font-medium text-black transition-all duration-500 ease-in-out overflow-hidden pl-[34px] ${
-              isExpanded ? "max-h-[500px] opacity-100 mt-[12px]" : "max-h-0 opacity-0"
+              isExpanded
+                ? "max-h-[500px] opacity-100 mt-[12px]"
+                : "max-h-0 opacity-0"
             }`}
           >
             {faq.answer}
@@ -644,8 +643,6 @@ export default function Home() {
   const t = useTranslations("HomePage");
   const mockExchangeFeatures = getExchangeFeatures(t);
   const faqData = getFaqData(t);
-
-
 
   return (
     <div>
@@ -710,7 +707,7 @@ export default function Home() {
               )}
               onClick={() => {
                 if (window.Intercom) {
-                  window.Intercom('show');
+                  window.Intercom("show");
                 }
               }}
             >
@@ -792,7 +789,7 @@ export default function Home() {
       <div
         className={clsx(
           "py-[20px] px-[15px]",
-          "lg:py-[50px] lg:flex lg:justify-between lg:px-[108px] lg:space-x-[150px]"
+          "lg:py-[50px] lg:flex lg:justify-between items-center lg:px-[108px] lg:space-x-[150px]"
         )}
       >
         <motion.div
@@ -802,12 +799,11 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <span className="font-bold">{t("stats.platformTitle")}</span>
-          <div className="font-bold" style={{ whiteSpace: "pre-line" }}>
-            {t("stats.platformSubtitle")}
-          </div>
+          <span className="font-bold" style={{ whiteSpace: "pre-line" }}>
+            {t("stats.platformTitle")} {t("stats.platformSubtitle")}
+          </span>
         </motion.div>
-        <div className="grid grid-cols-2 gap-x-[10px] gap-y-[10px] mt-[20px] lg:mt-0 lg:gap-x-[120px] lg:gap-y-[142px] text-black">
+        <div className="grid grid-cols-2 shrink-0 gap-x-[10px] gap-y-[10px] mt-[20px] lg:mt-0 lg:gap-x-[120px] lg:gap-y-[142px] text-black">
           {[
             { key: "volume", delay: 0.1 },
             { key: "countries", delay: 0.2 },
@@ -843,7 +839,9 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="lg:text-[68px] text-[36px] font-bold">{t("partners.title")}</div>
+          <div className="lg:text-[68px] text-[36px] font-bold">
+            {t("partners.title")}
+          </div>
           <div className="lg:mt-[24px] mt-[10px] lg:text-[20px] text-[16px]">
             {t("partners.description")}
           </div>
