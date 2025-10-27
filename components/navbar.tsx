@@ -34,7 +34,7 @@ const LanguageSwitch = ({
             !isEnglish ? "text-white/60" : "text-white/90"
           }`}
         >
-          CN
+          中文
         </span>
 
         <span
@@ -51,8 +51,8 @@ const LanguageSwitch = ({
             isEnglish ? "translate-x-[48px]" : "translate-x-[4px]"
           }`}
         >
-          <span className=" text-gray-700 leading-none ">
-            {isEnglish ? "EN" : "CN"}
+          <span className=" text-gray-700 leading-none text-[14px]">
+            {isEnglish ? "EN" : "中文"}
           </span>
         </div>
       </div>
@@ -79,7 +79,7 @@ const MobileLanguageSwitch = ({
         }`}
         onClick={() => changeLanguage("zh")}
       >
-        CN
+        中文
       </span>
       <span className="text-white">/</span>
       <span
@@ -224,7 +224,7 @@ export const Navbar = () => {
               className="rounded-[3px] flex items-center justify-center min-w-[78px] space-x-2 p-[4px] border border-[#fff]/16"
               onClick={() => changeLanguage(isEnglish ? "zh" : "en")}
             >
-              <span className="text-[#fff]">{isEnglish ? "EN" : "CN"}</span>
+              <span className="text-[#fff]">{isEnglish ? "EN" : "中文"}</span>
 
               <svg
                 xmlns="http://www.w3.org/2000/svg"
