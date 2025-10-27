@@ -6,12 +6,12 @@ import { useTranslations } from "next-intl";
 
 const CryptoSwapBox: React.FC = () => {
   const t = useTranslations("CryptoSwapBox");
-  const [inputValue, setInputValue] = useState("");
-  const [debouncedValue, setDebouncedValue] = useState("");
+  const [inputValue, setInputValue] = useState("1");
+  const [debouncedValue, setDebouncedValue] = useState("1");
   const [exchangeResult, setExchangeResult] = useState("--");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [isReversed, setIsReversed] = useState(false); // 是否反转输入输出
+  const [isReversed, setIsReversed] = useState(true); // 是否反转输入输出
 
   // 防抖处理
   useEffect(() => {

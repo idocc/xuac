@@ -14,26 +14,13 @@ import { Logo, ArrowRightIcon } from "@/components/icons";
 import { RippleButton } from "@/components/RippleButton";
 
 // 自定义语言切换开关组件（桌面版）
-const LanguageSwitch = () => {
-  const router = useRouter();
-  const [isEnglish, setIsEnglish] = useState(false);
-
-  // 读取当前语言设置
-  useEffect(() => {
-    const cookies = document.cookie.split("; ");
-    const localeCookie = cookies.find((row) => row.startsWith("locale="));
-    const currentLocale = localeCookie ? localeCookie.split("=")[1] : "zh";
-    setIsEnglish(currentLocale === "en");
-  }, []);
-
-  const changeLanguage = (locale: string) => {
-    // 保存到 cookie
-    document.cookie = `locale=${locale}; path=/; max-age=31536000`;
-    setIsEnglish(locale === "en");
-    // 刷新页面以应用新语言
-    router.refresh();
-  };
-
+const LanguageSwitch = ({ 
+  isEnglish, 
+  changeLanguage 
+}: { 
+  isEnglish: boolean; 
+  changeLanguage: (locale: string) => void 
+}) => {
   return (
     <div className="relative inline-flex items-center">
       <div
@@ -74,28 +61,15 @@ const LanguageSwitch = () => {
 };
 
 // 移动端语言切换组件
-const MobileLanguageSwitch = () => {
-  const router = useRouter();
-  const [isEnglish, setIsEnglish] = useState(false);
-
-  // 读取当前语言设置
-  useEffect(() => {
-    const cookies = document.cookie.split("; ");
-    const localeCookie = cookies.find((row) => row.startsWith("locale="));
-    const currentLocale = localeCookie ? localeCookie.split("=")[1] : "zh";
-    setIsEnglish(currentLocale === "en");
-  }, []);
-
-  const changeLanguage = (locale: string) => {
-    // 保存到 cookie
-    document.cookie = `locale=${locale}; path=/; max-age=31536000`;
-    setIsEnglish(locale === "en");
-    // 刷新页面以应用新语言
-    router.refresh();
-  };
-
+const MobileLanguageSwitch = ({ 
+  isEnglish, 
+  changeLanguage 
+}: { 
+  isEnglish: boolean; 
+  changeLanguage: (locale: string) => void 
+}) => {
   const tNav = useTranslations("Navbar");
-  
+
   return (
     <div className="flex items-center justify-center gap-2">
       <span className="text-white">{tNav("language")}</span>
@@ -125,6 +99,21 @@ export const Navbar = () => {
   const tHome = useTranslations("HomePage");
   const tNav = useTranslations("Navbar");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isEnglish, setIsEnglish] = useState(false);
+
+  // 读取当前语言设置
+  useEffect(() => {
+    const currentLocale = localStorage.getItem("lang") || "zh";
+    setIsEnglish(currentLocale === "en");
+  }, []);
+
+  const changeLanguage = (locale: string) => {
+    // 保存到 localStorage
+    localStorage.setItem("lang", locale);
+    setIsEnglish(locale === "en");
+    // 刷新页面以应用新语言
+    window.location.reload();
+  };
 
   // 监听路由变化，关闭菜单
   useEffect(() => {
@@ -214,7 +203,7 @@ export const Navbar = () => {
         </NavbarContent>
 
         <NavbarContent className="hidden lg:flex" justify="end">
-          <LanguageSwitch />
+          <LanguageSwitch isEnglish={isEnglish} changeLanguage={changeLanguage} />
           <RippleButton
             variant="transparent"
             className="text-white w-[190px] justify-center ml-[10px] text-[16px] font-bold px-[18px] py-[10px] flex items-center gap-2 cursor-pointer"
@@ -230,34 +219,87 @@ export const Navbar = () => {
         </NavbarContent>
 
         <NavbarContent className="lg:hidden" justify="end">
-          <button
-            className="text-[#fff] p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <div className="flex space-x-1">
+            <div
+              className="rounded-[3px] flex items-center justify-center min-w-[78px] space-x-2 p-[4px] border border-[#fff]/16"
+              onClick={() => changeLanguage(isEnglish ? "zh" : "en")}
             >
-              {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
+              <span className="text-[#fff]">{isEnglish ? "EN" : "CN"}</span>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g clipPath="url(#clip0_721_3845)">
+                  <path
+                    d="M16.5 13.5L19.5 16.5L16.5 19.5"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M4.5 16.5H19.5"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M7.5 10.5L4.5 7.5L7.5 4.5"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round" 
+                  />
+                  <path
+                    d="M19.5 7.5H4.5"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_721_3845">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+
+            <button
+              className="text-[#fff] p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </NavbarContent>
       </HeroUINavbar>
 
@@ -282,7 +324,11 @@ export const Navbar = () => {
                       "text-[#fff] text-[16px] py-1 text-center transition-all duration-200 rounded-lg"
                     )}
                   >
-                    <span className={clsx(isActive && "border-b border-[#fff]")}>{item.label}</span>
+                    <span
+                      className={clsx(isActive && "border-b border-[#fff]")}
+                    >
+                      {item.label}
+                    </span>
                   </NextLink>
                 );
               })}
@@ -290,7 +336,7 @@ export const Navbar = () => {
           </div>
           {/* 语言切换 - 固定在底部 */}
           <div className="border-t mt-[30px] w-[80%] mx-auto border-[#fff]/20 p-[10px]">
-            <MobileLanguageSwitch />
+            <MobileLanguageSwitch isEnglish={isEnglish} changeLanguage={changeLanguage} />
           </div>
         </div>
       </div>

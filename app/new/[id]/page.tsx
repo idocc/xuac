@@ -8,15 +8,12 @@ const newsList = [
   { id: 3, image: "/images/about/new3.png" },
 ];
 
-// 生成静态参数 - 用于 ISR
+// 生成静态参数 - 用于静态导出
 export async function generateStaticParams() {
   return newsList.map((news) => ({
     id: news.id.toString(),
   }));
 }
-
-// 配置 ISR - 每60秒重新验证一次
-export const revalidate = 60;
 
 // 生成元数据
 export async function generateMetadata({
