@@ -2,111 +2,148 @@
 
 import { Logo } from "./icons";
 import Link from "next/link";
-import inIcon from "@/assets/footer/in.svg";
-import whatsapp from "@/assets/footer/whatsapp.svg";
-import x from "@/assets/footer/x.svg";
+import telegram from "@/assets/footer/tgLogo.png";
+import x from "@/assets/footer/xLogo.png";
+import discord from "@/assets/footer/DiscordLogo.png";
+import reddit from "@/assets/footer/RedditLogo.png";
+import instagram from "@/assets/footer/InstagramLogo.png";
 import { useTranslations } from "next-intl";
 
 export const Footer = () => {
-  const tNav = useTranslations('Navbar');
   const tFooter = useTranslations('Footer');
 
   const navItems = [
     {
-      label: tNav('home'),
-      href: "/",
+      id: 'aboutUs',
+      label: tFooter('aboutUs'),
+      href: "#",
     },
     {
-      label: tNav('products'),
-      href: "/product",
+      id: 'legalCompliance',
+      label: tFooter('legalCompliance'),
+      href: "#",
     },
     {
-      label: tNav('process'),
-      href: "/process",
+      id: 'mediaKit',
+      label: tFooter('mediaKit'),
+      href: "#",
     },
     {
-      label: tNav('security'),
-      href: "/security",
+      id: 'transparency',
+      label: tFooter('transparency'),
+      href: "#",
     },
     {
-      label: tNav('global'),
-      href: "/global",
-    },
-    {
-      label: tNav('about'),
-      href: "/about",
-    },
-    {
-      label: tNav('news'),
-      href: "/new",
+      id: 'goldReserveReport',
+      label: tFooter('goldReserveReport'),
+      href: "#",
     },
   ];
 
   const socialMediaItems = [
     {
-      icon: whatsapp,
-      alt: "whatsapp",
-      href: "https://www.whatsapp.com",
-      name: "whatsapp"
+      icon: telegram,
+      alt: "telegram",
+      href: "https://t.me",
+      name: "telegram",
+      size: 39
     },
     {
       icon: x,
       alt: "x",
       href: "https://x.com",
-      name: "x"
+      name: "x",
+      size: 39
     },
     {
-      icon: inIcon,
-      alt: "ins",
+      icon: discord,
+      alt: "discord",
+      href: "https://discord.com",
+      name: "discord",
+      size: 44
+    },
+    {
+      icon: reddit,
+      alt: "reddit",
+      href: "https://reddit.com",
+      name: "reddit",
+      size: 44
+    },
+    {
+      icon: instagram,
+      alt: "instagram",
       href: "https://www.instagram.com",
-      name: "instagram"
+      name: "instagram",
+      size: 44
     }
   ];
 
   return (
-    <div className="bg-black lg:px-[108px] px-[12px] lg:py-[40px] py-[30px]">
-      <div className="flex items-center gap-2">
-        <Logo size={40}></Logo>
-        <span className="lg:text-[55px] text-[36px] font-bold">{tFooter('brandName')}</span>
-      </div>
-      <div className="lg:space-x-[50px] lg:mt-[50px] mt-[10px] space-y-[20px]">
-        {navItems.map((item) => (
-          <Link
-            href={item.href}
-            key={item.href}
-            className="text-[16px] text-[#fff] block lg:inline-block"
-          >
-            {item.label}
-          </Link>
-        ))}
-      </div>
-      <div className="border-[#333] pb-[30px] lg:mt-[50px] mt-[30px] border-b w-full">
-        <ul className="lg:space-x-[50px] space-x-[20px] flex lg:pl-[15px]">
-          {socialMediaItems.map((item) => (
-            <li key={item.name}>
-              <Link href={item.href} target="_blank" rel="noopener noreferrer" className="block">
-                <img src={item.icon.src} alt={item.alt} className="w-[23px]" />
+    <div className="bg-[#0e0e11] px-[12px] lg:px-[108px] py-[40px] lg:py-[80px] flex flex-col gap-[40px] lg:gap-[80px] items-center w-full">
+      {/* Top Section: Logo and Navigation */}
+      <div className="flex flex-col lg:flex-row items-start lg:items-start justify-between w-full gap-[40px] lg:gap-0">
+        {/* Logo Section */}
+        <div className="flex gap-[24px] items-center h-auto lg:h-[80px]">
+          <div className="w-[56px] h-[56px] lg:w-[72px] lg:h-[72px] shrink-0 flex items-center justify-center">
+            <Logo size={56} className="lg:w-[72px] lg:h-[72px] w-[56px] h-[56px]" />
+          </div>
+          <p className="font-['IBM_Plex_Mono',sans-serif] font-bold leading-[40px] lg:leading-[56px] text-[#efbe84] text-[28px] lg:text-[36px] tracking-[-0.36px]">
+            {tFooter('brandName')}
+          </p>
+        </div>
+
+        {/* Navigation and Social Media Section */}
+        <div className="flex flex-col gap-[32px] lg:gap-[48px] items-start lg:items-end w-full lg:w-auto">
+          {/* Navigation Links */}
+          <div className="flex flex-wrap gap-[20px] lg:gap-[54px] h-auto lg:h-[76px] items-center justify-start lg:justify-end w-full lg:w-auto">
+            {navItems.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="text-white text-[18px] lg:text-[24px] leading-none tracking-[-0.6px] whitespace-nowrap hover:opacity-80 transition-opacity"
+              >
+                {item.label}
               </Link>
-            </li>
-          ))}
-        </ul>
+            ))}
+          </div>
+
+          {/* Social Media Icons */}
+          <div className="flex gap-[24px] lg:gap-[48px] items-start justify-start lg:justify-end w-full lg:w-auto">
+            <div className="flex gap-[32px] lg:gap-[69px] items-start">
+              {socialMediaItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block hover:opacity-80 transition-opacity shrink-0"
+                >
+                  <img
+                    src={item.icon.src}
+                    alt={item.alt}
+                    width={item.size}
+                    height={item.size}
+                    className="block object-contain"
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="lg:flex justify-between items-start text-[#8C8C8E] text-[18px] mt-[48px]">
-        <div>
-          <div>{tFooter('disclaimer')}</div>
-          <div>{tFooter('copyright')}</div>
+      {/* Bottom Section: Disclaimer and Copyright */}
+      <div className="border-t border-[#333333] pt-[32px] lg:pt-[48px] pb-0 px-0 flex flex-col lg:flex-row items-start lg:items-end justify-between w-full gap-[24px] lg:gap-0">
+        <div className="flex flex-col gap-[8px] items-start">
+          <p className="text-[#8c8c8e] text-[14px] lg:text-[16px] leading-[24px] lg:leading-[28px]">
+            {tFooter('disclaimer')}
+          </p>
         </div>
-        <div className="lg:w-[616px]">
-          {tFooter('description')}
+        <div className="text-center lg:text-right flex flex-wrap gap-[10px] items-center justify-start lg:justify-center w-full lg:w-auto">
+          <p className="text-[#8c8c8e] text-[14px] lg:text-[16px] leading-[20px] lg:leading-[24px] text-left lg:text-right w-full lg:w-[616px] whitespace-pre-wrap">
+            {tFooter('copyright')}
+          </p>
         </div>
-      </div>
-      <div className="h-[200px]  relative lg:block hidden">
-        <img
-          src="/images/footer_abc.webp"
-          className="h-[120px] absolute bottom-[-40px] right-[-108px]"
-          alt=""
-        />
       </div>
     </div>
   );

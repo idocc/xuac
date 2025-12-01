@@ -158,6 +158,46 @@
     "protectionMechanismDesc": "Segregated client funds, dedicated handling for high-value transactions, and compensation safeguards",
     "detailDescription": "Security and compliance are the cornerstones of user trust. 24EXC employs a layered security architecture — including multi-signature mechanisms and cold wallet storage — to mitigate single-point risks and protect against attacks. Real-time risk controls and data-driven monitoring rapidly identify and block anomalous transactions. On the compliance side, the platform follows international KYC (identity verification) and AML (anti–money laundering) standards, conducting comprehensive checks on user identities and sources of funds, and refrains from serving sanctioned jurisdictions. Client assets are strictly segregated from company operational funds, with dedicated handling and contingency plans for large-value transfers to minimize risk exposure and provide a transparent, trustworthy environment."
   },
+  "SecuritySection": {
+    "title": "Security & Compliance",
+    "item1": {
+      "title": "Multi-location Vaults + Custody Redundancy"
+    },
+    "item2": {
+      "title": "Regulatory Filing & Legal Guarantee",
+      "hoverContent": "XAUC completes compliance filing according to applicable jurisdiction requirements, with all processes operating under formal legal frameworks. Minting, custody, and redemption mechanisms are constrained by clear regulatory requirements, ensuring transparent and traceable asset sources and flows. Provides users with a stable, credible, and traceable legal guarantee foundation."
+    },
+    "item3": {
+      "title": "On-chain Transparency & Audit Interface",
+      "hoverContent": "XAUC's reserve and circulation data can all be verified on-chain and are publicly disclosed in real-time through the Proof Dashboard. Independent third parties regularly provide reserve audits, ensuring a 1:1 correspondence between gold reserves and token issuance. Open query interfaces and data sources enable individuals and institutions to independently verify XAUC's real status."
+    },
+    "description": "XAUC's physical gold reserves are distributed and custodied by multiple regulated vaults, establishing redundancy mechanisms at both geographical and institutional levels.\nThis architecture ensures that even if a single custodian or region experiences risk, the overall reserves remain safe and controllable."
+  },
+  "RoadmapSection": {
+    "title": "Roadmap",
+    "phases": {
+      "phase1": {
+        "number": "01",
+        "title": "Startup Phase",
+        "description": "XAUC Official Release"
+      },
+      "phase2": {
+        "number": "02",
+        "title": "Growth Phase",
+        "description": "XAUC Official Release"
+      },
+      "phase3": {
+        "number": "03",
+        "title": "Expansion Phase",
+        "description": "Achieve multi-chain support and\nGlobal compliance license layout"
+      }
+    },
+    "timeline": {
+      "q4_2025": "2025 Q4",
+      "2026": "2026",
+      "2026_plus": "2026+"
+    }
+  },
   "AboutPage": {
     "title": "About Us",
     "subtitle": "About Us",
@@ -270,10 +310,14 @@
     ]
   },
   "Footer": {
-    "brandName": "24EXC",
+    "brandName": "XAUC",
+    "aboutUs": "About Us",
+    "legalCompliance": "Legal and Compliance",
+    "mediaKit": "Media Kit",
+    "transparency": "Transparency",
+    "goldReserveReport": "Gold Reserve Report",
     "disclaimer": "Disclaimer",
-    "copyright": "© 2025 24EXC All rights reserved",
-    "description": "All product images and simulations are for illustrative purposes only. Features may vary by customer and region. 24EXC complies with international KYC/AML standards and does not offer services in sanctioned or restricted jurisdictions."
+    "copyright": "Copyright © 2020 - 2025 Tether Operations, SA de CV All rights reserved."
   },
   "CryptoSwapBox": {
     "inputPlaceholder": "0",

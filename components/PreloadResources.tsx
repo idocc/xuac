@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface PreloadResourcesProps {
@@ -11,18 +11,12 @@ export default function PreloadResources({ onLoadComplete }: PreloadResourcesPro
  
   const [progress, setProgress] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
+  const headline = "XAUC · On-chain Gold,\nRedeemable & Compliant...";
+  const totalBars = 90;
 
   // 关键资源列表
   const criticalResources = [
-    "/allbg.mp4",
-    "/images/top_img.webp",
-    "/images/user_ava.png",
-    "/images/music_icon.png",
-    "/images/icon1.png",
-    "/images/icon2.png",
-    "/images/icon3.png",
-    "/images/global/earth.webp",
-    "/images/footer_abc.webp",
+    "/images/home/bg.png",
   ];
 
   useEffect(() => {
@@ -97,6 +91,10 @@ export default function PreloadResources({ onLoadComplete }: PreloadResourcesPro
     };
   }, [onLoadComplete]);
 
+  const highlightedBars = useMemo(() => {
+    return Math.round((progress / 100) * totalBars);
+  }, [progress, totalBars]);
+
   return (
     <AnimatePresence>
       {!isComplete && (
@@ -106,55 +104,31 @@ export default function PreloadResources({ onLoadComplete }: PreloadResourcesPro
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="text-center px-4">
-            {/* Logo 动画 */}
-            <motion.div
-              className="mb-8"
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="lg:text-6xl text-4xl font-bold text-white mb-4">
-                <span className="text-[#BDEE63]">24</span>EXC
-              </div>
-            </motion.div>
+          <div className="relative h-full w-full px-6 py-10 text-[#efbe84]">
+            <div className="flex h-full w-full items-center justify-center">
+              <div className="w-full max-w-[1200px]">
+                <div className="mb-10 flex flex-wrap gap-[6px]">
+                  {Array.from({ length: totalBars }).map((_, index) => {
+                    const isActive = index < highlightedBars;
+                    return (
+                      <span
+                        key={index}
+                        className="h-[82px] w-[6px] rounded-[1px] transition-colors duration-200"
+                        style={{
+                          backgroundColor: isActive ? "#efbe84" : "#2d2d2d",
+                        }}
+                      />
+                    );
+                  })}
+                </div>
 
-            {/* 进度条容器 */}
-            <div className="w-[280px] lg:w-[400px] mx-auto">
-              {/* 进度条背景 */}
-              <div className="h-1 bg-gray-800 rounded-full overflow-hidden mb-4">
-                <motion.div
-                  className="h-full bg-gradient-to-r from-[#BDEE63] to-[#9FCC4F]"
-                  style={{ width: `${progress}%` }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                />
+                <div className="flex flex-col gap-4 text-left font-[IBM_Plex_Mono,sans-serif] text-[28px] leading-[1.4] tracking-wide md:flex-row md:items-center md:justify-between md:text-[52px]">
+                  <div className="flex-1 whitespace-pre-line">{headline}</div>
+                  <div className="text-right text-[32px] font-semibold tabular-nums md:text-[52px]">
+                    {progress}%
+                  </div>
+                </div>
               </div>
-
-              {/* 百分比 */}
-              <div className="flex justify-center items-center text-sm">
-                <span className="text-[#BDEE63] font-bold tabular-nums">
-                  {progress}%
-                </span>
-              </div>
-            </div>
-
-            {/* 装饰性的脉冲圆点 */}
-            <div className="flex justify-center gap-2 mt-8">
-              {[0, 1, 2].map((i) => (
-                <motion.div
-                  key={i}
-                  className="w-2 h-2 bg-[#BDEE63] rounded-full"
-                  animate={{
-                    scale: [1, 1.5, 1],
-                    opacity: [0.5, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    delay: i * 0.2,
-                  }}
-                />
-              ))}
             </div>
           </div>
         </motion.div>

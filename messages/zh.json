@@ -158,6 +158,46 @@
     "protectionMechanismDesc": "资金隔离、大额资金专人处理、赔付计划",
     "detailDescription": "在数字资产交易领域,安全与合规是平台建立用户信任的基石。全天汇24exc 通过多层次安全架构，采用多重签名机制和冷钱包储存，确保用户资产免受黑客攻击与单点风险。同时，系统配置实时风控与大数据监测，能够快速识别和拦截异常交易，保障资金安全。 在合规层面，平台严格遵循 KYC(身份认证) 和 AML(反洗钱) 国际标准,全面审查用户身份与资金来源,拒绝为受制裁国家和高风险用户提供服务。此外,平台建立了资金隔离制度,将用户资产与平台自有资金独立存放,并针对大额资金配备专人处理及赔付计划,最大程度降低风险敞口。通过全方位的安全与合规体系,全天汇24exc 为用户提供透明、可信赖的交易环境，树立行业信任标杆。"
   },
+  "SecuritySection": {
+    "title": "安全与合规",
+    "item1": {
+      "title": "多地金库 + 托管冗余"
+    },
+    "item2": {
+      "title": "监管备案与法律保障",
+      "hoverContent": "XAUC 按照适用司法辖区要求完成合规备案，所有流程均在正式法律框架下运行。铸造、托管与赎回机制均受到明确的监管要求约束，确保资产来源与流向透明可查。为用户提供稳定、可信、可追溯的法律保障基础。"
+    },
+    "item3": {
+      "title": "链上透明与审计接口",
+      "hoverContent": "XAUC 的储备与流通数据全部可在链上验证，并通过 Proof Dashboard 实时公开。独立第三方定期提供储备审计，确保黄金储备与代币发行保持 1:1 对应关系。开放查询接口与数据源，方便个人与机构独立核查 XAUC 的真实状态。"
+    },
+    "description": "XAUC 的实物黄金储备由多家受监管金库分布式托管，建立地理与机构层面的冗余机制。\n这种架构确保即便单一托管方或地区发生风险，整体储备仍安全可控。"
+  },
+  "RoadmapSection": {
+    "title": "路线图",
+    "phases": {
+      "phase1": {
+        "number": "01",
+        "title": "启动阶段",
+        "description": "XAUC 正式发行"
+      },
+      "phase2": {
+        "number": "02",
+        "title": "成长阶段",
+        "description": "XAUC 正式发行"
+      },
+      "phase3": {
+        "number": "03",
+        "title": "扩展阶段",
+        "description": "实现多链支持与\n全球合规牌照布局"
+      }
+    },
+    "timeline": {
+      "q4_2025": "2025 Q4",
+      "2026": "2026",
+      "2026_plus": "2026+"
+    }
+  },
   "AboutPage": {
     "title": "关于我们",
     "subtitle": "About Us",
@@ -271,10 +311,14 @@
     ]
   },
   "Footer": {
-    "brandName": "全天汇",
-    "disclaimer": "免责声明",
-    "copyright": "© 2025 24EXC 保留所有权利",
-    "description": "所有产品图片和模拟均仅用于信息和演示目的。并非所有功能都适用于所有客户。"
+    "brandName": "XAUC",
+    "aboutUs": "关于我们",
+    "legalCompliance": "法律和合规",
+    "mediaKit": "媒体资料",
+    "transparency": "透明度",
+    "goldReserveReport": "金币储备报告",
+    "disclaimer": "Disclaimer",
+    "copyright": "版权所有 © 2020 - 2025 Tether Operations, SA de CV 保留所有权利。"
   },
   "CryptoSwapBox": {
     "inputPlaceholder": "0",

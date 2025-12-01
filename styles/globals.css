@@ -86,4 +86,74 @@ html, body {
   transition: all 0.3s ease-in-out !important;
 }
 
+/* SVG 文字描边 + 填充动画（黑色） */
+@keyframes hero-svg-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hero-svg-fill {
+  to {
+    fill: #000000;
+  }
+}
+
+.hero-svg-word path {
+  fill: transparent;
+  stroke: #000000;
+  stroke-width: 6;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+
+  animation:
+    hero-svg-draw 1.4s ease-out forwards,
+    hero-svg-fill 0.3s ease-out 1.4s forwards;
+}
+
+/* 依次出现的延迟 */
+.hero-svg-word-1 path {
+  animation-delay: 0.1s, 1.5s;
+}
+
+.hero-svg-word-2 path {
+  animation-delay: 0.2s, 1.6s;
+}
+
+.hero-svg-word-3 path {
+  animation-delay: 0.4s, 1.8s;
+}
+
+.hero-svg-word-4 path {
+  animation-delay: 0.6s, 2s;
+}
+
+/* ValueSection 竖线入场动画（从上到下伸展） */
+@keyframes value-line-grow {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.value-line {
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0;
+}
+
+/* 手动 4 行截断，用于文案「展开全部」之前 */
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
 @config "../tailwind.config.js";

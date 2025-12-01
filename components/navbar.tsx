@@ -1,354 +1,66 @@
 "use client";
-import {
-  Navbar as HeroUINavbar,
-  NavbarContent,
-  NavbarBrand,
-  NavbarItem,
-} from "@heroui/navbar";
+
 import NextLink from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { useTranslations } from "next-intl";
-import { Logo, ArrowRightIcon } from "@/components/icons";
-import { RippleButton } from "@/components/RippleButton";
 
-// 自定义语言切换开关组件（桌面版）
-const LanguageSwitch = ({ 
-  isEnglish, 
-  changeLanguage 
-}: { 
-  isEnglish: boolean; 
-  changeLanguage: (locale: string) => void 
-}) => {
-  return (
-    <div className="relative inline-flex items-center">
-      <div
-        className="relative w-[92px] h-[48px] text-[16px] rounded-full cursor-pointer transition-all duration-300 ease-in-out"
-        style={{ backgroundColor: "#FFFFFF1F" }}
-        onClick={() => changeLanguage(isEnglish ? "zh" : "en")}
-      >
-        {/* 背景标签 */}
-        <span
-          className={`absolute left-3 top-1/2 transform  -translate-y-1/2 font-medium transition-all duration-300 z-10 ${
-            !isEnglish ? "text-white/60" : "text-white/90"
-          }`}
-        >
-          中文
-        </span>
+const tokenLogo =
+  "https://www.figma.com/api/mcp/asset/a5dffe18-041d-48fe-8113-4982ce68ce0f";
 
-        <span
-          className={`absolute right-3 top-1/2 transform  -translate-y-1/2 transition-all duration-300 z-10 ${
-            isEnglish ? "text-white/60" : "text-white/90"
-          }`}
-        >
-          EN
-        </span>
-
-        {/* 滑动按钮 */}
-        <div
-          className={`absolute top-[4px] w-[40px] h-[40px] bg-gradient-to-br from-white to-gray-100 z-[11] rounded-full shadow-lg transition-all duration-300 ease-in-out flex items-center justify-center ${
-            isEnglish ? "translate-x-[48px]" : "translate-x-[4px]"
-          }`}
-        >
-          <span className=" text-gray-700 leading-none text-[14px]">
-            {isEnglish ? "EN" : "中文"}
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// 移动端语言切换组件
-const MobileLanguageSwitch = ({ 
-  isEnglish, 
-  changeLanguage 
-}: { 
-  isEnglish: boolean; 
-  changeLanguage: (locale: string) => void 
-}) => {
-  const tNav = useTranslations("Navbar");
-
-  return (
-    <div className="flex items-center justify-center gap-2">
-      <span className="text-white">{tNav("language")}</span>
-      <span
-        className={`cursor-pointer transition-all duration-200 ${
-          !isEnglish ? "text-white" : "text-white/70"
-        }`}
-        onClick={() => changeLanguage("zh")}
-      >
-        中文
-      </span>
-      <span className="text-white">/</span>
-      <span
-        className={`cursor-pointer transition-all duration-200 ${
-          isEnglish ? "text-white" : "text-white/70"
-        }`}
-        onClick={() => changeLanguage("en")}
-      >
-        EN
-      </span>
-    </div>
-  );
-};
+const navItems = [
+  { label: "关于我们", href: "/about" },
+  { label: "法律与合规", href: "/legal" },
+  { label: "媒体资源", href: "/media" },
+  { label: "透明度", href: "/transparency" },
+  { label: "金币储备报告", href: "/reports" },
+];
 
 export const Navbar = () => {
   const pathname = usePathname();
-  const tHome = useTranslations("HomePage");
-  const tNav = useTranslations("Navbar");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isEnglish, setIsEnglish] = useState(false);
-
-  // 读取当前语言设置
-  useEffect(() => {
-    const currentLocale = localStorage.getItem("lang") || "zh";
-    setIsEnglish(currentLocale === "en");
-  }, []);
-
-  const changeLanguage = (locale: string) => {
-    // 保存到 localStorage
-    localStorage.setItem("lang", locale);
-    setIsEnglish(locale === "en");
-    // 刷新页面以应用新语言
-    window.location.reload();
-  };
-
-  // 监听路由变化，关闭菜单
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [pathname]);
-
-  // 阻止菜单打开时的背景滚动
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isMenuOpen]);
-
-  // 导航项配置
-  const navItems = [
-    {
-      label: tNav("home"),
-      href: "/",
-    },
-    {
-      label: tNav("products"),
-      href: "/product",
-    },
-    {
-      label: tNav("process"),
-      href: "/process",
-    },
-    {
-      label: tNav("security"),
-      href: "/security",
-    },
-    {
-      label: tNav("global"),
-      href: "/global",
-    },
-    {
-      label: tNav("about"),
-      href: "/about",
-    },
-    {
-      label: tNav("news"),
-      href: "/new",
-    },
-  ];
 
   return (
-    <>
-      <HeroUINavbar
-        maxWidth="full"
-        position="sticky"
-        height="64px"
-        className="bg-black backdrop-blur-2xl"
-      >
-        <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-          <NavbarBrand as="li" className="gap-3 max-w-fit">
-            <NextLink
-              className="flex justify-start items-center gap-1"
-              href="/"
-            >
-              <Logo size={20} />
-              <p className="font-bold text-[#fff] ">{tHome("hero.title")}</p>
-            </NextLink>
-          </NavbarBrand>
-          <ul className="hidden lg:flex gap-4 justify-start ml-2">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <NavbarItem key={item.href}>
-                  <NextLink
-                    className={clsx(
-                      "text-[16px] text-[#fff] transition-all duration-200",
-                      isActive && "font-bold border-b border-[#fff]"
-                    )}
-                    href={item.href}
-                  >
-                    <span className="">{item.label}</span>
-                  </NextLink>
-                </NavbarItem>
-              );
-            })}
-          </ul>
-        </NavbarContent>
+    <header className="pointer-events-none fixed top-[50px] z-50 flex w-full justify-center">
+      <nav className="pointer-events-auto mx-4 flex w-full max-w-[1168px] flex-col gap-4 rounded-[12px] border border-[#3f3f3f] bg-[#050505] px-4 py-3 text-white shadow-[0_15px_60px_rgba(0,0,0,0.45)] md:flex-row md:items-center md:gap-6">
+        <NextLink
+          href="/"
+          className="flex items-center gap-3 text-[#efbe84]"
+          aria-label="XAUC"
+        >
+          <span className="flex size-9 items-center justify-center rounded-full bg-[#151515]">
+            <img
+              src={tokenLogo}
+              alt="XAUC token logo"
+              className="h-6 w-6 object-contain"
+            />
+          </span>
+          <span className="font-semibold tracking-wide">XAUC</span>
+        </NextLink>
 
-        <NavbarContent className="hidden lg:flex" justify="end">
-          <LanguageSwitch isEnglish={isEnglish} changeLanguage={changeLanguage} />
-          <RippleButton
-            variant="transparent"
-            className="text-white w-[190px] justify-center ml-[10px] text-[16px] font-bold px-[18px] py-[10px] flex items-center gap-2 cursor-pointer"
-            onClick={() => {
-              if (window.Intercom) {
-                window.Intercom("show");
-              }
-            }}
-          >
-            <span className="">{tHome("hero.exchangeNow")}</span>
-            <ArrowRightIcon />
-          </RippleButton>
-        </NavbarContent>
-
-        <NavbarContent className="lg:hidden" justify="end">
-          <div className="flex space-x-1">
-            <div
-              className="rounded-[3px] flex items-center justify-center min-w-[78px] space-x-2 p-[4px] border border-[#fff]/16"
-              onClick={() => changeLanguage(isEnglish ? "zh" : "en")}
-            >
-              <span className="text-[#fff]">{isEnglish ? "EN" : "中文"}</span>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <g clipPath="url(#clip0_721_3845)">
-                  <path
-                    d="M16.5 13.5L19.5 16.5L16.5 19.5"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M4.5 16.5H19.5"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M7.5 10.5L4.5 7.5L7.5 4.5"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round" 
-                  />
-                  <path
-                    d="M19.5 7.5H4.5"
-                    stroke="white"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_721_3845">
-                    <rect width="24" height="24" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
-
-            <button
-              className="text-[#fff] p-2"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+        <div className="flex flex-1 flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[15px] font-light text-white/80">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <NextLink
+                key={item.href}
+                href={item.href}
+                className={clsx(
+                  "transition-colors",
+                  isActive ? "text-[#efbe84]" : "hover:text-white"
                 )}
-              </svg>
-            </button>
-          </div>
-        </NavbarContent>
-      </HeroUINavbar>
-
-      <div
-        className={clsx(
-          "fixed left-0 right-0 bg-black h-full z-40 lg:hidden overflow-hidden transition-all duration-300 ease-in-out",
-          isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        )}
-        style={{ top: "64px" }}
-      >
-        <div className="flex flex-col relative">
-          {/* 菜单项 */}
-          <div className="flex-1 overflow-y-auto">
-            <div className="mx-4 mt-[10px] flex flex-col gap-4">
-              {navItems.map((item, index) => {
-                const isActive = pathname === item.href;
-                return (
-                  <NextLink
-                    key={`${item.href}-${index}`}
-                    href={item.href}
-                    className={clsx(
-                      "text-[#fff] text-[16px] py-1 text-center transition-all duration-200 rounded-lg"
-                    )}
-                  >
-                    <span
-                      className={clsx(isActive && "border-b border-[#fff]")}
-                    >
-                      {item.label}
-                    </span>
-                  </NextLink>
-                );
-              })}
-            </div>
-          </div>
-          {/* 语言切换 - 固定在底部 */}
-          <div className="border-t mt-[30px] w-[80%] mx-auto border-[#fff]/20 p-[10px]">
-            <MobileLanguageSwitch isEnglish={isEnglish} changeLanguage={changeLanguage} />
-          </div>
+              >
+                {item.label}
+              </NextLink>
+            );
+          })}
         </div>
-      </div>
 
-      {/* 背景遮罩 */}
-      {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
-          style={{ top: "64px" }}
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
-    </>
+        <button
+          className="rounded-[12px] bg-[#efbe84] px-5 py-2 text-[16px] font-medium text-[#151515] transition-colors hover:bg-[#f5d6a6]"
+          type="button"
+        >
+          购买XAUC
+        </button>
+      </nav>
+    </header>
   );
 };
