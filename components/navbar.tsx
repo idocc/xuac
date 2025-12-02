@@ -13,6 +13,7 @@ const navItems = [
   { label: "媒体资源", href: "/media" },
   { label: "透明度", href: "/transparency" },
   { label: "金币储备报告", href: "/reports" },
+  { label: "联系我们", href: "/contact" },
 ];
 
 export const Navbar = () => {
