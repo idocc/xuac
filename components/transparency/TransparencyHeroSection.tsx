@@ -15,7 +15,7 @@ export const TransparencyHeroSection = () => {
           </div>
 
           {/* Background Graphics */}
-          <div className="relative w-full md:w-[766px] h-[500px] flex-shrink-0">
+          <div className="relative w-full md:w-[506px] h-[340px] flex-shrink-0">
             <Image
               src="/toumingdu/t1.png"
               alt=""

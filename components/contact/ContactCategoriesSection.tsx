@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface ContactCategory {
   title: string;
@@ -73,14 +74,23 @@ const DecorativeText = () => {
 };
 
 const CategoryCard = ({ title, description }: ContactCategory) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/contact-form');
+  };
+
   return (
-    <div className="relative flex flex-col gap-5 items-start w-full max-w-[553px] pb-[138px]">
+    <div 
+      className="relative flex flex-col gap-5 items-start w-full max-w-[553px] pb-[138px] cursor-pointer transition-transform hover:scale-105"
+      onClick={handleClick}
+    >
       {/* Decorative background text */}
       <div className="relative w-full h-[221px] mb-[-138px]">
         <DecorativeText />
         
         {/* Title box - centered */}
-        <div className="absolute left-1/2 top-[19px] -translate-x-1/2 bg-[#0e0e11] flex items-center justify-center h-[42px] px-[10px] py-[10px]">
+        <div className="absolute left-1/2 top-[19px] -translate-x-1/2 bg-[#0e0e11] flex items-center justify-center h-[42px] px-[10px] py-[10px] hover:bg-[#1a1a1f] transition-colors">
           <div className="font-['IBM_Plex_Mono',monospace] text-[32px] text-white tracking-[-0.32px] whitespace-nowrap leading-[46px]" style={{ fontVariationSettings: "'wght' 400" }}>
             {title}
           </div>

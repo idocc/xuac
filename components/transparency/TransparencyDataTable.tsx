@@ -369,7 +369,7 @@ export const TransparencyDataTable = () => {
             </div>
 
             {/* Right side - Icons image */}
-            <div className="flex-shrink-0 bg-gray-100 flex items-center justify-center p-8">
+            <div className="flex-shrink-0 bg-gray-100 flex items-center justify-center">
               <Image
                 src="/toumingdu/t3.png"
                 alt=""
