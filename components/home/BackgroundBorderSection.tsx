@@ -1,8 +1,41 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
 
 export const BackgroundBorderSection = () => {
+  const [textComplete, setTextComplete] = useState(false);
+  const goldControls = useAnimation();
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+
+  useEffect(() => {
+    // 文字动画完成后，触发金砖动画
+    if (textComplete) {
+      goldControls.start({
+        x: 0,
+        opacity: 1,
+        transition: {
+          duration: 1.2,
+          ease: "easeOut",
+        },
+      });
+    }
+  }, [textComplete, goldControls]);
+
+  // 当最后一个文字元素（按钮）动画完成时，触发金砖动画
+  const handleTextAnimationComplete = () => {
+    if (isInView) {
+      setTextComplete(true);
+    }
+  };
+
   return (
-    <section className="relative isolate overflow-hidden bg-black border-t border-b border-[#3a3a3a] min-h-[900px]">
+    <section 
+      ref={sectionRef}
+      className="relative isolate overflow-hidden bg-black border-t border-b border-[#3a3a3a] min-h-[900px]"
+    >
       {/* Background Pattern */}
 
       <div className="absolute left-0 top-[-1px] w-full h-full flex flex-col gap-[6px]">
@@ -14,18 +47,41 @@ export const BackgroundBorderSection = () => {
       <div className="relative z-10 mx-auto w-full max-w-[720px] pt-[131px] pb-[131px] flex flex-col gap-[34px] items-center">
         <div className="flex flex-col gap-[25px] items-center w-full">
           {/* Title */}
-          <div className="text-center">
-            <h2 className="text-[68px] font-semibold leading-[90px] text-white whitespace-nowrap">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut",
+            }}
+          >
+            <motion.h2
+              className="text-[68px] font-semibold leading-[90px] text-white whitespace-nowrap"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
               让每个人都能
-            </h2>
-            <h2 className="text-[68px] font-semibold leading-[90px] text-white whitespace-nowrap">
+            </motion.h2>
+            <motion.h2
+              className="text-[68px] font-semibold leading-[90px] text-white whitespace-nowrap"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 1, delay: 0.6 }}
+            >
               安全、透明、自由地拥有
               <span className="text-[#efbe84]">黄金</span>
-            </h2>
-          </div>
+            </motion.h2>
+          </motion.div>
 
           {/* Try XAUC Section */}
-          <div className="flex items-center gap-[24px]">
+          <motion.div
+            className="flex items-center gap-[24px]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 1, delay: 1.2 }}
+          >
             <div className="text-[36px] font-semibold text-[#efbe84] leading-[45px] whitespace-pre-wrap">
               Try
             </div>
@@ -63,43 +119,65 @@ export const BackgroundBorderSection = () => {
                 XAUC
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Description */}
-          <p className="text-[24px] font-normal leading-[45px] text-[#888888] text-center">
+          <motion.p
+            className="text-[24px] font-normal leading-[45px] text-[#888888] text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 1, delay: 1.6 }}
+          >
             XAUC —— 将黄金的稳健与加密的灵活完美结合，
             <br />
             开启全球价值储存与支付的新纪元。
-          </p>
+          </motion.p>
         </div>
 
         {/* CTA Button */}
-        <button className="bg-[#efbe84] border border-[#efbe84] rounded-[12px] px-[16px] py-[10px] w-[166px] flex items-center justify-center">
+        <motion.button
+          className="bg-[#efbe84] border border-[#efbe84] rounded-[12px] px-[16px] py-[10px] w-[166px] flex items-center justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ 
+            duration: 1, 
+            delay: 2,
+            onComplete: handleTextAnimationComplete
+          }}
+        >
           <span className="text-[16px] font-normal text-[#151515] leading-[24px] text-center whitespace-nowrap">
             购买XAUC
           </span>
-        </button>
+        </motion.button>
       </div>
 
       {/* Left Gold Bars */}
-      <div className="absolute left-0 bottom-0 w-[517px] h-[539px] pointer-events-none z-0">
+      <motion.div
+        className="absolute left-0 bottom-0 w-[517px] h-[539px] pointer-events-none z-0"
+        initial={{ x: "-100%", opacity: 0 }}
+        animate={goldControls}
+      >
         <Image
           src="/images/home/gold.png"
           alt=""
           fill
           className="object-cover object-center"
         />
-      </div>
+      </motion.div>
 
       {/* Right Gold Bars */}
-      <div className="absolute right-0 bottom-0 w-[517px] h-[539px] pointer-events-none z-0">
+      <motion.div
+        className="absolute right-0 bottom-0 w-[517px] h-[539px] pointer-events-none z-0"
+        initial={{ x: "100%", opacity: 0 }}
+        animate={goldControls}
+      >
         <Image
           src="/images/home/gold.png"
           alt=""
           fill
           className="object-cover object-center scale-x-[-1]"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };
