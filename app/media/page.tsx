@@ -276,26 +276,27 @@ export default function MediaPage() {
   return (
     <div className="bg-[#030303]">
       {/* Hero */}
-      <section className="relative flex w-full justify-center bg-black h-[574px] pb-[120px] pt-[246px]">
-        <div
-          className={`${MEDIA_CONTAINER_WIDTH} flex items-center justify-between gap-10 px-4`}
-        >
-          <div className="max-w-[420px]">
-            <h1 className="font-['IBM_Plex_Mono',monospace] text-[64px] font-bold leading-[1.1] tracking-[-0.68px] text-white">
-              媒体资源
-            </h1>
-          </div>
+      <section className="relative min-h-[581px] w-full overflow-hidden bg-black">
+        <div className="relative mx-auto w-full max-w-[1440px] min-h-[581px] flex items-center">
+          <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-4 md:px-[136px] pb-16 pt-[246px]">
+            {/* Hero Title */}
+            <div className="flex flex-col gap-5 mb-8 md:mb-0 w-full md:w-[420px]">
+              <div className="font-['IBM_Plex_Mono','Noto_Sans_SC',monospace] text-[48px] md:text-[64px] font-bold leading-[1.1] tracking-[-0.68px] text-white" style={{ fontVariationSettings: "'wght' 800" }}>
+                媒体资源
+              </div>
+            </div>
 
-          {/* Hero illustration */}
-          <div className="relative flex h-[230px] w-[531px] items-center justify-center">
-            <Image
-              src="/meida/t1.png"
-              alt="XAUC 媒体资源主视觉"
-              width={531}
-              height={230}
-              className="h-[230px] w-[531px] object-contain"
-              priority
-            />
+            {/* Background Graphics */}
+            <div className="relative w-full md:w-[531px] h-[230px] flex-shrink-0">
+              <Image
+                src="/meida/t1.png"
+                alt="Media Resources"
+                className="h-full w-full object-contain object-center"
+                width={531}
+                height={230}
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>

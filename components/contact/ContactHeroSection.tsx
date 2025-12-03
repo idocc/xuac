@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const ContactHeroSection = () => {
   return (
-    <section className="relative min-h-[574px] w-full overflow-hidden bg-black">
+    <section className="relative min-h-[581px] w-full overflow-hidden bg-black">
       {/* Background decorative element */}
       <div className="absolute left-1/2 top-[272px] h-[194px] w-full max-w-[1300px] -translate-x-1/2 overflow-hidden">
         <Image 

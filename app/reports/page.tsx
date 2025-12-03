@@ -101,34 +101,35 @@ export default function ReportsPage() {
   return (
     <div className="bg-[#030303]">
       {/* Hero section */}
-      <section className="relative flex w-full justify-center bg-black h-[574px] pt-[140px] pb-[120px]">
-        <div
-          className={`${REPORTS_CONTAINER_WIDTH} flex items-center justify-between px-4`}
-        >
-          <div className="max-w-[420px]">
-            <h1 className="font-['IBM_Plex_Mono',monospace] text-[64px] font-bold leading-[1.1] tracking-[-0.68px] text-white">
-              金币储备报告
-            </h1>
-          </div>
+      <section className="relative min-h-[581px] w-full overflow-hidden bg-black">
+        <div className="relative mx-auto w-full max-w-[1440px] min-h-[581px] flex items-center">
+          <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-4 md:px-[136px] pb-16 pt-[140px]">
+            {/* Hero Title */}
+            <div className="flex flex-col gap-5 mb-8 md:mb-0 w-full md:w-[420px]">
+              <div className="font-['IBM_Plex_Mono','Noto_Sans_SC',monospace] text-[48px] md:text-[64px] font-bold leading-[1.1] tracking-[-0.68px] text-white" style={{ fontVariationSettings: "'wght' 800" }}>
+                金币储备报告
+              </div>
+            </div>
 
-          {/* Hero illustration images */}
-          <div className="relative flex h-[387px] items-center justify-center gap-6">
-            <Image
-              src="/report/t1.png"
-              alt="金币储备报告图示一"
-              width={372}
-              height={325}
-              className="h-[325px] w-[372px] object-contain"
-              priority
-            />
-            <Image
-              src="/report/t2.png"
-              alt="金币储备报告图示二"
-              width={343}
-              height={387}
-              className="h-[387px] w-[343px] object-contain"
-              priority
-            />
+            {/* Background Graphics */}
+            <div className="relative w-full md:w-[531px] h-[230px] flex-shrink-0 flex items-center justify-center gap-4">
+              <Image
+                src="/report/t1.png"
+                alt="Reserve Reports"
+                width={186}
+                height={162}
+                className="h-[162px] w-[186px] object-contain"
+                priority
+              />
+              <Image
+                src="/report/t2.png"
+                alt="Reserve Reports"
+                width={171}
+                height={193}
+                className="h-[193px] w-[171px] object-contain"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
