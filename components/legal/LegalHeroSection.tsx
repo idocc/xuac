@@ -15,7 +15,7 @@ export const LegalHeroSection = () => {
           </div>
 
           {/* Background Graphics */}
-          <div className="relative w-full md:w-[561px] h-[276px] flex-shrink-0 hidden md:block">
+          <div className="relative w-full md:w-[531px] h-[230px] flex-shrink-0 hidden md:block">
             <Image
               src="/falv/t1.png"
               alt=""
