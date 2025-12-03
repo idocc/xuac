@@ -6,7 +6,7 @@ export const LegalHeroSection = () => {
   return (
     <section className="relative min-h-[574px] w-full overflow-hidden bg-black">
       <div className="relative mx-auto w-full max-w-[1440px] min-h-[574px] flex items-center">
-        <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-4 md:px-[136px] pb-16 pt-[278px]">
+        <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-4 md:px-[136px] pb-16 pt-[246px]">
           {/* Hero Title */}
           <div className="flex flex-col gap-5 mb-8 md:mb-0 w-full md:w-[681px]">
             <div className="font-bold font-['IBM_Plex_Mono',monospace] text-[48px] md:text-[68px] leading-[79px] tracking-[-0.68px] text-white" style={{ fontVariationSettings: "'wght' 700" }}>
@@ -24,25 +24,7 @@ export const LegalHeroSection = () => {
               height={276}
               priority
             />
-            {/* Decorative elements - t2.png images */}
-            <div className="absolute left-[189px] top-[94.75px] w-[248px] h-[106px]">
-              <Image
-                src="/falv/t2.png"
-                alt=""
-                className="h-full w-full object-contain object-center pointer-events-none scale-y-[-1]"
-                width={248}
-                height={106}
-              />
-            </div>
-            <div className="absolute left-[189px] top-[207.75px] w-[248px] h-[106px]">
-              <Image
-                src="/falv/t2.png"
-                alt=""
-                className="h-full w-full object-contain object-center pointer-events-none"
-                width={248}
-                height={106}
-              />
-            </div>
+            
           </div>
         </div>
       </div>

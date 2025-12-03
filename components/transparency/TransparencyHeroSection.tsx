@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export const TransparencyHeroSection = () => {
   return (
-    <section className="relative min-h-[580px] w-full overflow-hidden bg-black">
-      <div className="relative mx-auto w-full max-w-[1440px] min-h-[580px] flex items-center">
+    <section className="relative min-h-[574px] w-full overflow-hidden bg-black">
+        <div className="relative mx-auto w-full max-w-[1440px] min-h-[574px] flex items-center">
         <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-4 md:px-[148px] pb-16 pt-40">
           {/* Hero Title */}
           <div className="flex flex-col gap-5 mb-8 md:mb-0">

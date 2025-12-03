@@ -4,17 +4,19 @@ import Image from "next/image";
 
 export const ContactHeroSection = () => {
   return (
-    <section className="relative min-h-[478px] w-full overflow-hidden bg-black">
+    <section className="relative min-h-[574px] w-full overflow-hidden bg-black">
       {/* Background decorative element */}
-      <div className="absolute left-1/2 top-[202px] h-[194px] w-full max-w-[1300px] -translate-x-1/2 overflow-hidden">
-        <img 
-          src="https://www.figma.com/api/mcp/asset/4a9e3184-8760-4ba1-aa78-b7642f614ae0" 
+      <div className="absolute left-1/2 top-[272px] h-[194px] w-full max-w-[1300px] -translate-x-1/2 overflow-hidden">
+        <Image 
+          src="/contact/t1.png" 
           alt="" 
-          className="w-full h-full object-cover block"
+          width={1300}
+          height={194}
+          objectFit="contanier"
         />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] flex flex-col items-center justify-center min-h-[478px] px-4 pt-[120px]">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] flex flex-col items-center justify-center min-h-[574px] px-4 pt-[120px]">
         {/* Hero Content */}
         <div className="flex flex-col items-center gap-0 text-white w-full max-w-[848px]">
           {/* Subtitle */}

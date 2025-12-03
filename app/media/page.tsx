@@ -276,7 +276,7 @@ export default function MediaPage() {
   return (
     <div className="bg-[#030303]">
       {/* Hero */}
-      <section className="relative flex w-full justify-center bg-black h-[575px] pb-[120px] pt-[246px]">
+      <section className="relative flex w-full justify-center bg-black h-[574px] pb-[120px] pt-[246px]">
         <div
           className={`${MEDIA_CONTAINER_WIDTH} flex items-center justify-between gap-10 px-4`}
         >

@@ -101,7 +101,7 @@ export default function ReportsPage() {
   return (
     <div className="bg-[#030303]">
       {/* Hero section */}
-      <section className="relative flex w-full justify-center bg-black pt-[140px] pb-[120px]">
+      <section className="relative flex w-full justify-center bg-black h-[574px] pt-[140px] pb-[120px]">
         <div
           className={`${REPORTS_CONTAINER_WIDTH} flex items-center justify-between px-4`}
         >
