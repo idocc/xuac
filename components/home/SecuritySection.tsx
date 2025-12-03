@@ -51,7 +51,7 @@ export const SecuritySection = () => {
   ];
 
   return (
-    <section className="bg-white text-black">
+    <section className="bg-white text-black border-t border-black">
       <div className="mx-auto max-w-[1300px] flex">
         <div className="border-r border-black">
           <div className="text-[68px] font-bold whitespace-nowrap py-[30px]">
