@@ -48,7 +48,7 @@ export const ContactFormSection = () => {
     if (!formData.description) newErrors.description = '请描述您的问题';
     if (!formData.email) newErrors.email = '请输入电子邮件';
     if (!formData.name) newErrors.name = '请输入姓名';
-    if (!formData.agreeToTerms) newErrors.agreeToTerms = '请同意条款和条件';
+    if (!formData.agreeToTerms) (newErrors as any).agreeToTerms = '请同意条款和条件';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
