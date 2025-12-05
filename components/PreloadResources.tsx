@@ -14,9 +14,51 @@ export default function PreloadResources({ onLoadComplete }: PreloadResourcesPro
   const headline = "XAUC · On-chain Gold,\nRedeemable & Compliant...";
   const totalBars = 90;
 
-  // 关键资源列表
+  // 关键资源列表 - 按优先级排序
   const criticalResources = [
+    // 首页关键图片
     "/images/home/bg.png",
+    "/images/hero/out.png",
+    "/images/hero/coin.png",
+    "/images/home/gold.png",
+    "/images/home/1.png",
+    "/images/home/2.png",
+    "/images/home/3.png",
+    "/images/query/gold-bars.png",
+    "/images/security/main-logo.png",
+    
+    // 关于页
+    "/about/bg.png",
+    "/about/coin.png",
+    "/images/about/bottom_1.png",
+    "/images/about/bottom_2.png",
+    "/images/about/bottom_3.png",
+    "/images/about/bottom_4.png",
+    
+    // 联系页
+    "/contact/t1.png",
+    "/contact/arrow.png",
+    "/contact/coin.png",
+    
+    // 透明度页
+    "/toumingdu/t1.png",
+    "/toumingdu/t3.png",
+    "/images/transparency/image245.png",
+    
+    // 法律页
+    "/falv/t1.png",
+    "/falv/t2.png",
+    
+    // 报告页
+    "/report/1.png",
+    "/report/2.png",
+    "/report/3.png",
+    "/report/t1.png",
+    "/report/t2.png",
+    
+    // 媒体页
+    "/meida/t1.png",
+    "/meida/black_xauc.png",
   ];
 
   useEffect(() => {
