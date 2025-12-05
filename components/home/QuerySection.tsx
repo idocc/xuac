@@ -52,7 +52,7 @@ export const QuerySection = () => {
       {/* Background Image */}
       <div className="relative w-full max-w-[1072px] h-[612px] mt-8 mx-auto">
         <Image
-          src="/images/query/gold-bars.png"
+          src="/images/query/gold-bars.webp"
           alt="Gold bars"
           fill
           className="object-cover object-center"

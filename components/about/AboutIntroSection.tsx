@@ -2,10 +2,14 @@
 
 import Image from "next/image";
 
-const believeIcon =
-  "https://www.figma.com/api/mcp/asset/a490c461-ff88-4d47-8d89-360869df0ba2";
-const bottomPattern =
-  "https://www.figma.com/api/mcp/asset/ca50eead-cca4-444e-aa05-bca0f246e06c";
+const BelieveIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47" fill="none">
+    <path d="M29.873 0L23.8984 6.37288L40.6273 23.3008L47.0001 17.3263L29.873 0Z" fill="#EFBE84"/>
+    <path d="M17.3263 0.199097L23.5 6.17367V40.6271L17.3263 46.8008L0 29.2754L6.17373 23.3008L0 16.7288L17.3263 0.199097Z" fill="#EFBE84"/>
+    <path d="M47 29.6737L40.6271 23.5L23.5 40.8263L29.6737 46.8008L47 29.6737Z" fill="#EFBE84"/>
+    <rect x="11.9492" y="19.9153" width="11.5508" height="6.77119" fill="black"/>
+  </svg>
+);
 
 export const AboutIntroSection = () => {
   return (
@@ -73,25 +77,19 @@ export const AboutIntroSection = () => {
       {/* We Believe Section with Background */}
       <div className="relative mt-20 w-full flex justify-start items-center overflow-hidden min-h-[335px] bg-black">
         <div className="absolute bottom-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
-          <img
-            src={bottomPattern}
-            alt=""
-            className="block h-full w-full max-w-none"
+          <Image
+            src="/about/xauc_bg.png"
+            alt="Background pattern"
+            fill
+            className="object-cover object-center"
           />
         </div>
 
         {/* We Believe Content */}
         <div className="relative z-20 mx-auto w-full max-w-[1300px] px-4 py-12">
           <div className="flex items-center gap-[12px] mb-8">
-            <div className="relative shrink-0 inline-grid grid-cols-[max-content] grid-rows-[max-content] justify-items-start leading-[0]">
-              <div className="col-[1] row-[1] relative ml-0 mt-0 h-[46.801px] w-[47px]">
-                <img
-                  src={believeIcon}
-                  alt=""
-                  className="block h-full w-full max-w-none"
-                />
-              </div>
-              <div className="col-[1] row-[1] ml-[11.95px] mt-[19.92px] h-[6.771px] w-[11.551px] bg-black"></div>
+            <div className="relative shrink-0 h-[47px] w-[47px]">
+              <BelieveIcon />
             </div>
             <div className="relative shrink-0 flex h-[60.47px] items-center justify-center">
               <div className="flex-none rotate-[0.252deg]">

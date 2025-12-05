@@ -10,7 +10,7 @@ export const AboutHeroSection = () => {
         {/* Background Image Layer */}
         <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/about/bg.png"
+            src="/about/bg.webp"
             alt="Background"
             fill
             className="object-cover object-center"
@@ -25,7 +25,7 @@ export const AboutHeroSection = () => {
         <div className="absolute inset-0 w-full h-full flex items-center justify-center z-10">
           <div className="relative h-[600px] w-full max-w-[800px] opacity-90">
             <Image
-              src="/about/coin.png"
+              src="/about/coin.webp"
               alt="Gold Coins"
               fill
               className="object-contain object-center"

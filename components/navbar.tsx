@@ -3,9 +3,7 @@
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-
-const tokenLogo =
-  "https://www.figma.com/api/mcp/asset/a5dffe18-041d-48fe-8113-4982ce68ce0f";
+import { XAUCLogo } from "@/components/icons";
 
 const navItems = [
   { label: "关于我们", href: "/about" },
@@ -27,12 +25,8 @@ export const Navbar = () => {
           className="flex items-center gap-3 text-[#efbe84]"
           aria-label="XAUC"
         >
-          <span className="flex size-9 items-center justify-center rounded-full bg-[#151515]">
-            <img
-              src={tokenLogo}
-              alt="XAUC token logo"
-              className="h-6 w-6 object-contain"
-            />
+          <span className="flex size-9 items-center justify-center rounded-full">
+            <XAUCLogo className="h-6 w-6" />
           </span>
           <span className="font-semibold tracking-wide">XAUC</span>
         </NextLink>

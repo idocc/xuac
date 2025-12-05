@@ -1,9 +1,6 @@
 "use client";
 
-const iconPerson = "https://www.figma.com/api/mcp/asset/6f24ea4a-edb5-4e6f-8bd6-270d1b4325b0";
-const iconFinance = "https://www.figma.com/api/mcp/asset/0fe47016-b6f3-414e-9677-c41cc1d69bed";
-const iconDefi = "https://www.figma.com/api/mcp/asset/56ff6f68-bf9c-4da7-953d-48b97e5a93ac";
-const iconInnovation = "https://www.figma.com/api/mcp/asset/e8dcfdc1-d725-4320-a4b9-20b9b7fe5e9e";
+import Image from "next/image";
 
 export const AboutScenariosSection = () => {
   return (
@@ -30,9 +27,11 @@ export const AboutScenariosSection = () => {
               {/* Personal & Institutions */}
               <div className="relative w-[346px] shrink-0 flex flex-col items-start gap-[20px]">
                 <div className="relative h-[58.5px] w-[62.769px] shrink-0 overflow-hidden">
-                  <img
-                    src={iconPerson}
-                    alt=""
+                  <Image
+                    src="/about/icon1.png"
+                    alt="个人与机构"
+                    width={63}
+                    height={68}
                     className="block left-0 top-[-11.97%] h-[116.24%] w-full max-w-none"
                   />
                 </div>
@@ -48,9 +47,11 @@ export const AboutScenariosSection = () => {
               {/* Financial & Crypto Institutions */}
               <div className="relative w-[346px] shrink-0 flex flex-col items-start gap-[20px]">
                 <div className="relative h-[68px] w-[69.478px] shrink-0">
-                  <img
-                    src={iconFinance}
-                    alt=""
+                  <Image
+                    src="/about/icon2.png"
+                    alt="金融与加密机构"
+                    width={70}
+                    height={68}
                     className="block h-full w-full max-w-none object-cover object-[50%_50%] pointer-events-none"
                   />
                 </div>
@@ -68,9 +69,11 @@ export const AboutScenariosSection = () => {
               {/* DeFi Applications */}
               <div className="relative w-[346px] shrink-0 flex flex-col items-start gap-[20px]">
                 <div className="relative h-[63.5px] w-[65.106px] shrink-0 overflow-hidden">
-                  <img
-                    src={iconDefi}
-                    alt=""
+                  <Image
+                    src="/about/icon3.png"
+                    alt="DeFi 应用"
+                    width={65}
+                    height={68}
                     className="block left-0 top-[-2.36%] h-[107.09%] w-full max-w-none"
                   />
                 </div>
@@ -85,9 +88,11 @@ export const AboutScenariosSection = () => {
               {/* Financial Innovation */}
               <div className="relative w-[346px] shrink-0 flex flex-col items-start gap-[20px]">
                 <div className="relative h-[68px] w-[63px] shrink-0">
-                  <img
-                    src={iconInnovation}
-                    alt=""
+                  <Image
+                    src="/about/icon4.png"
+                    alt="金融创新"
+                    width={63}
+                    height={68}
                     className="block h-full w-full max-w-none object-cover object-[50%_50%] pointer-events-none"
                   />
                 </div>

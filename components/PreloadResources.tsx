@@ -24,12 +24,12 @@ export default function PreloadResources({ onLoadComplete }: PreloadResourcesPro
     "/images/home/1.png",
     "/images/home/2.png",
     "/images/home/3.png",
-    "/images/query/gold-bars.png",
+    "/images/query/gold-bars.webp",
     "/images/security/main-logo.png",
     
     // 关于页
-    "/about/bg.png",
-    "/about/coin.png",
+    "/about/bg.webp",
+    "/about/coin.webp",
     "/images/about/bottom_1.png",
     "/images/about/bottom_2.png",
     "/images/about/bottom_3.png",
